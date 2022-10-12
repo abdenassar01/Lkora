@@ -1,56 +1,16 @@
 import { Text } from 'react-native';
-import { MainScreenWrapper } from "./styles/Styles";
+import LiveCard from './live/LiveCard';
+import { Heading, LiveSlider, MainScreenWrapper, Section } from "./styles/Styles";
 
 export default function MainScreen() {
   return (
     <MainScreenWrapper>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
-      <Text>MainScreen</Text>
+      <Section>
+        <Heading>Live Match</Heading>
+        <LiveSlider horizontal>
+          <LiveCard />
+        </LiveSlider>
+      </Section>
     </MainScreenWrapper>
   )
 }
