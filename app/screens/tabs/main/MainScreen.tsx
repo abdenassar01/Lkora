@@ -5,6 +5,52 @@ export default function MainScreen() {
   return (
     <MainScreenWrapper>
       <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
+      <Text>MainScreen</Text>
     </MainScreenWrapper>
   )
 }

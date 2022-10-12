@@ -8,12 +8,9 @@ import TabNavigator from './app/screens/tabs/TabNavigator';
 const App = () => {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <StatusBar/>
-        <TabNavigator />
-      </SafeAreaView>
+      <StatusBar/>
+      <TabNavigator />
     </NavigationContainer>
-    
   );
 };
 
