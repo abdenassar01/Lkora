@@ -12,6 +12,7 @@ export const LiveCardWrapper = styled(View)`
     width: 300px;
     background-color: ${ COLOR.main };
     border-radius: 20px;
+    margin-right: 10px;
 `
 
 export const LeagueTitle = styled(Text)`
@@ -58,7 +59,10 @@ export const Score = styled(View)`
 
 export const Time = styled(Text)`
     font-size: 12px;
-    color: ${ COLOR.helperText };
+    color: ${ COLOR.text };
+    padding: 2px 10px;
+    border-radius: 3px;
+    background-color: #FF2782;
 `
 
 export const MatchScore = styled(Text)`

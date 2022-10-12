@@ -10,7 +10,9 @@ export const Section = styled(View)`
 `
 
 export const Heading = styled(Text)`
-
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 20px;
 `
 
 export const LiveSlider = styled(ScrollView)`
