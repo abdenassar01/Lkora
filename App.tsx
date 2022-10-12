@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import {
   SafeAreaView,
   ScrollView,
@@ -8,13 +9,16 @@ import MainScreen from "./app/screens/tabs/main/MainScreen";
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar/>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic">
-          <MainScreen />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView>
+        <StatusBar/>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic">
+            <MainScreen />
+        </ScrollView>
+      </SafeAreaView>
+    </NavigationContainer>
+    
   );
 };
 
