@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native'
+import { Text } from 'react-native';
+import { MainScreenWrapper } from "./styles/Styles";
 
 export default function MainScreen() {
   return (
-    <View>
+    <MainScreenWrapper>
       <Text>MainScreen</Text>
-    </View>
+    </MainScreenWrapper>
   )
 }

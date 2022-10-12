@@ -4,6 +4,7 @@ import {
   StatusBar,
   Text
 } from 'react-native';
+import MainScreen from "./app/screens/tabs/main/MainScreen";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <StatusBar/>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic">
-          <Text>Empty App</Text>
+          <MainScreen />
       </ScrollView>
     </SafeAreaView>
   );
