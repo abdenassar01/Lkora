@@ -3,7 +3,7 @@ import { Avatar, GameTitle, HelperText, LeagueTitle, LiveCardWrapper, LiveCardWr
 export default function LiveCard() {
   return (
     <LiveCardWrapperLink>
-      <LiveCardWrapper>
+      <LiveCardWrapper source={{ uri: "https://i.imgur.com/QxU5mRR.jpg" }} blurRadius={10} borderRadius={20}>
         <LeagueTitle>Premier League</LeagueTitle>
         <GameTitle>Week 10</GameTitle>
         <MatchInfo>

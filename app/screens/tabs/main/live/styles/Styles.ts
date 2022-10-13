@@ -1,4 +1,5 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { HeadingText } from './../../../../../assets/text/Text';
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../assets/color";
 
@@ -6,16 +7,14 @@ export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
 `
 
-export const LiveCardWrapper = styled(View)`
+export const LiveCardWrapper = styled(ImageBackground)`
     padding: 20px 10px;
     align-items: center;
     width: 300px;
-    background-color: ${ COLOR.main };
-    border-radius: 20px;
     margin-right: 10px;
 `
 
-export const LeagueTitle = styled(Text)`
+export const LeagueTitle = styled(HeadingText)`
     font-weight: bold;   
     color: ${ COLOR.text };
 `

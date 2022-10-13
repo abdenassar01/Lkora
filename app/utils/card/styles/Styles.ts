@@ -1,6 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../assets/color";
+import { MainText } from "../../../assets/text/Text";
 
 export const CardWrapperLink = styled(TouchableOpacity)`
 
@@ -23,7 +24,7 @@ export const Team = styled(View)`
     padding: 0 20px;
 `
 
-export const Name = styled(Text)`
+export const Name = styled(MainText)`
     padding: 0 10px;
     font-weight: bold;
     font-size: 16px;
