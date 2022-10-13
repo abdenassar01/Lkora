@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/assets/fonts/Baloo2-Medium.ttf",
+      "sha1": "0c8db0b372caeea37f43a43b8b4773e8c386c964"
+    },
+    {
+      "path": "app/assets/fonts/Courgette-Regular.ttf",
+      "sha1": "0e6826b92f8f80fe2eb803bdef7d81355845e283"
+    }
+  ]
+}
