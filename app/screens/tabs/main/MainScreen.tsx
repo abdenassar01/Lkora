@@ -1,5 +1,6 @@
+import Card from '../../../utils/card/Card';
 import LiveCard from './live/LiveCard';
-import { Heading, LiveSlider, MainScreenWrapper, Section } from "./styles/Styles";
+import { Heading, LiveSlider, MainScreenWrapper, MatchesWrapper, Section } from "./styles/Styles";
 
 export default function MainScreen() {
   return (
@@ -13,6 +14,18 @@ export default function MainScreen() {
           <LiveCard />
           <LiveCard />
         </LiveSlider>
+      </Section>
+      <Section>
+        <Heading>Matches</Heading>
+        <MatchesWrapper>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </MatchesWrapper>
       </Section>
     </MainScreenWrapper>
   )

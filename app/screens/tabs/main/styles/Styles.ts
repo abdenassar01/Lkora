@@ -14,8 +14,13 @@ export const Heading = styled(Text)`
     padding: 10px 0;
     font-weight: bold;
     font-size: 20px;
+    margin-left: 10px;
 `
 
 export const LiveSlider = styled(ScrollView)`
+
+`
+
+export const MatchesWrapper = styled(ScrollView)`
 
 `
