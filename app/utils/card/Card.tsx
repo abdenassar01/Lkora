@@ -3,7 +3,7 @@ import { Avatar, CardWrapper, CardWrapperLink, Date, FixtureTime, Name, Team, Ti
 export default function Card() {
   return (
     <CardWrapperLink>
-      <CardWrapper>
+      <CardWrapper style={{ elevation: 5 }}>
         <Team>
             <Name>Raja CA</Name>
             <Avatar source={{ uri: "https://api.sofascore.app/api/v1/team/41757/image" }}></Avatar>

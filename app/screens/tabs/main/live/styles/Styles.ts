@@ -22,6 +22,7 @@ export const LeagueTitle = styled(HeadingText)`
 export const GameTitle = styled(Text)`
     font-size: 12px;
     color: ${ COLOR.helperText };
+    text-shadow: 2px 2px 1px black;
 `
 
 export const MatchInfo = styled(View)`

@@ -14,14 +14,18 @@ export const Section = styled(View)`
 export const Heading = styled(HeadingText)`
     padding: 10px 0;
     font-weight: bold;
-    font-size: 20px;
     margin-left: 10px;
+    font-size: 20px;
 `
 
 export const LiveSlider = styled(ScrollView)`   
-
+    margin-left: 10px;
 `
 
 export const MatchesWrapper = styled(ScrollView)`
     
+`
+
+export const Spacer = styled(View)`
+    height: 10px;
 `

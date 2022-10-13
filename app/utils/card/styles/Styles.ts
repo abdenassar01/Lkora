@@ -1,9 +1,9 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableHighlight, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
-export const CardWrapperLink = styled(TouchableOpacity)`
+export const CardWrapperLink = styled(TouchableHighlight)`
 
 `
 
@@ -12,9 +12,8 @@ export const CardWrapper = styled(View)`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 5px 10px;
+    margin: 5px 5px;
     border-radius: 10px;
-
     background-color: ${ COLOR.text };
 `
 
