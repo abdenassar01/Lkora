@@ -1,19 +1,16 @@
+import { NavigationContainer } from '@react-navigation/native';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
-  Text
 } from 'react-native';
+import TabNavigator from './app/screens/tabs/TabNavigator';
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <NavigationContainer>
       <StatusBar/>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic">
-          <Text>Empty App</Text>
-      </ScrollView>
-    </SafeAreaView>
+      <TabNavigator />
+    </NavigationContainer>
   );
 };
 

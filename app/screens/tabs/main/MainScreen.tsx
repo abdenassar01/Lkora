@@ -1,9 +1,32 @@
-import { View, Text } from 'react-native'
+import Card from '../../../utils/card/Card';
+import LiveCard from './live/LiveCard';
+import { Heading, LiveSlider, MainScreenWrapper, MatchesWrapper, Section } from "./styles/Styles";
 
 export default function MainScreen() {
   return (
-    <View>
-      <Text>MainScreen</Text>
-    </View>
+    <MainScreenWrapper>
+      <Section>
+        <Heading>Live Match</Heading>
+        <LiveSlider horizontal>
+          <LiveCard />
+          <LiveCard />
+          <LiveCard />
+          <LiveCard />
+          <LiveCard />
+        </LiveSlider>
+      </Section>
+      <Section>
+        <Heading>Matches</Heading>
+        <MatchesWrapper>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </MatchesWrapper>
+      </Section>
+    </MainScreenWrapper>
   )
 }
