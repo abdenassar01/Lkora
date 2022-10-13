@@ -2,9 +2,9 @@ import { Text } from "react-native";
 import styled from "styled-components";
 
 export const HeadingText = styled(Text)`
-    font-family: 'Courgette';
+    font-family: 'SF-UI-Display-Bold';
 `
 
 export const MainText = styled(Text)`
-    font-family: 'Baloo2-Medium';
+    font-family: 'SF-UI-Display-Bold';
 `
