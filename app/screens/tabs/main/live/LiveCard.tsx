@@ -17,9 +17,9 @@ export default function LiveCard() {
                 <Time>86'</Time>
             </Score>
             <Team>
-                <Avatar source={{ uri: "https://api.sofascore.app/api/v1/team/41757/image"}}></Avatar>
-                <Title>Raja Ma</Title>
-                <HelperText>Home</HelperText>
+                <Avatar source={{ uri: "https://api.sofascore.app/api/v1/team/1/image" }}></Avatar>
+                <Title>QPR</Title>
+                <HelperText>Away</HelperText>
             </Team>
         </MatchInfo>
       </LiveCardWrapper>

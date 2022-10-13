@@ -7,7 +7,7 @@ export const LiveCardWrapperLink = styled(TouchableOpacity)`
 `
 
 export const LiveCardWrapper = styled(View)`
-    padding: 10px 5px;
+    padding: 20px 10px;
     align-items: center;
     width: 300px;
     background-color: ${ COLOR.main };
@@ -38,8 +38,8 @@ export const Team = styled(View)`
 `
 
 export const Avatar = styled(Image)`
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 `
 
 export const Title = styled(Text)`

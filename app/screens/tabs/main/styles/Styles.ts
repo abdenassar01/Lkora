@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const MainScreenWrapper = styled(ScrollView)`
     padding: 5px;
+    background-color: #F7F7F7;
 `
 
 export const Section = styled(View)`
