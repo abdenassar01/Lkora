@@ -1,7 +1,7 @@
-import { HeadingText } from './../../../../../assets/text/Text';
 import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../assets/color";
+import { HeadingText } from "../../../../../assets/text/Text";
 
 export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
@@ -21,8 +21,7 @@ export const LeagueTitle = styled(HeadingText)`
 
 export const GameTitle = styled(Text)`
     font-size: 12px;
-    color: ${ COLOR.helperText };
-    text-shadow: 2px 2px 1px black;
+    color: ${ COLOR.text };
 `
 
 export const MatchInfo = styled(View)`
