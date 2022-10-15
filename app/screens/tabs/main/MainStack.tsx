@@ -1,0 +1,15 @@
+import { createStackNavigator } from '@react-navigation/stack';
+import MainScreen from './MainScreen';
+
+
+export default function MainStack() {
+
+
+    const Stack = createStackNavigator();
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='MainScreen' component={ MainScreen } />
+    </Stack.Navigator>
+  )
+}
