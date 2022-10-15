@@ -1,6 +1,6 @@
 import { ScrollView, View } from "react-native";
 import styled from "styled-components";
-import { HeadingText } from "../../../../assets/text/Text";
+import { HeadingText } from "../../../../../assets/text/Text";
 
 export const MainScreenWrapper = styled(ScrollView)`
     padding: 5px;

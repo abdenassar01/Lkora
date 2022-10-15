@@ -1,4 +1,4 @@
-import Card from '../../../utils/card/Card';
+import Card from '../../../../utils/card/Card';
 import LiveCard from './live/LiveCard';
 import { Heading, LiveSlider, MainScreenWrapper, MatchesWrapper, Section, Spacer } from "./styles/Styles";
 

@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from './main/MainScreen';
+import MainScreen from './main/mainStack/MainScreen';
 import MainStack from './main/MainStack';
 
 export default function TabNavigator() {
