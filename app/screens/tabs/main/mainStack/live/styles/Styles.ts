@@ -1,7 +1,7 @@
 import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../assets/color";
-import { HeadingText } from "../../../../../assets/text/Text";
+import { COLOR } from "../../../../../../assets/color";
+import { HeadingText } from "../../../../../../assets/text/Text";
 
 export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
