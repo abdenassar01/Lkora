@@ -1,10 +1,9 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { HeaderWrapper, Logo } from "./styles/Styles";
 
 export default function Header() {
   return (
-    <View>
-      <Text>Header</Text>
-    </View>
+    <HeaderWrapper>
+        <Logo source={ require("../../assets/logo.png") }/>
+    </HeaderWrapper>
   )
 }
