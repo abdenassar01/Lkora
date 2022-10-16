@@ -6,7 +6,7 @@ export default function Card() {
   const navigation: any = useNavigation();
 
   return (
-    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails") }>
+    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails") } activeOpacity={0.99}>
       <CardWrapper style={{ elevation: 3 }}>
         <Team>
             <Name>Raja CA</Name>
