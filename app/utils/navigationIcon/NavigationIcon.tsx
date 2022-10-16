@@ -1,15 +1,17 @@
-import { View, Text } from 'react-native'
-import { IconWrapper } from './styles/Styles'
+import { IconWrapper, Label } from './styles/Styles'
+import Icon from 'react-native-vector-icons/Ionicons';
 
 type Props = {
     focused: boolean,
-    label: string
+    label: string,
+    icon: string
 }
 
-export default function NavigationIcon({ focused, label }: Props) {
+export default function NavigationIcon({ focused, label, icon }: Props) {
   return (
     <IconWrapper>
-      <Text>NavigationIcon</Text>
+      <Icon name={ icon } size={20} color={ focused ? "#FF2782" : "#748c94" } />
+      <Label style={{ color: focused ? "#FF2782" : "#748c94" }}>{ focused ? "⦿" : label }</Label>
     </IconWrapper>
   )
 }

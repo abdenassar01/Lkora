@@ -17,8 +17,8 @@ export default function TabNavigator() {
           bottom: 10,
           left: 10,
           right: 10,
-          borderRadius: 50,
-          backgroundColor: "#037c9b",
+          borderRadius: 10,
+          backgroundColor: "#FFFFFF",
           elevation: 3,
           height: 50
         }
@@ -26,12 +26,12 @@ export default function TabNavigator() {
     >
       <Tab.Screen name='MainSTack' component={ MainStack } 
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" />
+          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
       />
       <Tab.Screen name='Matches' component={ MainScreen } 
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Matches" />
+          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Matches" icon="football" />
         }}
       />
     </Tab.Navigator>
