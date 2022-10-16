@@ -1,7 +1,7 @@
 import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../assets/color";
-import { HeadingText } from "../../../../../../assets/text/Text";
+import { HeadingText, MainText } from "../../../../../../assets/text/Text";
 
 export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
@@ -41,13 +41,13 @@ export const Avatar = styled(Image)`
     height: 60px;
 `
 
-export const Title = styled(Text)`
+export const Title = styled(MainText)`
     font-weight: bold;
     color: black;
     color: ${ COLOR.text };
 `
 
-export const HelperText = styled(Text)`
+export const HelperText = styled(MainText)`
     color: ${ COLOR.helperText };
     font-size: 12px;
 `
@@ -56,7 +56,7 @@ export const Score = styled(View)`
     align-items: center;
 `
 
-export const Time = styled(Text)`
+export const Time = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.text };
     padding: 2px 10px;
@@ -64,7 +64,7 @@ export const Time = styled(Text)`
     background-color: #FF2782;
 `
 
-export const MatchScore = styled(Text)`
+export const MatchScore = styled(MainText)`
     font-size: 25px;
     font-weight: bold;
     color: ${ COLOR.text };

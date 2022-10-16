@@ -6,5 +6,5 @@ export const HeadingText = styled(Text)`
 `
 
 export const MainText = styled(Text)`
-    font-family: 'Courgette-Regular';
+    font-family: 'Baloo2-Medium';
 `
