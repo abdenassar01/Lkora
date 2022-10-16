@@ -1,15 +1,17 @@
-import { Away, CardWrapper, Home, MatchStatusWrapper, Score, ScoreWrapper, StaduimTitle, Status, Team, TeamLogo, TeamTitle } from './styles/styles'
+import { Away, CardWrapper, HelperText, Home, Line, MatchStatusWrapper, Score, ScoreWrapper, StaduimTitle, Status, Team, TeamLogo, TeamTitle } from './styles/styles'
 
 export default function MainCard() {
     
   return (
-    <CardWrapper>
-      <StaduimTitle>Infield</StaduimTitle>
+    <CardWrapper style={{ elevation: 10 }}>
+      <StaduimTitle>St James' Park</StaduimTitle>
+      <Line />
       <ScoreWrapper>
         <Home>
             <Team>
                 <TeamTitle>Man City</TeamTitle>
-                <TeamLogo source={{ uri: " https://api.sofascore.app/api/v1/team/116/image" }} />
+                <TeamLogo source={{ uri: "https://api.sofascore.app/api/v1/team/116/image" }} />
+                <HelperText>Home</HelperText>
             </Team>
         </Home>
         <MatchStatusWrapper>
@@ -18,8 +20,9 @@ export default function MainCard() {
         </MatchStatusWrapper>
         <Away>
             <Team>
-                <TeamTitle>Man City</TeamTitle>
-                <TeamLogo source={{ uri: " https://api.sofascore.app/api/v1/team/116/image" }} />
+                <TeamTitle>Wolves</TeamTitle>
+                <TeamLogo source={{ uri: "https://api.sofascore.app/api/v1/team/116/image" }} />
+                <HelperText>Away</HelperText>
             </Team>
         </Away>
       </ScoreWrapper>
