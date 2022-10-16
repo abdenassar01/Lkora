@@ -1,8 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import { Avatar, CardWrapper, CardWrapperLink, Date, FixtureTime, Name, Team, Time } from "./styles/Styles";
 
 export default function Card() {
+
+  const navigation: any = useNavigation();
+
   return (
-    <CardWrapperLink>
+    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails") }>
       <CardWrapper style={{ elevation: 3 }}>
         <Team>
             <Name>Raja CA</Name>

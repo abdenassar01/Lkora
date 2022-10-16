@@ -1,9 +1,9 @@
-import { Image, Text, TouchableHighlight, View } from "react-native";
+import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
-export const CardWrapperLink = styled(TouchableHighlight)`
+export const CardWrapperLink = styled(TouchableOpacity)`
 
 `
 
