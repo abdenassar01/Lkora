@@ -1,6 +1,7 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../assets/color";
+import { MainText } from "../../../assets/text/Text";
 
 export const HeaderWrapper = styled(View)`
     align-items: center;
@@ -18,4 +19,10 @@ export const Logo = styled(Image)`
 export const GoBack = styled(TouchableOpacity)`
     position: absolute;
     left: 10px;
+`
+
+export const TournamentTitle = styled(MainText)`
+    font-size: 22px;
+    font-weight: 600;
+    color: ${ COLOR.main };
 `
