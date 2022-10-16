@@ -1,14 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {
-  SafeAreaView,
   StatusBar,
 } from 'react-native';
 import TabNavigator from './app/screens/tabs/TabNavigator';
+import Header from './app/utils/header/Header';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StatusBar/>
+      <StatusBar />
+      <Header />
       <TabNavigator />
     </NavigationContainer>
   );
