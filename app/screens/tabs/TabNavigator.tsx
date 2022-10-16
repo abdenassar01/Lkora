@@ -17,8 +17,8 @@ export default function TabNavigator() {
           bottom: 10,
           left: 10,
           right: 10,
-          borderRadius: 10,
-          backgroundColor: "#FFFFFF",
+          borderRadius: 50,
+          backgroundColor: "#ffffff",
           elevation: 3,
           height: 50
         }

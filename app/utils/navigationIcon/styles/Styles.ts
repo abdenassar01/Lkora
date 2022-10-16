@@ -7,5 +7,5 @@ export const IconWrapper = styled(View)`
 `
 
 export const Label = styled(Text)`
-
+    font-size: 12px
 `
