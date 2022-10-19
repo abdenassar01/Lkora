@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { COLOR } from '../../../../../../assets/color';
+import LineUps from './sections/LineUps';
 import Stats from './sections/Stats';
+import Summary from './sections/Summary';
 import { ButtonLabel, Container, NavBar, NavItem } from './styles/Styles'
 
 export default function Statistics() {
@@ -36,7 +38,10 @@ export default function Statistics() {
           <ButtonLabel style={{ color: section === "summary" ? COLOR.text : COLOR.helperText }}>Summary</ButtonLabel>
         </NavItem>
       </NavBar>
-      <Stats />
+      {
+        section === "stats" ?  <Stats /> : section === "lineups" ? <LineUps /> : <Summary />
+      }
+     
     </Container>
     
   )
