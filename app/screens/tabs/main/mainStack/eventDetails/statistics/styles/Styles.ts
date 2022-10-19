@@ -24,3 +24,8 @@ export const ButtonLabel = styled(MainText)`
     font-size: 15px;
     font-weight: 600;
 `
+
+export const Spacer = styled(View)`
+    height: 60px;
+    width: 100%;
+`

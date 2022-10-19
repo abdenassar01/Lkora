@@ -4,7 +4,9 @@ import { Avatar, Heading, LineUpWrapper, Name, PlayerWrapper, Position, Rating, 
 export default function LineUps() {
   return (
     <LineUpWrapper contentContainerStyle={{ alignItems: 'center' }}>
+     
       <Heading>Home</Heading>
+
       <PlayerWrapper>
         <Position>G</Position>
         <ShirtNumber>1</ShirtNumber>
@@ -33,7 +35,9 @@ export default function LineUps() {
         <Rating>7.2</Rating>
         <Avatar source={{ uri: "https://api.sofascore.app/api/v1/player/243609/image" }}></Avatar>
       </PlayerWrapper>
+
       <Heading>Away</Heading>
+
       <PlayerWrapper>
         <Position>G</Position>
         <ShirtNumber>1</ShirtNumber>
