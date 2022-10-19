@@ -1,4 +1,4 @@
-import { Label, StatisticsItem, StatisticsWrapper, Value } from '../styles/Styles'
+import { Label, StatisticsItem, StatisticsWrapper, Value } from './styles/Styles';
 
 export default function Stats() {
   return (

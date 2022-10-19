@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { COLOR } from '../../../../../../assets/color';
-import LineUps from './sections/LineUps';
-import Stats from './sections/Stats';
-import Summary from './sections/Summary';
+import LineUps from './sections/lineups/LineUps';
+import Stats from './sections/stats/Stats';
+import Summary from './sections/summary/Summary';
 import { ButtonLabel, Container, NavBar, NavItem } from './styles/Styles'
 
 export default function Statistics() {
