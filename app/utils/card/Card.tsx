@@ -1,9 +1,13 @@
+import { useNavigation } from "@react-navigation/native";
 import { Avatar, CardWrapper, CardWrapperLink, Date, FixtureTime, Name, Team, Time } from "./styles/Styles";
 
 export default function Card() {
+
+  const navigation: any = useNavigation();
+
   return (
-    <CardWrapperLink>
-      <CardWrapper>
+    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails") } activeOpacity={0.99}>
+      <CardWrapper style={{ elevation: 3 }}>
         <Team>
             <Name>Raja CA</Name>
             <Avatar source={{ uri: "https://api.sofascore.app/api/v1/team/41757/image" }}></Avatar>

@@ -1,28 +1,27 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../assets/color";
+import { COLOR } from "../../../../../../assets/color";
+import { HeadingText, MainText } from "../../../../../../assets/text/Text";
 
 export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
 `
 
-export const LiveCardWrapper = styled(View)`
+export const LiveCardWrapper = styled(ImageBackground)`
     padding: 20px 10px;
     align-items: center;
     width: 300px;
-    background-color: ${ COLOR.main };
-    border-radius: 20px;
     margin-right: 10px;
 `
 
-export const LeagueTitle = styled(Text)`
+export const LeagueTitle = styled(HeadingText)`
     font-weight: bold;   
     color: ${ COLOR.text };
 `
 
 export const GameTitle = styled(Text)`
     font-size: 12px;
-    color: ${ COLOR.helperText };
+    color: ${ COLOR.text };
 `
 
 export const MatchInfo = styled(View)`
@@ -42,13 +41,13 @@ export const Avatar = styled(Image)`
     height: 60px;
 `
 
-export const Title = styled(Text)`
+export const Title = styled(MainText)`
     font-weight: bold;
     color: black;
     color: ${ COLOR.text };
 `
 
-export const HelperText = styled(Text)`
+export const HelperText = styled(MainText)`
     color: ${ COLOR.helperText };
     font-size: 12px;
 `
@@ -57,7 +56,7 @@ export const Score = styled(View)`
     align-items: center;
 `
 
-export const Time = styled(Text)`
+export const Time = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.text };
     padding: 2px 10px;
@@ -65,7 +64,7 @@ export const Time = styled(Text)`
     background-color: #FF2782;
 `
 
-export const MatchScore = styled(Text)`
+export const MatchScore = styled(MainText)`
     font-size: 25px;
     font-weight: bold;
     color: ${ COLOR.text };

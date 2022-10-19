@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Baloo2-Medium.ttf",
+      "sha1": "0c8db0b372caeea37f43a43b8b4773e8c386c964"
+    },
+    {
+      "path": "assets/fonts/Courgette-Regular.ttf",
+      "sha1": "0e6826b92f8f80fe2eb803bdef7d81355845e283"
+    },
+    {
+      "path": "assets/fonts/SF-UI-Display-Bold.otf",
+      "sha1": "ea872c636f3043495b62cb953a7b3f8895432ef6"
+    }
+  ]
+}
