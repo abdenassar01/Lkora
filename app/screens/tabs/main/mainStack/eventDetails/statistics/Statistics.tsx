@@ -9,10 +9,6 @@ export default function Statistics() {
 
   const [ section, setSection ] = useState<string>("stats");
 
-  useEffect(() => {
-    console.log(section)
-  },[ section ])
-
   return (
     <>
     
