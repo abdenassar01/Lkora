@@ -27,6 +27,10 @@ type Score = {
     current: number
 }
 
+type StatusTime = {
+    timestamp: number
+}
+
 export type Event = {
     id: number,
     tournament: Tournament,
@@ -36,5 +40,6 @@ export type Event = {
     awayTeam: Team,
     homeScore: Score,
     awayScore: Score,
+    statusTime: StatusTime,
     startTimestamp: number;
 }

@@ -73,6 +73,7 @@ export const Time = styled(MainText)`
     padding: 2px 10px;
     border-radius: 3px;
     background-color: #FF2782;
+    margin-top: 20px;
 `
 
 export const MatchScore = styled(MainText)`

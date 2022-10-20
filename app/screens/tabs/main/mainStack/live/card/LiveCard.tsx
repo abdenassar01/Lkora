@@ -14,6 +14,7 @@ function truncateString(str: any, num: number) {
 }
 
 export default function LiveCard({ event }: Props) {
+
   return (
     <LiveCardWrapperLink>
       {/* <LiveCardWrapper source={{ uri: "https://i.imgur.com/QxU5mRR.jpg" }} blurRadius={15} borderRadius={20} > */}
@@ -28,7 +29,7 @@ export default function LiveCard({ event }: Props) {
             </Team>
             <Score>
                 <MatchScore>{ event?.homeScore.current } : { event?.awayScore.current }</MatchScore>
-                <Time>{"10" }'</Time>
+                <Time>{ event?.status?.description }</Time>
                 {/*  TODO: Time still need to be added  */}
             </Score>
             <Team>
