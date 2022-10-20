@@ -7,6 +7,15 @@ export const LiveCardWrapperLink = styled(TouchableOpacity)`
 
 `
 
+export const LiveCardWrapperView = styled(View)`
+    padding: 20px 10px;
+    align-items: center;
+    width: 300px;
+    margin-right: 10px;
+    background-color: ${ COLOR.helperText };
+    border-radius: 20px;
+` 
+
 export const LiveCardWrapper = styled(ImageBackground)`
     padding: 20px 10px;
     align-items: center;
@@ -16,6 +25,7 @@ export const LiveCardWrapper = styled(ImageBackground)`
 
 export const LeagueTitle = styled(HeadingText)`
     font-weight: bold;   
+    text-align: center;
     color: ${ COLOR.text };
 `
 
@@ -34,6 +44,7 @@ export const MatchInfo = styled(View)`
 
 export const Team = styled(View)`
     align-items: center;
+    width: 100px;
 `
 
 export const Avatar = styled(Image)`

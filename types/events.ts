@@ -12,6 +12,10 @@ type TeamColor = {
     seconadry?: string 
 }  
 
+type Round = {
+    round: number
+}
+
 type Team = {
     name: string,
     id: number,
@@ -24,7 +28,9 @@ type Score = {
 }
 
 export type Event = {
-    uniqueTournament: Tournament,
+    id: number,
+    tournament: Tournament,
+    roundInfo: Round,
     status: Status,
     homeTeam: Team,
     awayTeam: Team,
