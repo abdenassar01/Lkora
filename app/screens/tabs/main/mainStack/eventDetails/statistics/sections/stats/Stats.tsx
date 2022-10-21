@@ -1,6 +1,10 @@
 import { Label, StatisticsItem, StatisticsWrapper, Value } from './styles/Styles';
 
-export default function Stats() {
+type Props = {
+    id: number
+}
+
+export default function Stats({ id }: Props) {
   return (
     <StatisticsWrapper>
         <StatisticsItem>

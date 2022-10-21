@@ -1,7 +1,11 @@
 import React from 'react'
 import { Avatar, Heading, LineUpWrapper, Name, PlayerWrapper, Position, Rating, ShirtNumber } from './styles/Styles'
 
-export default function LineUps() {
+type Props = {
+  id: number
+}
+
+export default function LineUps({ id }: Props) {
   return (
     <LineUpWrapper contentContainerStyle={{ alignItems: 'center' }}>
      

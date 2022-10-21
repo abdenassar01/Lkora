@@ -5,10 +5,14 @@ import Stats from './sections/stats/Stats';
 import Summary from './sections/summary/Summary';
 import { ButtonLabel, Container, NavBar, NavItem, Spacer } from './styles/Styles'
 
-export default function Statistics() {
+type Props = {
+  id: number
+}
+
+export default function Statistics({ id }: Props) {
 
   const [ section, setSection ] = useState<string>("stats");
-
+ 
   return (
     <>
     
@@ -37,7 +41,7 @@ export default function Statistics() {
           </NavItem>
         </NavBar>
         {
-          section === "stats" ?  <Stats /> : section === "lineups" ? <LineUps /> : <Summary />
+          section === "stats" ?  <Stats id={ id } /> : section === "lineups" ? <LineUps id={ id }/> : <Summary id={ id } />
         }
       </Container>
       <Spacer />

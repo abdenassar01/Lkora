@@ -20,7 +20,7 @@ export default function EventDetails({ route }: any) {
     <EventDetailsWrappe>
       <WithGoBackHeader tournament={ data?.event?.tournament?.uniqueTournament?.name }/>
       <MainCard event={ data?.event }/>
-      <Statistics />
+      <Statistics id={ data?.event.id } />
     </EventDetailsWrappe>
   )
 }

@@ -1,6 +1,10 @@
 import { Away, Heading, Home, ItemWrapper, Jursey, Label, Manager, ManagerImage, ManagerName, SummaryWrapper } from './styles/Styles'
 
-export default function Summary() {
+type Props = {
+  id: number
+}
+
+export default function Summary({ id }: Props) {
   return (
     <SummaryWrapper contentContainerStyle={{ alignItems: 'center' }}>
       <Heading>Jursey</Heading>
