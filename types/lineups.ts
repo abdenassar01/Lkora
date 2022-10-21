@@ -7,9 +7,9 @@ type PlayerInfo = {
     id: number
 }
 
-type Player = {
+export type Player = {
     position: string,
-    substitude: boolean,
+    substitute: boolean,
     jurseyNumber: string,
     shirtNumber?: number,
     player: PlayerInfo,

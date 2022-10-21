@@ -21,7 +21,7 @@ export default function Stats({ id }: Props) {
     },[ id, data ])
 
     if(isFetching) return <GroupeName>loading...</GroupeName>
-    if(isError) return  <GroupeName>state is not available for this match</GroupeName>
+    if(isError) return  <GroupeName>statistics is not available for this match</GroupeName>
 
     return (
     <StatisticsWrapper>
@@ -35,7 +35,7 @@ export default function Stats({ id }: Props) {
                                 <GroupeName>{ item.groupName }</GroupeName>
                                 {
                                     item.statisticsItems.map((statsItem) => (
-                                        <StatisticsItem>
+                                        <StatisticsItem key={ statsItem.name }>
                                             <Value>{ statsItem.home }</Value>
                                             <Label>{ statsItem.name }</Label>
                                             <ValueFlipped>{ statsItem.away }</ValueFlipped>

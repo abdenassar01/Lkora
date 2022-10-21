@@ -35,6 +35,7 @@ export const Label = styled(MainText)`
     font-size: 16px;
     font-weight: 600;
     color: ${ COLOR.main };
+    text-align: center;
 `
 
 export const Home = styled(View)`
