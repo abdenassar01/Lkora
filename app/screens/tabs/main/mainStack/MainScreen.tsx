@@ -1,6 +1,7 @@
 import Card from '../../../../utils/card/Card';
 import Header from '../../../../utils/header/Header';
 import Live from './live/Live';
+import Scheduled from './scheduled/Scheduled';
 import { BottomSpacer, Heading,  MainScreenWrapper, MatchesWrapper, Section, Spacer } from "./styles/Styles";
 
 export default function MainScreen() {
@@ -15,15 +16,7 @@ export default function MainScreen() {
         <Section>
           <Heading>Matches</Heading>
           <MatchesWrapper>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Scheduled />
             <Spacer />
           </MatchesWrapper>
         </Section>
