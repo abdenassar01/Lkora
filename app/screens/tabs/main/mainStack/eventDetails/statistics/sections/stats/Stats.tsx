@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { StatsType } from '../../../../../../../../../types/stats';
-import { Goupe, GroupeName, Heading, Label, Period, StatisticsItem, StatisticsWrapper, Value } from './styles/Styles';
+import { Goupe, GroupeName, Heading, Label, Period, StatisticsItem, StatisticsWrapper, Value, ValueFlipped } from './styles/Styles';
 
 type Props = {
     id: number
@@ -9,11 +10,18 @@ type Props = {
 
 export default function Stats({ id }: Props) {
 
-    const { data, isLoading, error } = useQuery("match stats", async () => {
-        const response = await axios.get(`https://api.sofascore.com/api/v1/event/10686588/statistics`)
+    const { data, isFetching, error, refetch } = useQuery("match stats", async () => {
+        const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/statistics`)
         const data: StatsType[] = response.data?.statistics
         return data
     })
+
+    useEffect(() => {
+        refetch()
+    },[ id ])
+
+    if(isFetching) <GroupeName>loading...</GroupeName>
+    if(error) <GroupeName>error</GroupeName>
 
     return (
     <StatisticsWrapper>
@@ -30,7 +38,7 @@ export default function Stats({ id }: Props) {
                                         <StatisticsItem>
                                             <Value>{ statsItem.home }</Value>
                                             <Label>{ statsItem.name }</Label>
-                                            <Value>{ statsItem.away }</Value>
+                                            <ValueFlipped>{ statsItem.away }</ValueFlipped>
                                         </StatisticsItem>
                                     ))
                                 }
@@ -39,9 +47,7 @@ export default function Stats({ id }: Props) {
                     }
                 </Period>
             ))
-        }
-
-                            
+        }                    
     </StatisticsWrapper>
   )
 }

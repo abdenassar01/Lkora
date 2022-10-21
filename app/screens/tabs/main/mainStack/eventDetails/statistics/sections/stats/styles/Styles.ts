@@ -9,7 +9,7 @@ export const StatisticsWrapper = styled(ScrollView)`
 
 export const StatisticsItem = styled(View)`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin: 10px 0;
     padding: 0 10px;
     width: 100%;
@@ -17,10 +17,18 @@ export const StatisticsItem = styled(View)`
 
 export const Value = styled(MainText)`
     font-size: 16px;
+    width: 80px;
+    text-align: left;
 `  
+
+export const ValueFlipped = styled(Value)`
+    text-align: right;
+`
 
 export const Label = styled(MainText)`
     font-size: 16px;
+    text-align: center;
+    width: 50%;
 `
 
 export const Period = styled(View)`
