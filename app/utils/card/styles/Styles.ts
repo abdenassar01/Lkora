@@ -50,7 +50,7 @@ export const Time = styled(MainText)`
     color: orange;
 `
 
-export const Date = styled(MainText)`
+export const DateCmp = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.helperText };
 `
