@@ -15,10 +15,7 @@ export default function MainScreen() {
         </Section>
         <Section>
           <Heading>Matches</Heading>
-          <MatchesWrapper>
-            <Scheduled />
-            <Spacer />
-          </MatchesWrapper>
+          <Scheduled />
         </Section>
       </MainScreenWrapper>
       <BottomSpacer />

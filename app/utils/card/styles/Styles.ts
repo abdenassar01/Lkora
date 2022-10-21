@@ -20,13 +20,18 @@ export const CardWrapper = styled(View)`
 export const Team = styled(View)`
     flex-direction: row;
     align-items: center;
-    padding: 0 20px;
 `
 
 export const Name = styled(MainText)`
     padding: 0 10px;
     font-weight: 500;
     font-size: 16px;
+    width: 120px;
+    text-align: right;
+`
+
+export const NameFlipped = styled(Name)`
+    text-align: left;
 `
 
 export const Avatar = styled(Image)`
@@ -35,6 +40,7 @@ export const Avatar = styled(Image)`
 `
 
 export const FixtureTime = styled(View)`
+    width: 20%;
     align-items: center;
 `
 

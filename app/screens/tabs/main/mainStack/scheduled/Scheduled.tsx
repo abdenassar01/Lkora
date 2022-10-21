@@ -2,8 +2,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Text } from 'react-native';
 import { useQuery } from 'react-query';
+import { Event } from '../../../../../../types/events';
 import Card from '../../../../../utils/card/Card';
-
+import { MatchesWrapper, Spacer } from "../styles/Styles"
 
 export default function Scheduled() {
 
@@ -21,6 +22,12 @@ export default function Scheduled() {
     if(error) return <Text>error</Text>
     
   return (
-        <Card />
+    <MatchesWrapper>
+        {
+            data.events.map((event: Event) =>  <Card key={ event.id } event={ event } />)
+        }
+        <Spacer />
+    </MatchesWrapper>
+       
     )
 }
