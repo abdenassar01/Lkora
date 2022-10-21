@@ -9,7 +9,7 @@ type Group = {
     statisticsItems: StatsItem[]
 }
 
-export type Stats = {
+export type StatsType = {
     period: "All" | "1ST" | "2ND",
     groups: Group[] 
 }
