@@ -67,7 +67,7 @@ export const Status = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.text };
     padding: 2px 10px;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #FF2782;
     text-align: center;
     margin: 0 5px;

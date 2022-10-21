@@ -25,7 +25,7 @@ export default function Card({ event }: Props) {
   }
 
   return (
-    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails") } activeOpacity={0.99}>
+    <CardWrapperLink onPress={ () => navigation.navigate("EvantDetails", { id: event?.id }) } activeOpacity={0.99}>
       <CardWrapper style={{ elevation: 3 }}>
         <Team>
             <Name>{ event?.homeTeam?.shortName }</Name>
