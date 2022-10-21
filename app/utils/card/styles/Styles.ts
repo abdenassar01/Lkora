@@ -44,6 +44,15 @@ export const FixtureTime = styled(View)`
     align-items: center;
 `
 
+export const FinishedMatchStatus = styled(View)`
+    width: 20%;
+`
+
+export const Score = styled(MainText)`
+    text-align: center;
+    color: ${ COLOR.main };
+`
+
 export const Time = styled(MainText)`
     font-size: 16px;
     color: orange;
@@ -52,4 +61,14 @@ export const Time = styled(MainText)`
 export const DateCmp = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.helperText };
+`
+
+export const Status = styled(MainText)`
+    font-size: 12px;
+    color: ${ COLOR.text };
+    padding: 2px 10px;
+    border-radius: 10px;
+    background-color: #FF2782;
+    text-align: center;
+    margin: 0 5px;
 `

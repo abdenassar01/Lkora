@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { Event } from "../../../types/events";
-import { Avatar, CardWrapper, CardWrapperLink, DateCmp, FixtureTime, Name, NameFlipped, Team, Time } from "./styles/Styles";
+import { Avatar, CardWrapper, CardWrapperLink, DateCmp, FinishedMatchStatus, FixtureTime, Name, NameFlipped, Score, Status, Team, Time } from "./styles/Styles";
 
 type Props = {
   event: Event
@@ -14,7 +14,7 @@ export default function Card({ event }: Props) {
     const a = new Date(timestamp * 1000);
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const month = months[a.getMonth()];
-    const day = a.getDay();
+    const day = a.getDate();
     const hour = String(a.getHours()).padStart(2, "0");
     const min = String(a.getMinutes()).padStart(2, "0");
     
@@ -31,10 +31,18 @@ export default function Card({ event }: Props) {
             <Name>{ event?.homeTeam?.shortName }</Name>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ event?.homeTeam?.id }/image` }}></Avatar>
         </Team>        
-        <FixtureTime>
-            <Time>{ timeConverter(event?.startTimestamp).time }</Time>
-            <DateCmp>{ timeConverter(event?.startTimestamp).date }</DateCmp>
-        </FixtureTime>
+          {
+            event?.status.description === "Ended" ? 
+              <FinishedMatchStatus>
+                <Score>{ event?.homeScore.current } : { event?.awayScore.current }</Score>
+                <Status>{ event?.status.description }</Status>
+              </FinishedMatchStatus>
+                :
+              <FixtureTime>
+                <Time>{ timeConverter(event?.startTimestamp).time }</Time>
+                <DateCmp>{ timeConverter(event?.startTimestamp).date }</DateCmp>
+              </FixtureTime>
+          }   
         <Team>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ event?.awayTeam?.id }/image` }}></Avatar>
             <NameFlipped>{ event?.awayTeam?.shortName }</NameFlipped>
