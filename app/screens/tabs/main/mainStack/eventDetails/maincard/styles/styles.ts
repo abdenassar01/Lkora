@@ -43,6 +43,8 @@ export const Team = styled(View)`
 
 export const TeamTitle = styled(MainText)`
     font-size: 14px;
+    width: 100px;
+    text-align: center;
 `
 
 export const TeamLogo = styled(Image)`
@@ -60,13 +62,27 @@ export const MatchStatusWrapper = styled(View)`
 `
 
 export const Score = styled(MainText)`
-    font-size: 35px;
+    font-size: 25px;
+`
+
+export const Time = styled(MainText)`
+    font-size: 20px;
+    color: ${ COLOR.main };
+`
+
+export const DatePlaceHolder = styled(MainText)`
+   
+`
+
+export const TimeWrapper = styled(View)`
+    align-items: center;
 `
 
 export const Status = styled(MainText)`
-    padding: 5px;
+    padding: 5px 10px;
     color: white;
     border-radius: 5px;
+    margin-top: 10px;
     background-color: ${ COLOR.main };
 `
 

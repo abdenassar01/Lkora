@@ -22,7 +22,7 @@ type Staduim = {
 
 type Venue = {
     city?: City,
-    staduim: Staduim
+    stadium: Staduim
 }
 
 type Refree = {
@@ -32,7 +32,8 @@ type Refree = {
 type Team = {
     name: string,
     shortName?: string,
-    nameCode?: string
+    nameCode?: string,
+    id: number
 }
 
 type Score = {
