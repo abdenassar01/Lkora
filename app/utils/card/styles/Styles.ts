@@ -45,7 +45,6 @@ export const FixtureTime = styled(View)`
 `
 
 export const Time = styled(MainText)`
-    font-weight: bold;
     font-size: 16px;
     color: orange;
 `

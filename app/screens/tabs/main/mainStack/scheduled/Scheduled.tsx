@@ -8,13 +8,13 @@ import { MatchesWrapper, Spacer } from "../styles/Styles"
 
 export default function Scheduled() {
 
-    const [ day, setDay ] = useState<string>(String(new Date().getDay()).padStart(2, '0'));
+    const [ day, setDay ] = useState<string>(String(new Date().getDay() + 16).padStart(2, '0'));
     const [ month, setMonth ] = useState<string>(String(new Date().getMonth() + 1).padStart(2, '0'));
     const [ year, setYear ] = useState<string>(String(new Date().getFullYear()));
 
     const { data, isLoading, error } = useQuery("fetch scheduled matches", async () => {
         const result = await axios.get(`https://api.sofascore.com/api/v1/sport/football/scheduled-events/${ year }-${ month }-${ day }`) 
-
+        // console.log(day + " : " + month + " : " + year)
         return result.data
     })
 

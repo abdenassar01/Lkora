@@ -18,8 +18,8 @@ export default function Card({ event }: Props) {
     const hour = String(a.getHours()).padStart(2, "0");
     const min = String(a.getMinutes()).padStart(2, "0");
     
-    const date =  day + " : " + month;
-    const time = hour + " : " + min;
+    const date =  day + " " + month;
+    const time = hour + ":" + min;
     
     return { date, time };
   }
