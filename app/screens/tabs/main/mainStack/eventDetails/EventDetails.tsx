@@ -13,8 +13,8 @@ export default function EventDetails({ route }: any) {
     return result.data
   })
 
-  if(isLoading) <Text>loading...</Text>
-  if(error)  <Text>error occured</Text>
+  if(isLoading) return <Text>loading...</Text>
+  if(error) return <Text>error occured</Text>
 
   return (
     <EventDetailsWrappe>

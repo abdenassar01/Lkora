@@ -60,3 +60,9 @@ export const Avatar = styled(Image)`
     height: 25px;
     border-radius: 50px;
 `
+
+export const GroupeName = styled(MainText)`
+    font-size: 14px;
+    color: ${ COLOR.main };
+    text-align: center;
+`
