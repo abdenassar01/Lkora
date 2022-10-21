@@ -32,11 +32,12 @@ export const PlayerWrapper = styled(View)`
 export const Position = styled(MainText)`
     font-weight: 600;
     text-align: center;
-    height: 25px;
-    width: 25px;
     background-color: ${ COLOR.main };
     color: white;
     border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
 `
 
 export const ShirtNumber = styled(MainText)`
@@ -60,3 +61,13 @@ export const Avatar = styled(Image)`
     height: 25px;
     border-radius: 50px;
 `
+
+export const GroupeName = styled(MainText)`
+    font-size: 14px;
+    color: ${ COLOR.main };
+    text-align: center;
+`
+
+export const Portion = styled(View)`
+    flex-direction: row;
+` 
