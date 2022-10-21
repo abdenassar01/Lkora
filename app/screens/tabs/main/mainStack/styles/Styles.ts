@@ -1,5 +1,6 @@
 import { ScrollView, View } from "react-native";
 import styled from "styled-components";
+import { COLOR } from "../../../../../assets/color";
 import { HeadingText } from "../../../../../assets/text/Text";
 
 export const MainScreenWrapper = styled(ScrollView)`
@@ -15,6 +16,7 @@ export const Heading = styled(HeadingText)`
     padding: 10px 0;
     margin-left: 10px;
     font-size: 22px;
+    color: ${ COLOR.main };
 `
 
 export const LiveSlider = styled(ScrollView)`   
