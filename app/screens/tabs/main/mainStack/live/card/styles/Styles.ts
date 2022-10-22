@@ -12,7 +12,7 @@ export const LiveCardWrapperView = styled(View)`
     align-items: center;
     width: 300px;
     margin-right: 10px;
-    background-color: ${ COLOR.helperText };
+    background-color: #1d1d35;
     border-radius: 20px;
 ` 
 
@@ -71,13 +71,11 @@ export const Time = styled(MainText)`
     font-size: 12px;
     color: ${ COLOR.text };
     padding: 2px 10px;
-    border-radius: 3px;
+    border-radius: 50px;
     background-color: #FF2782;
-    margin-top: 20px;
 `
 
 export const MatchScore = styled(MainText)`
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 30px;
     color: ${ COLOR.text };
 `

@@ -35,7 +35,7 @@ export default function Card({ event }: Props) {
             event?.status.description !== "Not started" ? 
               <FinishedMatchStatus>
                 <Score>{ event?.homeScore.current } : { event?.awayScore.current }</Score>
-                <Status>live</Status>
+                <Status>{ event?.status.description === "Ended" ? "Ended" : "live" }</Status>
               </FinishedMatchStatus>
                 :
               <FixtureTime>
