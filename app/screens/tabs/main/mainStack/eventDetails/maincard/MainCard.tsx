@@ -35,7 +35,7 @@ export default function MainCard({ event }: Props) {
         </Home>
         <MatchStatusWrapper>
           { 
-            (event?.status.description === "Ended") ? 
+            (event?.status.description !== "Not started") ? 
               <Score>{ event?.homeScore.current + " : " + event?.awayScore.current }</Score> : 
                   <TimeWrapper>
                     <Time>{ timeConverter(event?.startTimestamp).time }</Time>  

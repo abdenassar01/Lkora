@@ -86,7 +86,7 @@ export default function LineUps({ id }: Props) {
           </Portion>  
           <Name>{ player.player.name }</Name>
           <Portion>
-            <Rating>{ player.statistics.rating }</Rating>
+            <Rating>{ player.statistics.rating ?? "💺" }</Rating>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></Avatar>
           </Portion>
         </PlayerWrapper>

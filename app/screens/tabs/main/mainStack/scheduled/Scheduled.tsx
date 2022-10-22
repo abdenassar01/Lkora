@@ -23,7 +23,7 @@ export default function Scheduled() {
   return (
     <MatchesWrapper>
         {
-            data.events.map((event: Event) => <Card key={ event.id } event={ event } />)
+            data.events.map((event: Event) => ( event?.tournament.priority > 300 ) && <Card key={ event.id } event={ event } />)
         }
         <Spacer />
     </MatchesWrapper>

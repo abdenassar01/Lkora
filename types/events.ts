@@ -1,6 +1,7 @@
 type Tournament =  {
     name: string,
-    id: number
+    id: number,
+    priority: number
 }
 
 type Status = {

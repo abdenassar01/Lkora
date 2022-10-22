@@ -52,7 +52,7 @@ export const Jursey = styled(Image)`
 `
 
 export const Manager = styled(View)`
-
+    align-items: center;
 `
 
 export const ManagerImage = styled(Image)`

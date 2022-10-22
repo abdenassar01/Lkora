@@ -19,7 +19,7 @@ export default function Live() {
     <LiveSlider horizontal>
       {
         data?.events?.map(
-          (event: Event) => 
+          (event: Event) => (event.tournament.priority > 250) &&
             <LiveCard event={ event } key={ event.id } />
         )
       }
