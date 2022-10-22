@@ -32,10 +32,10 @@ export default function Card({ event }: Props) {
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ event?.homeTeam?.id }/image` }}></Avatar>
         </Team>        
           {
-            event?.status.description === "Ended" ? 
+            event?.status.description !== "Not started" ? 
               <FinishedMatchStatus>
                 <Score>{ event?.homeScore.current } : { event?.awayScore.current }</Score>
-                <Status>{ event?.status.description }</Status>
+                <Status>live</Status>
               </FinishedMatchStatus>
                 :
               <FixtureTime>
