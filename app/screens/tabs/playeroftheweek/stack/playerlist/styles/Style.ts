@@ -53,6 +53,7 @@ export const PlayerName = styled(MainText)`
 
 export const TeamName = styled(MainText)`
     font-size: 16px;
+    margin-right: 5px;
 `
 
 export const RatingWrapper = styled(View)`
@@ -68,4 +69,9 @@ export const RatingWrapper = styled(View)`
 export const Rating = styled(MainText)`
     font-size: 18px;
     color: ${ COLOR.text };
+`
+
+export const TmpText = styled(MainText)`
+    font-size: 18px;
+    color: ${ COLOR.main };
 `
