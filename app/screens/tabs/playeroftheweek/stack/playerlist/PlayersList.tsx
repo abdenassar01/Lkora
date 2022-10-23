@@ -27,10 +27,10 @@ export default function PlayersList() {
             <Player style={{ elevation: 5 }}>
               <Left>
                 <PlayerAvatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></PlayerAvatar>
-                <PlayerName>{ player.player.name }</PlayerName>
+                <PlayerName>{ player.player.shortName }</PlayerName>
               </Left>
               <Left>
-                <TeamName>{ player.team.name }</TeamName>
+                <TeamName>{ player.team.shortName }</TeamName>
                 <RatingWrapper>
                   <Rating>{ player.rating }</Rating>
                 </RatingWrapper>

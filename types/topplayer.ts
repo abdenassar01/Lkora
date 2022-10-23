@@ -1,11 +1,13 @@
 type Player = {
     name: string,
-    id: number
+    id: number,
+    shortName: string
 }
 
 type Team = {
     name: string,
-    id: number
+    id: number,
+    shortName: string
 }
 
 export type PlayerType = {
