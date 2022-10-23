@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainScreen from './main/mainStack/MainScreen';
 import MainStack from './main/MainStack';
 import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
+import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
 
 export default function TabNavigator() {
     
@@ -33,7 +34,12 @@ export default function TabNavigator() {
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Matches" icon="football" />
         }}
-      />
+      /> 
+      <Tab.Screen name='PlayerOfTheWeek' component={ PlayerOfTheWeekStack } 
+        options={{
+          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Top Players" icon="person-circle-outline" />
+        }}
+      /> 
     </Tab.Navigator>
   )
 }
