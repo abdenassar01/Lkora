@@ -10,8 +10,13 @@ type Team = {
     shortName: string
 }
 
+type Event = {
+    id: number
+}
+
 export type PlayerType = {
     rating: number,
     player: Player,
-    team: Team
+    team: Team,
+    event: Event
 }
