@@ -2,7 +2,7 @@ import Card from '../../../../utils/card/Card';
 import Header from '../../../../utils/header/Header';
 import Live from './live/Live';
 import Scheduled from './scheduled/Scheduled';
-import { BottomSpacer, Heading,  MainScreenWrapper, MatchesWrapper, Section, Spacer } from "./styles/Styles";
+import { Heading,  MainScreenWrapper, Section } from "./styles/Styles";
 
 export default function MainScreen() {
   return (
@@ -18,7 +18,6 @@ export default function MainScreen() {
           <Scheduled />
         </Section>
       </MainScreenWrapper>
-      <BottomSpacer />
     </>
   )
 }

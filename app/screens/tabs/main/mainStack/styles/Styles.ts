@@ -28,9 +28,5 @@ export const MatchesWrapper = styled(ScrollView)`
 `
 
 export const Spacer = styled(View)`
-    height: 10px;
-`
-
-export const BottomSpacer = styled(View)`
-    height: 60px;
+    height: 70px;
 `
