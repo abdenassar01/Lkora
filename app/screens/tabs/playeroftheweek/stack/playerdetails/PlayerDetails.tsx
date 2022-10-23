@@ -1,12 +1,23 @@
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import React from 'react'
 import { COLOR } from '../../../../../assets/color'
 import { Avatar, BackIcon, Header, HeaderTitle, Heading, HeroSection, Paragraph, PlayerDetailsWrapper, PlayerInfo, Rating, RatingText, Stats, StatsItem, Value } from './styles/Styles'
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useQuery } from 'react-query';
 
 export default function PlayerDetails() {
 
-  const navigation: any = useNavigation()
+  const navigation: any = useNavigation();
+  const root: any = useRoute();
+
+  console.log(root.params.id)
+
+  const { data, isLoading, error } = useQuery("get player statistics", async () => {
+
+  })
+
+  if(isLoading) return <Paragraph>Loading...</Paragraph>
+  if(error) return <Paragraph>error happened check your network</Paragraph>
 
   return (
     <PlayerDetailsWrapper>
