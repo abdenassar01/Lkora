@@ -16,29 +16,29 @@ export default function PlayerDetails() {
         </BackIcon>
         <HeaderTitle>Ossmane Dembele</HeaderTitle>
       </Header>
-      <HeroSection>
-        <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/100386/image` }}></Avatar>
+      <HeroSection style={{ elevation: 5 }}>
+        <Avatar  source={{ uri: `https://api.sofascore.app/api/v1/player/100386/image` }}></Avatar>
         <Rating>
           <RatingText>10</RatingText>
         </Rating>
+        <PlayerInfo>
+          <Paragraph>Marc Andre Ter Shtegen</Paragraph>
+          <Paragraph>FC Barcelona</Paragraph>
+          <Paragraph>29 Year</Paragraph>
+          <Paragraph>MidleFielder</Paragraph>
+        </PlayerInfo>
       </HeroSection>
-      <PlayerInfo>
-        <Paragraph>Marc Andre Ter Shtegen</Paragraph>
-        <Paragraph>FC Barcelona</Paragraph>
-        <Paragraph>29 Year</Paragraph>
-        <Paragraph>MidleFielder</Paragraph>
-      </PlayerInfo>
-      <Stats>
+      <Stats style={{ elevation: 5 }} contentContainerStyle={{ alignItems: "center" }}>
         <Heading>Statistics</Heading>
-        <StatsItem>
+        <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Total Pass</Paragraph>
           <Value>88</Value>
         </StatsItem>
-        <StatsItem>
+        <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Accurate Pass</Paragraph>
           <Value>88</Value>
         </StatsItem>
-        <StatsItem>
+        <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Total Long Balls</Paragraph>
           <Value>88</Value>
         </StatsItem>        
