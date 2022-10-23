@@ -35,8 +35,12 @@ export const RatingText = styled(MainText)`
 
 `
 
-export const Paragraph = styled(MainText)`
+export const PlayerInfo = styled(View)`
 
+`
+
+export const Paragraph = styled(MainText)`
+    
 `
 
 export const Stats = styled(View)`
