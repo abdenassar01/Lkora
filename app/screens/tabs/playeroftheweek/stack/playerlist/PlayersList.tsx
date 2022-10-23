@@ -23,7 +23,7 @@ export default function PlayersList() {
 
       {
         data?.map((player: PlayerType) =>(
-          <PressablePlayer key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { id: player.player.id }) }>
+          <PressablePlayer key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { playerId: player.player.id, eventId: player.event.id }) }>
             <Player style={{ elevation: 5 }}>
               <Left>
                 <PlayerAvatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></PlayerAvatar>

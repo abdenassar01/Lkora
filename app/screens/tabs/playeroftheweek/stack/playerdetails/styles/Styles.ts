@@ -7,7 +7,7 @@ export const PlayerDetailsWrapper = styled(View)`
     background-color: ${ COLOR.background };
 `
 
-export const Header = styled(View)`
+export const Header = styled(ScrollView)`
     flex-direction: row;
     padding: 5px 10px;
     justify-content: space-between;
@@ -65,8 +65,9 @@ export const Paragraph = styled(MainText)`
     font-weight: 600;
 `
 
-export const Stats = styled(ScrollView)`
+export const Stats = styled(View)`
     background-color: ${ COLOR.text };
+    align-items: center;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;

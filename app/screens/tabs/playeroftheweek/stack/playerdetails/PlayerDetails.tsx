@@ -4,16 +4,19 @@ import { COLOR } from '../../../../../assets/color'
 import { Avatar, BackIcon, Header, HeaderTitle, Heading, HeroSection, Paragraph, PlayerDetailsWrapper, PlayerInfo, Rating, RatingText, Stats, StatsItem, Value } from './styles/Styles'
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useQuery } from 'react-query';
+import axios from 'axios';
+import { PlayerPerformance } from '../../../../../../types/playerstats';
 
 export default function PlayerDetails() {
 
   const navigation: any = useNavigation();
   const root: any = useRoute();
 
-  console.log(root.params.id)
+  console.log("event: " + root.params.eventId + " player: " + root.params.playerId )
 
-  const { data, isLoading, error } = useQuery("get player statistics", async () => {
-
+  const { data, isLoading, error } = useQuery<PlayerPerformance>("get player statistics", async () => {
+    const result = await axios.get(`https://api.sofascore.com/api/v1/event/${ root.params.eventId }/player/${ root.params.playerId }/statistics`);
+    return result.data
   })
 
   if(isLoading) return <Paragraph>Loading...</Paragraph>
@@ -25,33 +28,65 @@ export default function PlayerDetails() {
         <BackIcon onPress={ () => navigation.goBack() }>
           <Ionicons name="chevron-back-circle-sharp" size={ 35 } color={ COLOR.main } />
         </BackIcon>
-        <HeaderTitle>Ossmane Dembele</HeaderTitle>
+        <HeaderTitle>{ data?.player?.name }</HeaderTitle>
       </Header>
       <HeroSection style={{ elevation: 5 }}>
-        <Avatar  source={{ uri: `https://api.sofascore.app/api/v1/player/100386/image` }}></Avatar>
+        <Avatar  source={{ uri: `https://api.sofascore.app/api/v1/player/${ data?.player.id }/image` }}></Avatar>
         <Rating>
-          <RatingText>10</RatingText>
+          <RatingText>{ data?.statistics?.rating }</RatingText>
         </Rating>
         <PlayerInfo>
-          <Paragraph>Marc Andre Ter Shtegen</Paragraph>
-          <Paragraph>FC Barcelona</Paragraph>
-          <Paragraph>29 Year</Paragraph>
-          <Paragraph>MidleFielder</Paragraph>
+          <Paragraph>{ data?.player?.name }</Paragraph>
+          <Paragraph>{ data?.team?.name }</Paragraph>
+          <Paragraph>{ (data?.player?.dateOfBirthTimestamp) && new Date(data.player.dateOfBirthTimestamp * 1000).getFullYear() }</Paragraph>
+          <Paragraph>{ data?.player?.position === "G" ? "GoalKeeper" : data?.player?.position === "M" ? "Midfielder" : "Forward" }</Paragraph>
         </PlayerInfo>
       </HeroSection>
-      <Stats style={{ elevation: 5 }} contentContainerStyle={{ alignItems: "center" }}>
+      <Stats style={{ elevation: 5 }}>
         <Heading>Statistics</Heading>
         <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Total Pass</Paragraph>
-          <Value>88</Value>
+          <Value>{ data?.statistics?.totalPass }</Value>
         </StatsItem>
         <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Accurate Pass</Paragraph>
-          <Value>88</Value>
+          <Value>{ data?.statistics?.accuratePass }</Value>
         </StatsItem>
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Total Long Balls</Paragraph>
-          <Value>88</Value>
+          <Value>{ data?.statistics?.totalLongBalls }</Value>
+        </StatsItem>     
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Total Clearance</Paragraph>
+          <Value>{ data?.statistics?.totalClearance }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Saved Shots From Inside The Box</Paragraph>
+          <Value>{ data?.statistics?.savedShotsFromInsideTheBox }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Saves</Paragraph>
+          <Value>{ data?.statistics?.saves }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Punches</Paragraph>
+          <Value>{ data?.statistics?.punches }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Minutes Played</Paragraph>
+          <Value>{ data?.statistics?.minutesPlayed }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Touches</Paragraph>
+          <Value>{ data?.statistics?.touches }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Rating</Paragraph>
+          <Value>{ data?.statistics?.rating }</Value>
+        </StatsItem>        
+        <StatsItem style={{ elevation: 2 }}>
+          <Paragraph>Possession Lost Ctrl</Paragraph>
+          <Value>{ data?.statistics?.possessionLostCtrl }</Value>
         </StatsItem>        
       </Stats>
     </PlayerDetailsWrapper>
