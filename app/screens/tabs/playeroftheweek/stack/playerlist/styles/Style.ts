@@ -75,3 +75,7 @@ export const TmpText = styled(MainText)`
     font-size: 18px;
     color: ${ COLOR.main };
 `
+
+export const Spacer = styled(View)`
+    height: 50px;
+`

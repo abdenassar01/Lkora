@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import { PlayerType } from '../../../../../../types/topplayer';
-import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText } from './styles/Style'
+import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText, Spacer } from './styles/Style'
 
 export default function PlayersList() {
 
@@ -38,7 +38,8 @@ export default function PlayersList() {
             </Player>
           </PressablePlayer>
         ))
-      }      
+      }   
+      <Spacer />   
     </PlayerListWrapper>
   )
 }
