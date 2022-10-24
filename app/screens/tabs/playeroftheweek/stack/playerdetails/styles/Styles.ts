@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
-export const PlayerDetailsWrapper = styled(View)`
+export const PlayerDetailsWrapper = styled(ScrollView)`
     background-color: ${ COLOR.background };
 `
 
-export const Header = styled(ScrollView)`
+export const Header = styled(View)`
     flex-direction: row;
     padding: 5px 10px;
     justify-content: space-between;
@@ -41,10 +41,10 @@ export const Avatar = styled(Image)`
 
 export const Rating = styled(View)`
     position: absolute;
-    top: 85px;
-    left: 85px;
-    width: 25px;
-    height: 25px;
+    top: 80px;
+    left: 80px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
@@ -96,4 +96,8 @@ export const StatsItem = styled(View)`
 
 export const Value = styled(MainText)`
 
+`
+
+export const Spacer = styled(View)`
+    height: 60px;
 `
