@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
@@ -60,4 +60,10 @@ export const Column = styled(MainText)`
 
 export const Spacer = styled(View)`
     height: 60px;
+`
+
+export const Avatar = styled(Image)`
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
 `
