@@ -1,7 +1,7 @@
 import { useNavigation, useRoute } from '@react-navigation/native'
 import React from 'react'
 import { COLOR } from '../../../../../assets/color'
-import { Avatar, BackIcon, Header, HeaderTitle, Heading, HeroSection, Paragraph, PlayerDetailsWrapper, PlayerInfo, Rating, RatingText, Stats, StatsItem, Value } from './styles/Styles'
+import { Avatar, BackIcon, Header, HeaderTitle, Heading, HeroSection, Paragraph, PlayerDetailsWrapper, PlayerInfo, Rating, RatingText, Spacer, Stats, StatsItem, Value } from './styles/Styles'
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useQuery } from 'react-query';
 import axios from 'axios';
@@ -46,49 +46,50 @@ export default function PlayerDetails() {
         <Heading>Statistics</Heading>
         <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Total Pass</Paragraph>
-          <Value>{ data?.statistics?.totalPass }</Value>
+          <Value>{ data?.statistics?.totalPass ?? 0 }</Value>
         </StatsItem>
         <StatsItem style={{ elevation: 2 }} >
           <Paragraph>Accurate Pass</Paragraph>
-          <Value>{ data?.statistics?.accuratePass }</Value>
+          <Value>{ data?.statistics?.accuratePass ?? 0 }</Value>
         </StatsItem>
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Total Long Balls</Paragraph>
-          <Value>{ data?.statistics?.totalLongBalls }</Value>
+          <Value>{ data?.statistics?.totalLongBalls ?? 0 }</Value>
         </StatsItem>     
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Total Clearance</Paragraph>
-          <Value>{ data?.statistics?.totalClearance }</Value>
+          <Value>{ data?.statistics?.totalClearance ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Saved Shots From Inside The Box</Paragraph>
-          <Value>{ data?.statistics?.savedShotsFromInsideTheBox }</Value>
+          <Value>{ data?.statistics?.savedShotsFromInsideTheBox ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Saves</Paragraph>
-          <Value>{ data?.statistics?.saves }</Value>
+          <Value>{ data?.statistics?.saves ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Punches</Paragraph>
-          <Value>{ data?.statistics?.punches }</Value>
+          <Value>{ data?.statistics?.punches ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Minutes Played</Paragraph>
-          <Value>{ data?.statistics?.minutesPlayed }</Value>
+          <Value>{ data?.statistics?.minutesPlayed ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Touches</Paragraph>
-          <Value>{ data?.statistics?.touches }</Value>
+          <Value>{ data?.statistics?.touches ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Rating</Paragraph>
-          <Value>{ data?.statistics?.rating }</Value>
+          <Value>{ data?.statistics?.rating ?? 0 }</Value>
         </StatsItem>        
         <StatsItem style={{ elevation: 2 }}>
           <Paragraph>Possession Lost Ctrl</Paragraph>
-          <Value>{ data?.statistics?.possessionLostCtrl }</Value>
+          <Value>{ data?.statistics?.possessionLostCtrl ?? 0 }</Value>
         </StatsItem>        
       </Stats>
+      <Spacer />
     </PlayerDetailsWrapper>
   ) 
 }
