@@ -50,12 +50,18 @@ export const Table = styled(View)`
 
 export const Row = styled(View)`
     flex-direction: row;
+    align-items: center;
+    padding-top: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: ${ COLOR.background };
 `
 
 export const Column = styled(MainText)`
     padding:  2px;
-    border: 1px solid ${ COLOR.main }; 
+    height: 30px; 
     text-align: center;
+    align-items: center;
 `
 
 export const Spacer = styled(View)`
@@ -65,5 +71,5 @@ export const Spacer = styled(View)`
 export const Avatar = styled(Image)`
     width: 20px;
     height: 20px;
-    padding-right: 5px;
+    top: -3px;
 `

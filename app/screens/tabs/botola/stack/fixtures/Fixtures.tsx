@@ -24,31 +24,32 @@ export default function Fixtures() {
       </TieBreakingRule>
       <Table>
         <Row>
-            <Column style={{ width: 20 }}>#</Column>
-            <Column style={{ width: "50%" }}>Team</Column>
-            <Column style={{ width: 20 }}>P</Column>
-            <Column style={{ width: 20, color: "white", backgroundColor: "#07c05a", borderWidth: 0, borderTopWidth: 1 }}>W</Column>
-            <Column style={{ width: 20, color: "white", backgroundColor: "#f8b600", borderWidth: 0, borderTopWidth: 1 }}>D</Column>
-            <Column style={{ width: 20, color: "white", backgroundColor: "#e30044", borderWidth: 0, borderTopWidth: 1 }}>L</Column>
-            <Column style={{ width: 20 }}>+</Column>
-            <Column style={{ width: 20 }}>-</Column>
-            <Column style={{ width: 30 }}>Pts</Column>
+            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/937/image` }} ></Avatar>
+            <Column style={{ width:  "7%" }}>#</Column>
+            <Column style={{ width: "40%", textAlign: 'left' }}>Team</Column>
+            <Column style={{ width:  "6.5%" }}>P</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#07c05a", borderWidth: 0, borderTopWidth: 1 }}>W</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#f8b600", borderWidth: 0, borderTopWidth: 1 }}>D</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#e30044", borderWidth: 0, borderTopWidth: 1 }}>L</Column>
+            <Column style={{ width:  "6.5%" }}>+</Column>
+            <Column style={{ width:  "6.5%" }}>-</Column>
+            <Column style={{ width:  "9%" }}>Pts</Column>
         </Row>
 
         {
             data && data[0]?.rows.map((row) => (
                 <Row key={ row.id }>
-                    <Column style={{ width: 20 }}>{ row.position }</Column> 
-                    <Column style={{ width: "50%", textAlign: 'left' }}>
-                      <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ row.team.id }/image` }} ></Avatar>
+                    <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ row.team.id }/image` }} ></Avatar>
+                    <Column style={{ width: "7%" }}>{ row.position }</Column> 
+                    <Column style={{ width: "40%", textAlign: 'left' }}>
                       { row.team.shortName }</Column>
-                    <Column style={{ width: 20 }}>{ row.matches }</Column>
-                    <Column style={{ width: 20 }}>{ row.wins }</Column>
-                    <Column style={{ width: 20 }}>{ row.draws }</Column>
-                    <Column style={{ width: 20 }}>{ row.losses }</Column>
-                    <Column style={{ width: 20 }}>{ row.scoresFor }</Column>
-                    <Column style={{ width: 20 }}>{ row.scoresAgainst }</Column>
-                    <Column style={{ width: 30 }}>{ row.points }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.matches }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.wins }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.draws }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.losses }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.scoresFor }</Column>
+                    <Column style={{ width: "6.5%" }}>{ row.scoresAgainst }</Column>
+                    <Column style={{ width: "9%" }}>{ row.points }</Column>
                 </Row>
             ))
         }
