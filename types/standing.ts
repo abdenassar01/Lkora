@@ -14,7 +14,7 @@ type Row = {
     matches: number,
     wins: number,
     losses: number,
-    drows: number,
+    draws: number,
     scoresFor: number,
     scoresAgainst: number,
     points: number,

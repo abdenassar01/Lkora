@@ -57,3 +57,7 @@ export const Column = styled(MainText)`
     border: 1px solid ${ COLOR.main }; 
     text-align: center;
 `
+
+export const Spacer = styled(View)`
+    height: 60px;
+`

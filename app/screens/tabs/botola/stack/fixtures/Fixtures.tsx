@@ -1,13 +1,33 @@
-import { BigHeading, BotolaFixWrapper, Column, Row, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText } from './styles/Styles'
+import axios from 'axios'
+import { useQuery } from 'react-query'
+import { Standing } from '../../../../../../types/standing'
+import { BigHeading, BotolaFixWrapper, Column, Row, Spacer, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText } from './styles/Styles'
 
 export default function Fixtures() {
+
+    const { data, isLoading, error } = useQuery<Standing[]>("get botola standing", async () => {
+        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/937/season/45552/standings/total`);
+        return result.data.standings
+    })
+
+    function truncateString(str: any, num: number) {
+        if (str.length > num) {
+        return str.slice(0, num) + "...";
+        } else {
+        return str;
+        }
+    }
+
+    if(isLoading) return <TieBreakingRuleText>loading...</TieBreakingRuleText>
+    if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
+
   return (
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
-      <BigHeading>Botola Pro</BigHeading>
+      <BigHeading>{ data && data[0]?.name }</BigHeading>
       <TieBreakingRule>
         <TieBreakingRuleHeading>Tie Breaking Rule</TieBreakingRuleHeading>
         <TieBreakingRuleText>
-         In the event that two (or more) teams finish with an equal number of points, the following rules break the tie:  1. Head-to-head games between the teams concerned   1a. Points total  1b. Goal difference  1c. Goals scored 2. Goal difference 3. Goals scored
+          { data && data[0]?.tieBreakingRule?.text }
         </TieBreakingRuleText>
       </TieBreakingRule>
       <Table>
@@ -21,19 +41,25 @@ export default function Fixtures() {
             <Column style={{ width: 20 }}>+</Column>
             <Column style={{ width: 20 }}>-</Column>
             <Column style={{ width: 30 }}>Pts</Column>
-        </Row> 
-        <Row>
-            <Column style={{ width: 20 }}>1</Column>
-            <Column style={{ width: 170 }}>Raja Club Athletic</Column>
-            <Column style={{ width: 20 }}>6</Column>
-            <Column style={{ width: 20 }}>1</Column>
-            <Column style={{ width: 20 }}>3</Column>
-            <Column style={{ width: 20 }}>2</Column>
-            <Column style={{ width: 20 }}>5</Column>
-            <Column style={{ width: 20 }}>6</Column>
-            <Column style={{ width: 30 }}>6</Column>
         </Row>
-      </Table>
+
+        {
+            data && data[0]?.rows.map((row) => (
+                <Row key={ row.id }>
+                    <Column style={{ width: 20 }}>{ row.position }</Column>
+                    <Column style={{ width: 170 }}>{ truncateString(row.team.name, 20) }</Column>
+                    <Column style={{ width: 20 }}>{ row.matches }</Column>
+                    <Column style={{ width: 20 }}>{ row.wins }</Column>
+                    <Column style={{ width: 20 }}>{ row.draws }</Column>
+                    <Column style={{ width: 20 }}>{ row.losses }</Column>
+                    <Column style={{ width: 20 }}>{ row.scoresFor }</Column>
+                    <Column style={{ width: 20 }}>{ row.scoresAgainst }</Column>
+                    <Column style={{ width: 30 }}>{ row.points }</Column>
+                </Row>
+            ))
+        }
+        </Table>
+        <Spacer />
     </BotolaFixWrapper>
   )
 }
