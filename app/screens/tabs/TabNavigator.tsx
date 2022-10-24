@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MainScreen from './main/mainStack/MainScreen';
 import MainStack from './main/MainStack';
 import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
 import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
-import Matches from './matches/Matches';
+import Standing from './standings/Standing';
+import BotolaStack from './botola/BotolaStack';
 
 export default function TabNavigator() {
     
@@ -31,9 +31,14 @@ export default function TabNavigator() {
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
       />
-      <Tab.Screen name='Matches' component={ Matches } 
+      <Tab.Screen name='Botola' component={ BotolaStack } 
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Matches" icon="football" />
+          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Botola" icon="football" />
+        }}
+      />
+      <Tab.Screen name='Matches' component={ Standing } 
+        options={{
+          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Standing" icon="ios-layers" />
         }}
       /> 
       <Tab.Screen name='PlayerOfTheWeek' component={ PlayerOfTheWeekStack } 
