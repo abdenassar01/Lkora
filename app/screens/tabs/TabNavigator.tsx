@@ -3,6 +3,7 @@ import MainScreen from './main/mainStack/MainScreen';
 import MainStack from './main/MainStack';
 import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
 import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
+import Matches from './matches/Matches';
 
 export default function TabNavigator() {
     
@@ -30,7 +31,7 @@ export default function TabNavigator() {
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
       />
-      <Tab.Screen name='Matches' component={ MainScreen } 
+      <Tab.Screen name='Matches' component={ Matches } 
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Matches" icon="football" />
         }}
