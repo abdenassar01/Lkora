@@ -8,14 +8,14 @@ type Props = {
 
 export default function Summary({ id }: Props) {
 
-  const { data, isFetching, isError } = useQuery("match stats", async () => {
+  const { data, isFetching, error } = useQuery("match stats", async () => {
     const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/managers`)
     const data = response.data
     return data
   })
 
   if(isFetching) return <Label>loading...</Label>
-  if(isError) return <Label>error</Label>
+  if(error) return <Label>error</Label>
 
   return (
     <SummaryWrapper contentContainerStyle={{ alignItems: 'center' }}>

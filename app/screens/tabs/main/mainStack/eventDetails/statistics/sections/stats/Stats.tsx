@@ -10,7 +10,7 @@ type Props = {
 
 export default function Stats({ id }: Props) {
 
-    const { data, isFetching, isError, refetch } = useQuery("match stats", async () => {
+    const { data, isFetching, error, refetch } = useQuery<StatsType[]>("match stats", async () => {
         const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/statistics`)
         const data: StatsType[] = response.data?.statistics
         return data
@@ -21,7 +21,7 @@ export default function Stats({ id }: Props) {
     },[ id, data ])
 
     if(isFetching) return <GroupeName>loading...</GroupeName>
-    if(isError) return  <GroupeName>statistics is not available for this match</GroupeName>
+    if(error) return  <GroupeName>statistics is not available for this match</GroupeName>
 
     return (
     <StatisticsWrapper>
