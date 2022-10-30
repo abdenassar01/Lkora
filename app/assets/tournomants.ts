@@ -1,27 +1,33 @@
 type Tournomant = {
     id: Number,
-    label: string
+    label: string,
+    seasonId: number
 }
 
-export const Tournomants: Tournomant[] = [
+export const TOURNOMANTS: Tournomant[] = [
     {
-        id: 1,
-        label: "Premier League"
+        id: 17,
+        label: "Premier League",
+        seasonId: 41886,
     },
     {
-        id: 1,
-        label: "Premier League"
+        id: 2,
+        label: "El Botola",
+        seasonId: 45552,
     },
     {
-        id: 1,
-        label: "Premier League"
+        id: 162,
+        label: "Premier League",
+        seasonId: 41886,
     },
     {
-        id: 1,
-        label: "Premier League"
+        id: 17527,
+        label: "Premier League",
+        seasonId: 41886,
     },
     {
-        id: 1,
-        label: "Premier League"
+        id: 123,
+        label: "Premier League",
+        seasonId: 41886,
     }
 ]

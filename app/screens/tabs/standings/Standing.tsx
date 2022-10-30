@@ -1,12 +1,16 @@
 import axios from 'axios'
+import { useState } from 'react';
 import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
+import { TOURNOMANTS } from '../../../assets/tournomants';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
 export default function Fixtures() {
 
+  const [ tournomant, setTournomant ] = useState<number>(937)
+
     const { data, isLoading, error } = useQuery<Standing[]>("get botola standing", async () => {
-        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/937/season/45552/standings/total`);
+        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomant }/season/45552/standings/total`);
         return result.data.standings
     })
 
@@ -17,21 +21,13 @@ export default function Fixtures() {
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
       <BigHeading>{ data && data[0]?.name }</BigHeading>
       <TournamentsWrapper horizontal>
-        <TournomantItemPressable>          
-          <TournomantItem>Premier League</TournomantItem>
-        </TournomantItemPressable> 
-        <TournomantItemPressable>          
-          <TournomantItem>Premier League</TournomantItem>
-        </TournomantItemPressable>
-        <TournomantItemPressable>          
-          <TournomantItem>El Calcio</TournomantItem>
-        </TournomantItemPressable>
-        <TournomantItemPressable>          
-          <TournomantItem>El Botola</TournomantItem>
-        </TournomantItemPressable>
-        <TournomantItemPressable>
-          <TournomantItem>La Liga</TournomantItem>
-        </TournomantItemPressable>
+        {
+          TOURNOMANTS.map(tournomant => (
+              <TournomantItemPressable key={ tournomant.id }>          
+                <TournomantItem>{ tournomant.label }</TournomantItem>
+              </TournomantItemPressable> 
+          ))
+        }
       </TournamentsWrapper>
       <TieBreakingRule>
         <TieBreakingRuleHeading>Tie Breaking Rule</TieBreakingRuleHeading>
