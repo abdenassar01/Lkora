@@ -10,14 +10,14 @@ type Props = {
 
 export default function LineUps({ id }: Props) {
 
-  const { data, isFetching, isError } = useQuery("match stats", async () => {
+  const { data, isFetching, error } = useQuery("match stats", async () => {
     const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/lineups`)
     const data: LineUp = response.data
     return data
   })
 
   if(isFetching) return <GroupeName>loading...</GroupeName>
-  if(isError) return <GroupeName>error</GroupeName>
+  if(error) return <GroupeName>error</GroupeName>
 
   return (
     <LineUpWrapper contentContainerStyle={{ alignItems: 'center' }}>
@@ -78,7 +78,7 @@ export default function LineUps({ id }: Props) {
 
       <GroupeName>substitution</GroupeName>
      {
-      data?.home?.players.map((player: Player) => (player.substitute) &&  (
+      data?.away?.players.map((player: Player) => (player.substitute) &&  (
         <PlayerWrapper key={ player.player.id }>
           <Portion>
             <Position>{ player.position }</Position>

@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
@@ -50,14 +50,26 @@ export const Table = styled(View)`
 
 export const Row = styled(View)`
     flex-direction: row;
+    align-items: center;
+    padding-top: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: ${ COLOR.background };
 `
 
 export const Column = styled(MainText)`
     padding:  2px;
-    border: 1px solid ${ COLOR.main }; 
+    height: 30px; 
     text-align: center;
+    align-items: center;
 `
 
 export const Spacer = styled(View)`
     height: 60px;
+`
+
+export const Avatar = styled(Image)`
+    width: 20px;
+    height: 20px;
+    top: -3px;
 `
