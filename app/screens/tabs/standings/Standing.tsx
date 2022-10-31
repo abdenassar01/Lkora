@@ -1,20 +1,32 @@
 import axios from 'axios'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
-import { TOURNOMANTS } from '../../../assets/tournomants';
-import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
+import { COLOR } from '../../../assets/color';
+import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
+import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
 export default function Fixtures() {
 
-  const [ tournomant, setTournomant ] = useState<number>(937)
+  const [ tournomantId, setTournomantId ] = useState<number>(937)
+  const [ seasonId, setSeasonId ] = useState<number>(45552)
 
-    const { data, isLoading, error } = useQuery<Standing[]>("get botola standing", async () => {
-        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomant }/season/45552/standings/total`);
+    const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
+        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
         return result.data.standings
     })
 
-    if(isLoading) return <TieBreakingRuleText>loading...</TieBreakingRuleText>
+    const onTournomantChange = (tournomant: Tournomant) => {
+      setSeasonId(tournomant.seasonId);
+      setTournomantId(tournomant.id);
+
+    }
+
+    useEffect(() => {
+      refetch();
+    },[tournomantId])
+
+    if(isLoading || isRefetching) return <TieBreakingRuleText>loading...</TieBreakingRuleText>
     if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
 
   return (
@@ -22,12 +34,19 @@ export default function Fixtures() {
       <BigHeading>{ data && data[0]?.name }</BigHeading>
       <TournamentsWrapper horizontal>
         {
-          TOURNOMANTS.map(tournomant => (
-              <TournomantItemPressable key={ tournomant.id }>          
-                <TournomantItem>{ tournomant.label }</TournomantItem>
+          TOURNOMANTS.map((tournomant) => (
+              <TournomantItemPressable key={ tournomant.id } onPress={ () => onTournomantChange(tournomant) }>          
+                <TournomantItem 
+                  style={{ 
+                    backgroundColor: 
+                      (tournomantId === tournomant.id) ? COLOR.main : COLOR.text, 
+                    color: (tournomantId === tournomant.id) ? COLOR.text : COLOR.helperText
+                  }}  
+                >{ tournomant.label }</TournomantItem>
               </TournomantItemPressable> 
           ))
         }
+        <SpacerHorisontal />
       </TournamentsWrapper>
       <TieBreakingRule>
         <TieBreakingRuleHeading>Tie Breaking Rule</TieBreakingRuleHeading>

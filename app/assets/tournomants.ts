@@ -1,5 +1,5 @@
-type Tournomant = {
-    id: Number,
+export type Tournomant = {
+    id: number,
     label: string,
     seasonId: number
 }
@@ -22,7 +22,7 @@ export const TOURNOMANTS: Tournomant[] = [
     },
     {
         id: 35,
-        label: "Serie A",
+        label: "Bundesliga",
         seasonId: 42268,
     },
     {

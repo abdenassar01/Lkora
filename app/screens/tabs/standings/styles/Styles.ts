@@ -30,7 +30,7 @@ export const TournomantItem = styled(MainText)`
     color: ${ COLOR.helperText };
     background-color: ${ COLOR.text };
     font-weight: 600;  
-    font-size: 16px; 
+    font-size: 14px; 
 `
 
 export const TieBreakingRule = styled(View)`
@@ -91,4 +91,8 @@ export const Avatar = styled(Image)`
     width: 20px;
     height: 20px;
     top: -3px;
+`
+
+export const SpacerHorisontal = styled(View)`
+    width: 20px;
 `
