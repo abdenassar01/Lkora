@@ -44,5 +44,10 @@ export const TOURNOMANTS: Tournomant[] = [
         id: 34,
         label: "Ligue 1",
         seasonId: 42273,
+    },
+    {
+        id: 7,
+        label: "UEFA Champions League",
+        seasonId: 41897,
     }
 ]
