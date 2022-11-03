@@ -56,13 +56,13 @@ export default function Fixtures() {
       </TieBreakingRule>
       <Table>
         <Row>
-            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/937/image` }} ></Avatar>
+            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ tournomantId }/image` }} ></Avatar>
             <Column style={{ width:  "7%" }}>#</Column>
             <Column style={{ width: "40%", textAlign: 'left' }}>Team</Column>
             <Column style={{ width:  "6.5%" }}>P</Column>
-            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#07c05a", borderWidth: 0, borderTopWidth: 1 }}>W</Column>
-            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#f8b600", borderWidth: 0, borderTopWidth: 1 }}>D</Column>
-            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#e30044", borderWidth: 0, borderTopWidth: 1 }}>L</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#07c05a" }}>W</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#f8b600" }}>D</Column>
+            <Column style={{ width:  "6.5%", color: "white", backgroundColor: "#e30044" }}>L</Column>
             <Column style={{ width:  "6.5%" }}>+</Column>
             <Column style={{ width:  "6.5%" }}>-</Column>
             <Column style={{ width:  "9%" }}>Pts</Column>
