@@ -19,7 +19,6 @@ export default function Fixtures() {
     const onTournomantChange = (tournomant: Tournomant) => {
       setSeasonId(tournomant.seasonId);
       setTournomantId(tournomant.id);
-
     }
 
     useEffect(() => {

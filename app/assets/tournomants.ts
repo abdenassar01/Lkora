@@ -16,6 +16,11 @@ export const TOURNOMANTS: Tournomant[] = [
         seasonId: 45552,
     },
     {
+        id: 16,
+        label: "World Cup",
+        seasonId: 41087,
+    },
+    {
         id: 8,
         label: "La Liga",
         seasonId: 42409,
