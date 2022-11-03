@@ -1,9 +1,11 @@
 # Lkora
 
+![img](https://thumbs.gfycat.com/AntiquePastelEeve-mobile.jpg)
+
 _lkora is an android application built with react native_ 
 
 <video class="video media" width="500px" height="auto"
-id="video-antiquepasteleeve" alt="mockrocket-export GIF" autoplay="" playsinline="" preload="auto" poster="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.jpg" style="max-width: 640px; margin: 0px auto; display: block;" tabindex="-1" width="1920" height="1080"><source src="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.mp4" type="video/mp4"><source src="https://giant.gfycat.com/AntiquePastelEeve.mp4" type="video/mp4"><source src="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.mp4" type="video/mp4"></video>
+id="video-antiquepasteleeve" alt="mockrocket-export GIF" autoplay="" playsinline="" preload="auto" poster="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.jpg" style="max-width: 640px; margin: 0px auto; display: block;" tabindex="-1"><source src="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.mp4" type="video/mp4"><source src="https://giant.gfycat.com/AntiquePastelEeve.mp4" type="video/mp4"><source src="https://thumbs.gfycat.com/AntiquePastelEeve-mobile.mp4" type="video/mp4"></video>
 
 
 This app uses [sofascore api](https://sofascore.com) to get live football matches and stats, next match fixtures, leagues standings, player of the day...

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
@@ -16,6 +17,8 @@ export default function LineUps({ id }: Props) {
     return data
   })
 
+  const navigation: any = useNavigation();
+
   if(isFetching) return <GroupeName>loading...</GroupeName>
   if(error) return <GroupeName>error</GroupeName>
 
@@ -26,7 +29,7 @@ export default function LineUps({ id }: Props) {
       <GroupeName>starting xi</GroupeName>
      {
       data?.home?.players.map((player: Player) => !(player.substitute) &&  (
-        <PlayerWrapper key={ player.player.id }>
+        <PlayerWrapper key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { playerId: player.player.id, eventId: id }) }>
           <Portion>
             <Position>{ player.position }</Position>
             <ShirtNumber>{ player.shirtNumber }</ShirtNumber>

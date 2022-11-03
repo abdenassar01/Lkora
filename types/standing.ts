@@ -27,7 +27,8 @@ type UniqueTournament = {
 }
 
 type Tournemant = {
-    uniqueTournament: UniqueTournament
+    uniqueTournament: UniqueTournament,
+    id: number
 } 
 
 export type Standing = {
