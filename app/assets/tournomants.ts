@@ -49,5 +49,15 @@ export const TOURNOMANTS: Tournomant[] = [
         id: 7,
         label: "UEFA Champions League",
         seasonId: 41897,
+    },
+    {
+        id: 1054,
+        label: "CAF Champions League",
+        seasonId: 44968,
+    },
+    {
+        id: 1115,
+        label: "CAF Confederations Cup",
+        seasonId: 44969,
     }
 ]

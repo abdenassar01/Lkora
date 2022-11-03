@@ -57,7 +57,7 @@ export default function Fixtures() {
 
         {
           data?.map(group => (
-            <Table key={ group.tournament?.uniqueTournament.id }>
+            <Table key={ group.tournament?.id }>
               <Row>
                   <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ tournomantId }/image` }} ></Avatar>
                   <Column style={{ width:  "7%" }}>#</Column>
