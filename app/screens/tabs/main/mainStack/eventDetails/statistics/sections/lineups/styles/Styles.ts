@@ -1,4 +1,4 @@
-import { Image, ScrollView, View, ViewBase } from 'react-native';
+import { Image, Pressable, ScrollView, View, ViewBase } from 'react-native';
 import styled from "styled-components";
 import { COLOR } from '../../../../../../../../../assets/color';
 import { MainText } from '../../../../../../../../../assets/text/Text';
@@ -19,7 +19,7 @@ export const Heading = styled(MainText)`
     width: 50%;
 `   
 
-export const PlayerWrapper = styled(View)`
+export const PlayerWrapper = styled(Pressable)`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
