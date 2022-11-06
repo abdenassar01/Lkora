@@ -1,18 +1,24 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+
+import axios from 'axios';
+import { useQuery } from 'react-query';
+import { BotolaFixWrapper, Spacer, StyledText } from './styles/Styles';
 
 export default function Fixtures() {
+
+  const { data, isLoading, error } = useQuery("fetch botola fixtures", async () => {
+    const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/937/season/45552/events/next/0`);
+    console.log(result?.data)
+  })
+
+  if(isLoading) return <StyledText>loading...</StyledText>
+  if(error) return <StyledText>error occured. Check your network</StyledText>
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#FF2782',
-      }}>
-      <Text style={{color: '#fff'}}>
-        This will be available in the next release 🌲
-      </Text>
-    </View>
+    <BotolaFixWrapper>
+      {
+        
+      }
+      <Spacer />
+    </BotolaFixWrapper>
   );
 }
