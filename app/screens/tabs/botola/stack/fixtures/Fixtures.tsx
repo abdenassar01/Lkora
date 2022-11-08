@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
 import Card from '../../../../../utils/card/Card';
-import { BotolaFixWrapper, Spacer, StyledText } from './styles/Styles';
+import { BotolaFixWrapper, Heading, HeroTitle, Spacer, StyledText } from './styles/Styles';
 
 export default function Fixtures() {
 
@@ -17,6 +17,8 @@ export default function Fixtures() {
 
   return (
     <BotolaFixWrapper>
+      <HeroTitle>Moroccain Botola</HeroTitle>
+      <Heading>Fixtures</Heading>
       {
         data?.events.map((event: Event) => <Card event={ event } key={ event.id } />)
       }
