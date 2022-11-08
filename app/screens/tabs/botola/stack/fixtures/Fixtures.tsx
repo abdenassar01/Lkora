@@ -1,13 +1,15 @@
 
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { Event } from '../../../../../../types/events';
+import Card from '../../../../../utils/card/Card';
 import { BotolaFixWrapper, Spacer, StyledText } from './styles/Styles';
 
 export default function Fixtures() {
 
   const { data, isLoading, error } = useQuery("fetch botola fixtures", async () => {
     const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/937/season/45552/events/next/0`);
-    console.log(result?.data)
+    return result?.data;
   })
 
   if(isLoading) return <StyledText>loading...</StyledText>
@@ -16,7 +18,7 @@ export default function Fixtures() {
   return (
     <BotolaFixWrapper>
       {
-        
+        data?.events.map((event: Event) => <Card event={ event } key={ event.id } />)
       }
       <Spacer />
     </BotolaFixWrapper>
