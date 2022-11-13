@@ -4,6 +4,11 @@ type TitleHolder = {
     id: string
 }
 
+type Category = {
+    name: string,
+    id: number
+}
+
 type MostTitlesTeam = {
     name: string,
     nameCode: string,
@@ -18,4 +23,5 @@ export type UniqueTournomant = {
     mostTitles: string,
     titleHolder: TitleHolder,
     mostTitlesTeams: MostTitlesTeam[],
+    category: Category
 }

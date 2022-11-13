@@ -10,8 +10,17 @@ export const Card = styled(View)`
 
 `
 
-export const TeamLogo = styled(Image)`
+export const Team = styled(View)`
 
+`
+
+export const TeamName = styled(MainText)`
+
+`
+
+export const TeamLogo = styled(Image)`
+    width: 40px;
+    height: 40px;
 `
 
 export const Label = styled(MainText)`
