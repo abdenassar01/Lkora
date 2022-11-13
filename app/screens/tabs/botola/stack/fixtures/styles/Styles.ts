@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
@@ -21,7 +21,6 @@ export const Heading = styled(MainText)`
     border-bottom-width: 2px;
     border-bottom-color: purple;
     width: 50%;
-    margin-left: 25%;
     border-bottom-style: solid;
     margin-bottom: 10px;
 `
@@ -29,6 +28,11 @@ export const Heading = styled(MainText)`
 export const StyledText = styled(MainText)`
     text-align: center;
     color: ${ COLOR.main };
+`
+
+export const Logo = styled(Image)`
+    width: 200px;
+    height: 200px;
 `
 
 export const Spacer = styled(View)`
