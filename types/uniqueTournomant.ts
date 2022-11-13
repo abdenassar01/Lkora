@@ -20,7 +20,7 @@ export type UniqueTournomant = {
     name: string,
     primaryColorHex: string,
     secondaryColorHex: string,
-    mostTitles: string,
+    mostTitles: number,
     titleHolder: TitleHolder,
     mostTitlesTeams: MostTitlesTeam[],
     category: Category
