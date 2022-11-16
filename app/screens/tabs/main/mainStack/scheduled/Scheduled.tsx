@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Text } from 'react-native';
 import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
+import { MainText } from '../../../../../assets/text/Text';
 import Card from '../../../../../utils/card/Card';
 import { MatchesWrapper, Spacer } from "../styles/Styles"
 
@@ -17,13 +17,16 @@ export default function Scheduled() {
         return result.data
     })
 
-    if(isLoading) return <Text>loading...</Text>
-    if(error) return <Text>error</Text>
+    if(isLoading) return <MainText>loading...</MainText>
+    if(error) return <MainText>error occured. check your network status and try again</MainText>
+
+    const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 ));
 
   return (
     <MatchesWrapper>
         {
-            data.events.map((event: Event) => ( event?.tournament.priority > 300 ) && <Card key={ event.id } event={ event } />)
+            (filtred.length === 0 ) ? <MainText>No Matches For the moment</MainText> :
+            filtred.map((event: Event) => <Card key={ event.id } event={ event } />)
         }
         <Spacer />
     </MatchesWrapper>
