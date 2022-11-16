@@ -5,6 +5,7 @@ import { Event } from '../../../../../../types/events';
 import { MainText } from '../../../../../assets/text/Text';
 import Card from '../../../../../utils/card/Card';
 import { MatchesWrapper, Spacer } from "../styles/Styles"
+import ScheculedErrorHandler from './error/ScheculedErrorHandler';
 
 export default function Scheduled() {
 
@@ -18,14 +19,14 @@ export default function Scheduled() {
     })
 
     if(isLoading) return <MainText>loading...</MainText>
-    if(error) return <MainText>error occured. check your network status and try again</MainText>
+    if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' />
 
     const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 ));
 
   return (
     <MatchesWrapper>
         {
-            (filtred.length === 0 ) ? <MainText>No Matches For the moment</MainText> :
+            (filtred.length === 0 ) ? <ScheculedErrorHandler message='No scheduled matches at the moment' /> :
             filtred.map((event: Event) => <Card key={ event.id } event={ event } />)
         }
         <Spacer />
