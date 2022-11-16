@@ -10,7 +10,6 @@ export default function Fixtures() {
 
   const { data, isLoading, error } = useQuery("fetch botola fixtures", async () => {
     const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/937/season/45552/events/next/0`);
-    console.log(result.data)
     return result?.data;
   })
 

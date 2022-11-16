@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { LineUp, Player } from '../../../../../../../../../types/lineups'
+import SkeltonStatisticsLoader from '../../loader/SkeltonStatisticsLoader'
 import { Avatar, GroupeName, Heading, LineUpWrapper, Name, PlayerWrapper, Portion, Position, Rating, ShirtNumber } from './styles/Styles'
 
 type Props = {
@@ -19,7 +20,7 @@ export default function LineUps({ id }: Props) {
 
   const navigation: any = useNavigation();
 
-  if(isFetching) return <GroupeName>loading...</GroupeName>
+  if(isFetching) return <SkeltonStatisticsLoader />
   if(error) return <GroupeName>error</GroupeName>
 
   return (

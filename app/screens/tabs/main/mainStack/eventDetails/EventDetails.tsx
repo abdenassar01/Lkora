@@ -5,21 +5,23 @@ import Statistics from './statistics/Statistics'
 import { useQuery } from 'react-query'
 import { Text } from 'react-native'
 import axios from 'axios'
+import SkeltonDetailsLoader from './loader/SkeltonDetailsLoader'
 
 export default function EventDetails({ route }: any) {
 
-  const { data, isLoading, error } = useQuery("get match details", async () => {
+  const { data, isFetching, error } = useQuery("get match details", async () => {
     const result = await axios.get(`https://api.sofascore.com/api/v1/event/${ route.params.id }`);
     return result.data
   })
 
-  if(isLoading) return <Text>loading...</Text>
   if(error) return <Text>error occured</Text>
 
   return (
     <EventDetailsWrappe>
       <WithGoBackHeader tournament={ data?.event?.tournament?.uniqueTournament?.name }/>
-      <MainCard event={ data?.event }/>
+      {
+        isFetching ? <SkeltonDetailsLoader /> : <MainCard event={ data?.event }/>
+      }
       <Statistics id={ data?.event.id } />
     </EventDetailsWrappe>
   )

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import SkeltonStatisticsLoader from '../../loader/SkeltonStatisticsLoader'
 import { Away, Heading, Home, ItemWrapper, Jursey, Label, Manager, ManagerImage, ManagerName, SummaryWrapper } from './styles/Styles'
 
 type Props = {
@@ -14,7 +15,7 @@ export default function Summary({ id }: Props) {
     return data
   })
 
-  if(isFetching) return <Label>loading...</Label>
+  if(isFetching) return <SkeltonStatisticsLoader />
   if(error) return <Label>error</Label>
 
   return (

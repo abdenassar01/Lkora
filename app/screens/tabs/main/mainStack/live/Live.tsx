@@ -4,6 +4,9 @@ import { Text } from "react-native";
 import { LiveSlider } from "../styles/Styles";
 import LiveCard from "./card/LiveCard";
 import { Event } from "../../../../../../types/events";
+import LiveError from "./card/error/LiveError";
+import LiveSkiltonLoader from "./card/loader/LiveSkiltonLoader";
+
 
 export default function Live() {
 
@@ -12,15 +15,17 @@ export default function Live() {
       return result.data
   })
 
-  if(isLoading) return <Text>loading...</Text>
-  if(error) return <Text>error occured</Text>
+  if(isLoading) return <LiveSkiltonLoader />
+  if(error) return <LiveError message="Network Error, Please chech your network status and try again" />
+
+  const filtred = data?.events?.filter((event: Event) => (event.tournament.priority > 250))
 
   return (
-    <LiveSlider horizontal>
+    <LiveSlider horizontal showsHorizontalScrollIndicator={ false } >
       {
-        data?.events?.map(
-          (event: Event) => (event.tournament.priority > 250) &&
-            <LiveCard event={ event } key={ event.id } />
+        (filtred.length === 0) ? <LiveError message="No live matches available at the moment check again later" /> : 
+        filtred.map(
+          (event: Event) => <LiveCard event={ event } key={ event.id } />
         )
       }
     </LiveSlider>
