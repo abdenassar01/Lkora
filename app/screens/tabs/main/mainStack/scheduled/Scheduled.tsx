@@ -19,14 +19,14 @@ export default function Scheduled() {
     })
 
     if(isFetching) return <MainText>loading...</MainText>
-    if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' />
+    if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' refetch={ refetch } />
 
     const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 ));
 
   return (
     <MatchesWrapper>
         {
-            (filtred.length === 0 ) ? <ScheculedErrorHandler message='No scheduled matches at the moment' refetch={ refetch } /> :
+            (filtred.length === 0 ) ? <ScheculedErrorHandler message='No scheduled matches at the moment' /> :
             filtred.map((event: Event) => <Card key={ event.id } event={ event } />)
         }
         <Spacer />
