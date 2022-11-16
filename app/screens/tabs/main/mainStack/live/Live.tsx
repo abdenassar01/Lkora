@@ -15,12 +15,14 @@ export default function Live() {
   if(isLoading) return <Text>loading...</Text>
   if(error) return <Text>error occured</Text>
 
+  const filtred = data?.events?.filter((event: Event) => (event.tournament.priority > 250))
+
   return (
     <LiveSlider horizontal>
       {
-        data?.events?.map(
-          (event: Event) => (event.tournament.priority > 250) &&
-            <LiveCard event={ event } key={ event.id } />
+        (filtred.length === 0) ? <Text>There is no live events for the moment</Text> : 
+        filtred.map(
+          (event: Event) => <LiveCard event={ event } key={ event.id } />
         )
       }
     </LiveSlider>
