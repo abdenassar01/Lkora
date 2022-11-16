@@ -20,7 +20,6 @@ export default function LiveCard({ event }: Props) {
 
   return (
     <LiveCardWrapperLink onPress={ () => navigation.navigate("EvantDetails", { id : event?.id }) }>
-      {/* <LiveCardWrapper source={{ uri: "https://i.imgur.com/gOms8Ox.jpg" }} blurRadius={5} borderRadius={20} > */}
       <LiveCardWrapperView style={{ elevation: 5 }} >
         <LeagueTitle>{ truncateString(event?.tournament.name, 30) }</LeagueTitle>
         <GameTitle>Week { event.roundInfo?.round }</GameTitle>
@@ -42,7 +41,6 @@ export default function LiveCard({ event }: Props) {
             </Team>
         </MatchInfo>
       </LiveCardWrapperView>
-      {/* </LiveCardWrapper> */}
     </LiveCardWrapperLink>
   )
 }

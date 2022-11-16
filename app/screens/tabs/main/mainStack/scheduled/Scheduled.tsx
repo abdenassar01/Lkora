@@ -2,10 +2,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
-import { MainText } from '../../../../../assets/text/Text';
 import Card from '../../../../../utils/card/Card';
 import { MatchesWrapper, Spacer } from "../styles/Styles"
 import ScheculedErrorHandler from './error/ScheculedErrorHandler';
+import ScheduledSkiltonLoader from './loader/ScheduledSkiltonLoader';
 
 export default function Scheduled() {
 
@@ -18,7 +18,7 @@ export default function Scheduled() {
         return result.data
     })
 
-    if(isFetching) return <MainText>loading...</MainText>
+    if(isFetching) return <ScheduledSkiltonLoader />
     if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' refetch={ refetch } />
 
     const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 ));
