@@ -13,12 +13,12 @@ export default function Scheduled() {
     const [ month, setMonth ] = useState<string>(String(new Date().getMonth() + 1).padStart(2, '0'));
     const [ year, setYear ] = useState<string>(String(new Date().getFullYear()));
 
-    const { data, isLoading, error } = useQuery("fetch scheduled matches", async () => {
+    const { data, isFetching, error, refetch } = useQuery("fetch scheduled matches", async () => {
         const result = await axios.get(`https://api.sofascore.com/api/v1/sport/football/scheduled-events/${ year }-${ month }-${ day }`) 
         return result.data
     })
 
-    if(isLoading) return <MainText>loading...</MainText>
+    if(isFetching) return <MainText>loading...</MainText>
     if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' />
 
     const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 ));
@@ -26,7 +26,7 @@ export default function Scheduled() {
   return (
     <MatchesWrapper>
         {
-            (filtred.length === 0 ) ? <ScheculedErrorHandler message='No scheduled matches at the moment' /> :
+            (filtred.length === 0 ) ? <ScheculedErrorHandler message='No scheduled matches at the moment' refetch={ refetch } /> :
             filtred.map((event: Event) => <Card key={ event.id } event={ event } />)
         }
         <Spacer />

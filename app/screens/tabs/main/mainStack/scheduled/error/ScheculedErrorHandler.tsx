@@ -1,14 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { ButtonText, ErrorText, RefrechButton, ScheduledErrorWrapper } from './styles/Styles'
 
 type Props = {
-  message: string
+  message: string,
+  refetch?: () => void
 }
 
-export default function ScheculedErrorHandler({ message }: Props) {
+export default function ScheculedErrorHandler({ message, refetch }: Props) {
   return (
-    <View>
-      <Text>{ message }</Text>
-    </View>
+    <ScheduledErrorWrapper>
+      <ErrorText>{ message }</ErrorText>
+      <RefrechButton onPress={ refetch }>
+        <ButtonText>refrech</ButtonText>
+      </RefrechButton>
+    </ScheduledErrorWrapper>
   )
 }
