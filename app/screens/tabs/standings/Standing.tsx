@@ -6,6 +6,7 @@ import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
 import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
+import SkeltonStandingRefetchLoader from './loader/SkeltonStandingRefetchLoader';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
 export default function Fixtures() {
@@ -27,7 +28,7 @@ export default function Fixtures() {
       refetch();
     },[tournomantId])
 
-    if(isLoading || isRefetching) return <SkeltonStandingLoader />
+    if(isLoading) return <SkeltonStandingLoader />
     if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
 
   return (
@@ -57,6 +58,7 @@ export default function Fixtures() {
       </TieBreakingRule>
 
         {
+          (isRefetching) ? <SkeltonStandingRefetchLoader /> :
           data?.map(group => (
             <Table key={ group.tournament?.id }>
               <Row>
