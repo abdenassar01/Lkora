@@ -66,9 +66,8 @@ export const Paragraph = styled(MainText)`
 `
 
 export const Stats = styled(View)`
-    background-color: ${ COLOR.text };
     align-items: center;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     border-radius: 10px;
 `
@@ -91,7 +90,8 @@ export const StatsItem = styled(View)`
     align-items: center;
     margin: 5px 0;
     border-radius: 10px;
-    background-color: ${ COLOR.background };
+    background-color: ${ COLOR.text };
+    elevation: 2;
 `
 
 export const Value = styled(MainText)`
