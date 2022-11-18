@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import { PlayerType } from '../../../../../../types/topplayer';
+import SkeltonPlayerOfTheWeekLoader from './loader/SkeltonPlayerOfTheWeekLoader';
 import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText, Spacer } from './styles/Style'
 
 export default function PlayersList() {
@@ -14,7 +15,6 @@ export default function PlayersList() {
     return players
   })
 
-  if(isLoading) return <TmpText>loading...</TmpText>
   if(error) return <TmpText>check network</TmpText>
 
   return (
@@ -22,7 +22,8 @@ export default function PlayersList() {
       <Heading>Top Players Of The Week</Heading>
 
       {
-        data?.map((player: PlayerType) =>(
+        isLoading ? <SkeltonPlayerOfTheWeekLoader /> :
+        data?.map((player: PlayerType) => (
           <PressablePlayer key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { playerId: player.player.id, eventId: player.event.id }) }>
             <Player style={{ elevation: 5 }}>
               <Left>

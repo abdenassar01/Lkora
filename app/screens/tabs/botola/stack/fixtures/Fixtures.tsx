@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
 import Card from '../../../../../utils/card/Card';
 import BotolaInfo from './botolainfo/BotolaInfo';
+import SkeltonBotolaLoader from './loader/SkeltonBotolaLoader';
 import { BotolaFixWrapper, Heading, HeroTitle, Logo, Spacer, StyledText } from './styles/Styles';
 
 export default function Fixtures() {
@@ -13,8 +14,7 @@ export default function Fixtures() {
     return result?.data;
   })
 
-  if(isLoading) return <StyledText>loading...</StyledText>
-  if(error) return <StyledText>error occured. Check your network</StyledText>
+  if(isLoading) return <SkeltonBotolaLoader />
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ alignItems: 'center' }}>
@@ -22,6 +22,7 @@ export default function Fixtures() {
       <Logo source={{ uri: "https://api.sofascore.app/api/v1/unique-tournament/937/image" }}></Logo>
       <Heading>Fixtures</Heading>
       {
+        (error) ? <StyledText>There is no match fixtures at the moment.</StyledText> : 
         data?.events.map((event: Event) => <Card event={ event } key={ event.id } />)
       }
       <Heading>Summary</Heading>
