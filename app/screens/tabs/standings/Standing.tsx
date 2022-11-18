@@ -60,7 +60,7 @@ export default function Fixtures() {
         {
           (isRefetching) ? <SkeltonStandingRefetchLoader /> :
           data?.map(group => (
-            <Table key={ group.tournament?.id }>
+            <Table key={ group?.tournament[0]?.uniqueTournament.id }>
               <Row>
                   <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ tournomantId }/image` }} ></Avatar>
                   <Column style={{ width:  "7%" }}>#</Column>

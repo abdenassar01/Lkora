@@ -20,9 +20,14 @@ export default function EventDetails({ route }: any) {
     <EventDetailsWrappe>
       <WithGoBackHeader tournament={ data?.event?.tournament?.uniqueTournament?.name }/>
       {
-        isFetching ? <SkeltonDetailsLoader /> : <MainCard event={ data?.event }/>
+        isFetching ? <SkeltonDetailsLoader /> :(
+          <>
+            <MainCard event={ data?.event }/>
+            <Statistics id={ data?.event.id } />
+          </> 
+        )
       }
-      <Statistics id={ data?.event.id } />
+
     </EventDetailsWrappe>
   )
 }
