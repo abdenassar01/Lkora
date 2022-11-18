@@ -3,12 +3,19 @@ import styled from "styled-components";
 import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
+export const HeaderBackground = styled(View)`
+    background-color: ${ COLOR.background };
+`
+
 export const HeaderWrapper = styled(View)`
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
-    padding: 10px 0;
-    background-color: ${ COLOR.background };
+    padding: 5px;
+    background-color: ${ COLOR.text };
+    margin: 10px;
+    border-radius: 5px;
+    elevation: 5;
 `
 
 export const Logo = styled(Image)`
@@ -25,4 +32,11 @@ export const TournamentTitle = styled(MainText)`
     font-size: 22px;
     font-weight: 600;
     color: ${ COLOR.main };
+`
+
+export const Heading = styled(MainText)`
+    font-size: 22px;
+    font-weight: 600;
+    color: ${ COLOR.main };
+    padding-left: 10px;
 `
