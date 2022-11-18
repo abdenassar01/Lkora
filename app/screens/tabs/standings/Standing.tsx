@@ -1,9 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
+import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
 export default function Fixtures() {
@@ -25,7 +27,7 @@ export default function Fixtures() {
       refetch();
     },[tournomantId])
 
-    if(isLoading || isRefetching) return <TieBreakingRuleText>loading...</TieBreakingRuleText>
+    if(isLoading || isRefetching) return <SkeltonStandingLoader />
     if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
 
   return (
