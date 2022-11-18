@@ -13,8 +13,7 @@ export default function Stats({ id }: Props) {
 
     const { data, isFetching, error, refetch } = useQuery<StatsType[]>("match stats", async () => {
         const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/statistics`)
-        const data: StatsType[] = response.data?.statistics
-        return data
+        return response.data?.statistics
     })
 
     useEffect(() => {
