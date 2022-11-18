@@ -28,7 +28,7 @@ export const Player = styled(View)`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     margin: 0 10px;
     background-color: white;
     border-radius: 50px;
@@ -41,8 +41,8 @@ export const Left = styled(View)`
 `
 
 export const PlayerAvatar = styled(Image)`
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
 `
 
@@ -58,8 +58,8 @@ export const TeamName = styled(MainText)`
 
 export const RatingWrapper = styled(View)`
     background-color: ${ COLOR.main };
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     justify-content: center;
     align-items: center;

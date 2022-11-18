@@ -89,9 +89,8 @@ export const StatsItem = styled(View)`
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: ${ COLOR.text };
-    elevation: 2;
 `
 
 export const Value = styled(MainText)`

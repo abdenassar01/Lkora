@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useQuery } from 'react-query'
 import { PlayerType } from '../../../../../../types/topplayer';
 import SkeltonPlayerOfTheWeekLoader from './loader/SkeltonPlayerOfTheWeekLoader';
-import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText, Spacer } from './styles/Style'
+import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText, Spacer } from './styles/Styles'
 
 export default function PlayersList() {
 
@@ -25,7 +25,7 @@ export default function PlayersList() {
         isLoading ? <SkeltonPlayerOfTheWeekLoader /> :
         data?.map((player: PlayerType) => (
           <PressablePlayer key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { playerId: player.player.id, eventId: player.event.id }) }>
-            <Player style={{ elevation: 5 }}>
+            <Player>
               <Left>
                 <PlayerAvatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></PlayerAvatar>
                 <PlayerName>{ player.player.shortName }</PlayerName>

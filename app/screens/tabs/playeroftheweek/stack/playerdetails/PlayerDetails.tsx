@@ -31,7 +31,7 @@ export default function PlayerDetails() {
       {
         isFetching ?  <SkeltonPlayerDetailsLoader /> :
         <>
-          <HeroSection style={{ elevation: 5 }}>
+          <HeroSection style={{ elevation: 20 }}>
             <Avatar  source={{ uri: `https://api.sofascore.app/api/v1/player/${ data?.player.id }/image` }}></Avatar>
             <Rating>
               <RatingText>{ data?.statistics?.rating }</RatingText>
