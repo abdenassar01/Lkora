@@ -14,7 +14,6 @@ export default function Fixtures() {
   })
 
   if(isLoading) return <StyledText>loading...</StyledText>
-  if(error) return <StyledText>error occured. Check your network</StyledText>
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ alignItems: 'center' }}>
@@ -22,6 +21,7 @@ export default function Fixtures() {
       <Logo source={{ uri: "https://api.sofascore.app/api/v1/unique-tournament/937/image" }}></Logo>
       <Heading>Fixtures</Heading>
       {
+        (error) ? <StyledText>error occured. Check your network</StyledText> : 
         data?.events.map((event: Event) => <Card event={ event } key={ event.id } />)
       }
       <Heading>Summary</Heading>
