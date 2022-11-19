@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { LineUp, Player } from '../../../../../../../../../types/lineups'
+import MatchDetailSectionError from '../../error/MatchDetailSectionError'
 import SkeltonStatisticsLoader from '../../loader/SkeltonStatisticsLoader'
 import { Avatar, GroupeName, Heading, LineUpWrapper, Name, PlayerWrapper, Portion, Position, Rating, ShirtNumber } from './styles/Styles'
 
@@ -21,11 +22,10 @@ export default function LineUps({ id }: Props) {
   const navigation: any = useNavigation();
 
   if(isFetching) return <SkeltonStatisticsLoader />
-  if(error) return <GroupeName>error</GroupeName>
+  if(error) return <MatchDetailSectionError message='LineUp is not available for this event'  />
 
   return (
     <LineUpWrapper contentContainerStyle={{ alignItems: 'center' }}>
-     
       <Heading>Home</Heading>
       <GroupeName>starting xi</GroupeName>
      {

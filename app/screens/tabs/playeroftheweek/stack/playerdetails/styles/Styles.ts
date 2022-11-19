@@ -12,7 +12,10 @@ export const Header = styled(View)`
     padding: 5px 10px;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: ${ COLOR.text };
+    elevation: 10;
 `
 
 export const BackIcon = styled(Pressable)`
@@ -66,9 +69,8 @@ export const Paragraph = styled(MainText)`
 `
 
 export const Stats = styled(View)`
-    background-color: ${ COLOR.text };
     align-items: center;
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     border-radius: 10px;
 `
@@ -90,8 +92,8 @@ export const StatsItem = styled(View)`
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    border-radius: 10px;
-    background-color: ${ COLOR.background };
+    border-radius: 5px;
+    background-color: ${ COLOR.text };
 `
 
 export const Value = styled(MainText)`

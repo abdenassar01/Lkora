@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { StatsType } from '../../../../../../../../../types/stats';
+import MatchDetailSectionError from '../../error/MatchDetailSectionError';
 import SkeltonStatisticsLoader from '../../loader/SkeltonStatisticsLoader';
 import { Goupe, GroupeName, Heading, Label, Period, StatisticsItem, StatisticsWrapper, Value, ValueFlipped } from './styles/Styles';
 
@@ -21,7 +22,7 @@ export default function Stats({ id }: Props) {
     },[ id, data ])
 
     if(isFetching) return <SkeltonStatisticsLoader />
-    if(error) return  <GroupeName>statistics is not available for this match</GroupeName>
+    if(error) return  <MatchDetailSectionError message='statistics is not available for this match' />
 
     return (
     <StatisticsWrapper>

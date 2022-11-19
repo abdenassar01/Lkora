@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useQuery } from 'react-query'
+import MatchDetailSectionError from '../../error/MatchDetailSectionError'
 import SkeltonStatisticsLoader from '../../loader/SkeltonStatisticsLoader'
 import { Away, Heading, Home, ItemWrapper, Jursey, Label, Manager, ManagerImage, ManagerName, SummaryWrapper } from './styles/Styles'
 
@@ -16,7 +17,7 @@ export default function Summary({ id }: Props) {
   })
 
   if(isFetching) return <SkeltonStatisticsLoader />
-  if(error) return <Label>error</Label>
+  if(error) return <MatchDetailSectionError message='No data available for this match' />
 
   return (
     <SummaryWrapper contentContainerStyle={{ alignItems: 'center' }}>

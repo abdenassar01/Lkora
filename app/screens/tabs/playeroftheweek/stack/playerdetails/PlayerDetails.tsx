@@ -31,7 +31,7 @@ export default function PlayerDetails() {
       {
         isFetching ?  <SkeltonPlayerDetailsLoader /> :
         <>
-          <HeroSection style={{ elevation: 5 }}>
+          <HeroSection style={{ elevation: 20 }}>
             <Avatar  source={{ uri: `https://api.sofascore.app/api/v1/player/${ data?.player.id }/image` }}></Avatar>
             <Rating>
               <RatingText>{ data?.statistics?.rating }</RatingText>
@@ -43,49 +43,49 @@ export default function PlayerDetails() {
               <Paragraph>{ data?.player?.position === "G" ? "GoalKeeper" : data?.player?.position === "M" ? "Midfielder" : "Forward" }</Paragraph>
             </PlayerInfo>
           </HeroSection>
-          <Stats style={{ elevation: 5 }}>
+          <Stats >
             <Heading>Statistics</Heading>
-            <StatsItem style={{ elevation: 2 }} >
+            <StatsItem  >
               <Paragraph>Total Pass</Paragraph>
               <Value>{ data?.statistics?.totalPass ?? 0 }</Value>
             </StatsItem>
-            <StatsItem style={{ elevation: 2 }} >
+            <StatsItem  >
               <Paragraph>Accurate Pass</Paragraph>
               <Value>{ data?.statistics?.accuratePass ?? 0 }</Value>
             </StatsItem>
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Total Long Balls</Paragraph>
               <Value>{ data?.statistics?.totalLongBalls ?? 0 }</Value>
             </StatsItem>     
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Total Clearance</Paragraph>
               <Value>{ data?.statistics?.totalClearance ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Saved Shots From Inside The Box</Paragraph>
               <Value>{ data?.statistics?.savedShotsFromInsideTheBox ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Saves</Paragraph>
               <Value>{ data?.statistics?.saves ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Punches</Paragraph>
               <Value>{ data?.statistics?.punches ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Minutes Played</Paragraph>
               <Value>{ data?.statistics?.minutesPlayed ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Touches</Paragraph>
               <Value>{ data?.statistics?.touches ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Rating</Paragraph>
               <Value>{ data?.statistics?.rating ?? 0 }</Value>
             </StatsItem>        
-            <StatsItem style={{ elevation: 2 }}>
+            <StatsItem >
               <Paragraph>Possession Lost Ctrl</Paragraph>
               <Value>{ data?.statistics?.possessionLostCtrl ?? 0 }</Value>
             </StatsItem>        
