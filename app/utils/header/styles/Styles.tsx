@@ -16,6 +16,8 @@ export const HeaderWrapper = styled(View)`
     margin: 10px;
     border-radius: 5px;
     elevation: 5;
+    position: relative;
+    height: 45px;
 `
 
 export const Logo = styled(Image)`
@@ -32,6 +34,8 @@ export const TournamentTitle = styled(MainText)`
     font-size: 22px;
     font-weight: 600;
     color: ${ COLOR.main };
+    position: absolute;
+    right: 10px;
 `
 
 export const Heading = styled(MainText)`

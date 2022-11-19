@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { GoBack, HeaderWrapper, Logo, TournamentTitle } from "../styles/Styles";
+import { GoBack, HeaderWrapper, TournamentTitle } from "../styles/Styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { COLOR } from "../../../assets/color";
 
@@ -17,7 +17,7 @@ export default function WithGoBackHeader({ tournament }: Props) {
             <Ionicons name="chevron-back-circle-sharp" size={ 35 } color={ COLOR.main } />
         </GoBack>
         <TournamentTitle>
-          { tournament }
+          { tournament ?? "loading..." }
         </TournamentTitle>
     </HeaderWrapper>
   )
