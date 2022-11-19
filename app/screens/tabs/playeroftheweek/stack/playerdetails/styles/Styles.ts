@@ -12,7 +12,10 @@ export const Header = styled(View)`
     padding: 5px 10px;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: ${ COLOR.text };
+    elevation: 10;
 `
 
 export const BackIcon = styled(Pressable)`
