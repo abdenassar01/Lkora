@@ -18,7 +18,7 @@ export default function PlayersList() {
   if(error) return <TmpText>check network</TmpText>
 
   return (
-    <PlayerListWrapper >
+    <PlayerListWrapper>
       <Heading>Top Players Of The Week</Heading>
 
       {

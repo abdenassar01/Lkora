@@ -4,20 +4,23 @@ import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const PlayerListWrapper = styled(ScrollView)`
-    margin: 10px 0;
+    
 `
 
 export const Heading = styled(MainText)`
-    margin: 10px 0;
+    margin: 10px;
     text-align: center;
     color: ${ COLOR.main };
     font-size: 20px;
     font-weight: 600;
     border-bottom-color: purple;
-    border-bottom-width: 2px;
+    border-bottom-width: 3px;
     border-bottom-style: solid;
-    margin-bottom: 10px;
-    width: 100%;
+    margin-bottom: 20px;
+    background-color: ${ COLOR.text };
+    padding: 10px;
+    border-radius: 5px;
+    elevation: 5;
 `
 
 export const PressablePlayer = styled(Pressable)`
@@ -77,5 +80,5 @@ export const TmpText = styled(MainText)`
 `
 
 export const Spacer = styled(View)`
-    height: 50px;
+    height: 55px;
 `
