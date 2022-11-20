@@ -4,6 +4,7 @@ import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
+import ErrorHandler from '../../../utils/error/ErrorHandler';
 import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
 import SkeltonStandingRefetchLoader from './loader/SkeltonStandingRefetchLoader';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
@@ -28,7 +29,7 @@ export default function Fixtures() {
     },[tournomantId])
 
     if(isLoading) return <SkeltonStandingLoader />
-    if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
+    if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
