@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
@@ -11,8 +10,8 @@ import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHoriso
 
 export default function Fixtures() {
 
-  const [ tournomantId, setTournomantId ] = useState<number>(937)
-  const [ seasonId, setSeasonId ] = useState<number>(45552)
+  const [ tournomantId, setTournomantId ] = useState<number>(16)
+  const [ seasonId, setSeasonId ] = useState<number>(41087)
 
     const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
         const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
@@ -53,14 +52,17 @@ export default function Fixtures() {
       <TieBreakingRule>
         <TieBreakingRuleHeading>Tie Breaking Rule</TieBreakingRuleHeading>
         <TieBreakingRuleText>
-          { data && data[0]?.tieBreakingRule?.text }
+          { 
+            (isRefetching) ? "Loading..." :
+            data && data[0]?.tieBreakingRule?.text 
+          }
         </TieBreakingRuleText>
       </TieBreakingRule>
 
         {
           (isRefetching) ? <SkeltonStandingRefetchLoader /> :
           data?.map(group => (
-            <Table key={ group?.toString() }>
+            <Table key={ Math.random() * Math.random() }>
               <Row>
                   <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ tournomantId }/image` }} ></Avatar>
                   <Column style={{ width:  "7%" }}>#</Column>
