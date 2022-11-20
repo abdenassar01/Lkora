@@ -32,7 +32,7 @@ type Tournemant = {
 } 
 
 export type Standing = {
-    tournament: Tournemant[],
+    tournament: Tournemant,
     name: string,
     tieBreakingRule: TieBreakingRule,
     rows: Row[]

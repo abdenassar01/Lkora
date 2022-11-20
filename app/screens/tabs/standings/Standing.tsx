@@ -13,7 +13,7 @@ export default function Fixtures() {
   const [ tournomantId, setTournomantId ] = useState<number>(16)
   const [ seasonId, setSeasonId ] = useState<number>(41087)
 
-    const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing>("get botola standing", async () => {
+    const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
         const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
         return result.data.standings
     })
