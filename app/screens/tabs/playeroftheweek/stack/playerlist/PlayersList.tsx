@@ -16,7 +16,7 @@ export default function PlayersList() {
     return players
   })
 
-  if(error) return <PlayerListErrorHandler  message="Network Error. Check your network Status and try again." />
+  if(error) return <PlayerListErrorHandler  message="Network Error. Check your network and try again." />
 
   return (
     <PlayerListWrapper>
