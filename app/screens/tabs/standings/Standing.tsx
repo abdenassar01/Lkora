@@ -1,18 +1,18 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { useQuery } from 'react-query'
 import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
+import ErrorHandler from '../../../utils/error/ErrorHandler';
 import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
 import SkeltonStandingRefetchLoader from './loader/SkeltonStandingRefetchLoader';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
 export default function Fixtures() {
 
-  const [ tournomantId, setTournomantId ] = useState<number>(937)
-  const [ seasonId, setSeasonId ] = useState<number>(45552)
+  const [ tournomantId, setTournomantId ] = useState<number>(16)
+  const [ seasonId, setSeasonId ] = useState<number>(41087)
 
     const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
         const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
@@ -29,11 +29,11 @@ export default function Fixtures() {
     },[tournomantId])
 
     if(isLoading) return <SkeltonStandingLoader />
-    if(error) return <TieBreakingRuleText>check network</TieBreakingRuleText>
+    if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
-      <BigHeading>{ data && data[0]?.name }</BigHeading>
+      <BigHeading>{ data && data[0]?.tournament.uniqueTournament.name }</BigHeading>
       <TournamentsWrapper horizontal>
         {
           TOURNOMANTS.map((tournomant) => (
@@ -53,14 +53,17 @@ export default function Fixtures() {
       <TieBreakingRule>
         <TieBreakingRuleHeading>Tie Breaking Rule</TieBreakingRuleHeading>
         <TieBreakingRuleText>
-          { data && data[0]?.tieBreakingRule?.text }
+          { 
+            (isRefetching) ? "Loading..." :
+            data && data[0]?.tieBreakingRule?.text 
+          }
         </TieBreakingRuleText>
       </TieBreakingRule>
 
         {
           (isRefetching) ? <SkeltonStandingRefetchLoader /> :
           data?.map(group => (
-            <Table key={ group?.toString() }>
+            <Table key={ Math.random() * Math.random() }>
               <Row>
                   <Avatar source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ tournomantId }/image` }} ></Avatar>
                   <Column style={{ width:  "7%" }}>#</Column>

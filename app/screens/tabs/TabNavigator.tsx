@@ -4,6 +4,7 @@ import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
 import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
 import Standing from './standings/Standing';
 import BotolaStack from './botola/BotolaStack';
+import { COLOR } from '../../assets/color';
 
 export default function TabNavigator() {
     
@@ -19,8 +20,8 @@ export default function TabNavigator() {
           bottom: 10,
           left: 10,
           right: 10,
-          borderRadius: 50,
-          backgroundColor: "#ffffff",
+          borderRadius: 10,
+          backgroundColor: COLOR.text,
           elevation: 3,
           height: 50
         }

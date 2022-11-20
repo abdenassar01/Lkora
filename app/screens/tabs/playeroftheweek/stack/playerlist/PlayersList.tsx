@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import { PlayerType } from '../../../../../../types/topplayer';
+import PlayerListErrorHandler from './error/PlayerListErrorHandler';
 import SkeltonPlayerOfTheWeekLoader from './loader/SkeltonPlayerOfTheWeekLoader';
 import { Player, Left, PlayerAvatar, PlayerListWrapper, PlayerName, PressablePlayer, Rating, TeamName, RatingWrapper, Heading, TmpText, Spacer } from './styles/Styles'
 
@@ -15,7 +16,7 @@ export default function PlayersList() {
     return players
   })
 
-  if(error) return <TmpText>check network</TmpText>
+  if(error) return <PlayerListErrorHandler  message="Network Error. Check your network and try again." />
 
   return (
     <PlayerListWrapper>
