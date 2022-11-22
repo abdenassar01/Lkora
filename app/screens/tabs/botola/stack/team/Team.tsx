@@ -2,8 +2,23 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import WithGoBackHeader from '../../../../../utils/header/withgoback/WithGoBackHeader'
 import { Avatar, Card, CardRightSide, Heading, Spacer, StaduimImage, TeamWrapper, Title, TournomantLogo } from './styles/Styles'
+import { useQuery } from 'react-query'
+import ErrorHandler from '../../../../../utils/error/ErrorHandler'
+import axios from 'axios'
+import { useRoute } from '@react-navigation/native'
 
 export default function Team() {
+
+    const route: any = useRoute();
+
+    const { data, isFetching, error } = useQuery("Get Team Details", async () => {
+        const result = await axios.get(`https://api.sofascore.app/api/v1/team/${ route?.params?.id }`);
+        console.log(result.data);
+    })
+
+    if(isFetching) return <Heading>loading...</Heading>
+    if(error) return <ErrorHandler message='Network Error. Please check your network status and try again.' />
+    
   return (
     <TeamWrapper>
         <WithGoBackHeader tournament='Arsonal'/>
