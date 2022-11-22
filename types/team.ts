@@ -30,7 +30,7 @@ type Staduim = {
 
 type Venue  = {
     city: City,
-    staduim: Staduim
+    stadium: Staduim
 }
 
 type Team = {

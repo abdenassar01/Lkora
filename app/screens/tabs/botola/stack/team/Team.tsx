@@ -6,14 +6,15 @@ import { useQuery } from 'react-query'
 import ErrorHandler from '../../../../../utils/error/ErrorHandler'
 import axios from 'axios'
 import { useRoute } from '@react-navigation/native'
+import TeamType from '../../../../../../types/team'
 
 export default function Team() {
 
     const route: any = useRoute();
 
-    const { data, isFetching, error } = useQuery("Get Team Details", async () => {
+    const { data, isFetching, error } = useQuery<TeamType>("Get Team Details", async () => {
         const result = await axios.get(`https://api.sofascore.app/api/v1/team/${ route?.params?.id }`);
-        console.log(result.data);
+        return result?.data?.team;
     })
 
     if(isFetching) return <Heading>loading...</Heading>
@@ -23,31 +24,31 @@ export default function Team() {
     <TeamWrapper>
         <WithGoBackHeader tournament='Arsonal'/>
         <Card>
-            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/42/image` }}></Avatar>
+            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ data?.id }/image` }}></Avatar>
             <CardRightSide>
-                <Heading>Arsonal</Heading>
-                <Heading>Premier League</Heading>
-                <Heading>1890</Heading>
+                <Heading>{ data?.name }</Heading>
+                <Heading>{ data?.tournament.name }</Heading>
+                <Heading>{ data && new Date(data?.foundationDateTimestamp * 1000).getFullYear() }</Heading>
             </CardRightSide>
-            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/team/42/image` }}></TournomantLogo>
+            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ data?.tournament.id }/image` }}></TournomantLogo>
         </Card>
         <Title>Manager</Title>
         <Card>
-            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/42/image` }}></Avatar>
+            <Avatar source={{ uri: `https://api.sofascore.app/api/v1/manager/${ data?.manager?.id }/image` }}></Avatar>
             <CardRightSide>
-                <Heading>Mickel Artita</Heading>
-                <Heading>Espana</Heading>
+                <Heading>{ data?.manager.name }</Heading>
+                <Heading>{ data?.manager.country.name }</Heading>
             </CardRightSide>
         </Card>
         <Title>Staduim</Title>
         <Card>
             <Spacer />
             <CardRightSide>
-                <Heading>Emirates Stadium</Heading>
-                <Heading>60272</Heading>
-                <Heading>London</Heading>
+                <Heading>{ data?.venue.stadium.name }</Heading>
+                <Heading>{ data?.venue.stadium.capacity }</Heading>
+                <Heading>{ data?.venue.city.name }</Heading>
             </CardRightSide>
-            <StaduimImage source={{ uri: `https://api.sofascore.app/api/v1/team/42/image` }}></StaduimImage>
+            <StaduimImage source={{ uri: `https://i.imgur.com/tMBDNIu.jpg` }}></StaduimImage>
             <Spacer />
         </Card>
         <Title>Players List</Title>
