@@ -27,10 +27,10 @@ export default function Team() {
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ data?.id }/image` }}></Avatar>
             <CardRightSide>
                 <Heading>{ data?.name }</Heading>
-                <Heading>{ data?.tournament.name }</Heading>
+                <Heading>{ data?.tournament.uniqueTournament.name }</Heading>
                 <Heading>{ data && new Date(data?.foundationDateTimestamp * 1000).getFullYear() }</Heading>
             </CardRightSide>
-            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ data?.tournament.id }/image` }}></TournomantLogo>
+            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ data?.tournament.uniqueTournament.id }/image` }}></TournomantLogo>
         </Card>
         <Title>Manager</Title>
         <Card>

@@ -3,9 +3,14 @@ type Category = {
     id: string
 }
 
+type UniqueTournomant = {
+    name: string,
+    id: string
+}
+
 type Tournomant = {
     name: string,
-    id: number
+    uniqueTournament: UniqueTournomant
 }
 
 type Country = {
