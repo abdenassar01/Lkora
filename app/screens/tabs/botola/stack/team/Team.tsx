@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Standing() {
+export default function Team() {
   return (
     <View>
-      <Text>Standing</Text>
+      <Text>Team</Text>
     </View>
   )
 }
