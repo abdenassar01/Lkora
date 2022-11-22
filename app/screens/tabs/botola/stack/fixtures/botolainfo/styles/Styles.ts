@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
@@ -20,6 +20,10 @@ export const Card = styled(View)`
 
 export const Team = styled(View)`
     align-items: center;
+`
+
+export const TeamPressable = styled(TouchableOpacity)`
+
 `
 
 export const TeamName = styled(MainText)`
