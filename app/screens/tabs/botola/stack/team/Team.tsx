@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import WithGoBackHeader from '../../../../../utils/header/withgoback/WithGoBackHeader'
 import { Avatar, Card, CardRightSide, Heading, Spacer, StaduimImage, TeamWrapper, Title, TournomantLogo } from './styles/Styles'

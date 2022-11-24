@@ -15,6 +15,7 @@ export const Player = styled(TouchableOpacity)`
     flex-direction: row;
     border-radius: 10px;
     justify-content: space-between;
+    align-items: center;
 `
 
 export const Avatar = styled(Image)`
@@ -32,11 +33,16 @@ export const CentreSection = styled(View)`
 `
 
 export const RightSection = styled(View)`
-
+    align-items: center;
+    justify-content: center;
+    border: 2px solid ${ COLOR.main };
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
 `
 
 export const ShirtNumber = styled(MainText)`
-    font-size: 40px;
+    font-size: 25px;
     color: ${ COLOR.main };
 `
 
