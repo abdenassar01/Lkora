@@ -1,4 +1,4 @@
-import { Avatar, CentreSection, LeftSection, Player, PlayerName, PlayersWrapper, RightSection, ShirtNumber, TeamName } from './styles/Styles'
+import { Avatar, CentreSection, LeftSection, Player, PlayerName, PlayersWrapper, RightSection, ShirtNumber, Spacer, TeamName } from './styles/Styles'
 
 type Props = {
     id?: number 
@@ -19,6 +19,7 @@ export default function PlayerList({ id }: Props) {
             <ShirtNumber>10</ShirtNumber>
         </RightSection>
       </Player>
+      <Spacer />
     </PlayersWrapper>
   )
 }

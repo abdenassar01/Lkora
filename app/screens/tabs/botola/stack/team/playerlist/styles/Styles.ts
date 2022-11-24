@@ -49,3 +49,7 @@ export const TeamName = styled(MainText)`
     font-size: 13px;
     color: ${ COLOR.textInverted };
 `
+
+export const Spacer = styled(View)`
+    height: 60px;
+`
