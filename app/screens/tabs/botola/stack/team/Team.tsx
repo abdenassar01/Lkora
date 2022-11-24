@@ -28,17 +28,17 @@ export default function Team() {
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ data?.id }/image` }}></Avatar>
             <CardRightSide>
                 <Heading>{ data?.name }</Heading>
-                <Heading>{ data?.tournament.uniqueTournament.name }</Heading>
+                <Heading>{ data?.tournament?.uniqueTournament.name }</Heading>
                 <Heading>{ data && new Date(data?.foundationDateTimestamp * 1000).getFullYear() }</Heading>
             </CardRightSide>
-            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ data?.tournament.uniqueTournament.id }/image` }}></TournomantLogo>
+            <TournomantLogo source={{ uri: `https://api.sofascore.app/api/v1/unique-tournament/${ data?.tournament?.uniqueTournament.id }/image` }}></TournomantLogo>
         </Card>
         <Title>Manager</Title>
         <Card>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/manager/${ data?.manager?.id }/image` }}></Avatar>
             <CardRightSide>
-                <Heading>{ data?.manager.name }</Heading>
-                <Heading>{ data?.manager.country.name }</Heading>
+                <Heading>{ data?.manager?.name }</Heading>
+                <Heading>{ data?.manager?.country.name }</Heading>
             </CardRightSide>
         </Card>
         <Title>Staduim</Title>
