@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { PlayerType } from '../../../../../../../types/player';
 import ErrorHandler from '../../../../../../utils/error/ErrorHandler';
 import { Avatar, CentreSection, LeftSection, Player, PlayerName, PlayersWrapper, RightSection, ShirtNumber, Spacer, TeamName } from './styles/Styles'
 
@@ -9,7 +10,7 @@ type Props = {
 
 export default function PlayerList({ id }: Props) {
 
-  const { data, isFetching, error } = useQuery("Get Team Details", async () => {
+  const { data, isFetching, error } = useQuery<PlayerType[]>("Get Team players", async () => {
     const result = await axios.get(`https://api.sofascore.app/api/v1/team/${ id }/players`);
     return result?.data?.players;
   })
@@ -20,17 +21,17 @@ export default function PlayerList({ id }: Props) {
   return (
     <PlayersWrapper>
       {
-        data?.map((player: any) => (
-          <Player onPress={ () => console.log("Player Clicked") }>
+        data?.map((player) => (
+          <Player key={ player?.player.id } onPress={ () => console.log("Player Clicked") }>
             <LeftSection>  
-              <Avatar source={{ uri: "https://api.sofascore.app/api/v1/player/794839/image" }}></Avatar>
+              <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></Avatar>
               <CentreSection>
-                  <PlayerName>Neymar Js</PlayerName>
-                  <TeamName>Paris sant germain</TeamName>
+                  <PlayerName>{ player?.player.name }</PlayerName>
+                  <TeamName>{ player?.player.team?.name }</TeamName>
               </CentreSection>
             </LeftSection>
             <RightSection>
-                <ShirtNumber>10</ShirtNumber>
+                <ShirtNumber>{ player?.player.jerseyNumber }</ShirtNumber>
             </RightSection>
           </Player>
         ))
