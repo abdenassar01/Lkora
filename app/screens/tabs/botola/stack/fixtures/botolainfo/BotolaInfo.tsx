@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { UniqueTournomant } from '../../../../../../../types/uniqueTournomant'
+import ErrorHandler from '../../../../../../utils/error/ErrorHandler'
 import { BotolaColorsLine, BotolaInfoWrapper, Card, HelperText, Label, LeftLine, Team, TeamLogo, TeamName, TeamPressable } from './styles/Styles'
 
 export default function BotolaInfo() {
@@ -15,7 +16,7 @@ export default function BotolaInfo() {
     const navigation: any = useNavigation();
 
     if(isLoading) return <Label>loading...</Label>
-    if(error) return <Label>error</Label>
+    if(error) return <ErrorHandler message="Network Error. Please check your network status and try again." />
 
   return (
     <>
