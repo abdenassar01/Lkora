@@ -36,7 +36,7 @@ export default function Team() {
         <Card>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/manager/${ data?.manager?.id }/image` }}></Avatar>
             <CardRightSide>
-                <Heading>{ data?.manager?.name }</Heading>
+                <Heading style={{ fontSize: 22 }}>{ data?.manager?.name }</Heading>
                 <Heading>{ data?.manager?.country.name }</Heading>
             </CardRightSide>
         </Card>
