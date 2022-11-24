@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import Fixtures from './stack/fixtures/Fixtures';
-import Standing from './stack/standing/Standing';
+import Team from './stack/team/Team';
 
 export default function BotolaStack() {
 
@@ -9,7 +9,7 @@ export default function BotolaStack() {
   return (
     <Stack.Navigator initialRouteName='MainScreen' screenOptions={{ headerShown: false }}>
       <Stack.Screen name="BotolaFixtures" component={ Fixtures } />
-      <Stack.Screen name="BotolaStanding" component={ Standing } />
+      <Stack.Screen name="Team" component={ Team } />
     </Stack.Navigator>
   )
 }

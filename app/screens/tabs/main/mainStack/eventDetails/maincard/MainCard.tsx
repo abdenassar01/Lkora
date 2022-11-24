@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import { EventDetails } from '../../../../../../../types/eventDetails'
 import { Away, CardWrapper, DatePlaceHolder, HelperText, Home, Line, MatchStatusWrapper, Score, ScoreWrapper, StaduimTitle, Status, Team, TeamLogo, TeamTitle, Time, TimeWrapper } from './styles/styles'
 
@@ -6,7 +7,9 @@ type Props = {
 }
 
 export default function MainCard({ event }: Props) {
-    
+  
+  const navigation: any = useNavigation();
+
   function timeConverter(timestamp: number){
     const a = new Date(timestamp * 1000);
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -27,7 +30,7 @@ export default function MainCard({ event }: Props) {
       <Line />
       <ScoreWrapper>
         <Home>
-            <Team>
+            <Team onPress={ () => navigation.navigate("Team", { id: event?.homeTeam.id }) }>
                 <TeamTitle>{ event?.homeTeam?.shortName }</TeamTitle>
                 <TeamLogo source={{ uri: `https://api.sofascore.app/api/v1/team/${ event?.homeTeam.id }/image` }} />
                 <HelperText>Home</HelperText>
@@ -45,7 +48,7 @@ export default function MainCard({ event }: Props) {
             <Status>{ event?.status.description }</Status>
         </MatchStatusWrapper>
         <Away>
-            <Team>
+            <Team  onPress={ () => navigation.navigate("Team", { id: event?.awayTeam.id }) }>
                 <TeamTitle>{ event?.awayTeam?.name }</TeamTitle>
                 <TeamLogo source={{ uri: `https://api.sofascore.app/api/v1/team/${ event?.awayTeam.id }/image` }} />
                 <HelperText>Away</HelperText>
