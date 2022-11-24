@@ -7,6 +7,7 @@ import ErrorHandler from '../../../../../utils/error/ErrorHandler'
 import axios from 'axios'
 import { useRoute } from '@react-navigation/native'
 import TeamType from '../../../../../../types/team'
+import PlayerList from './playerlist/PlayerList'
 
 export default function Team() {
 
@@ -52,6 +53,7 @@ export default function Team() {
             <Spacer />
         </Card>
         <Title>Players List</Title>
+        <PlayerList id={ data?.id } />
     </TeamWrapper>
   )
 }
