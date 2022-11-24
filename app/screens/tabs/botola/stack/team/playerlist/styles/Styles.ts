@@ -29,7 +29,7 @@ export const LeftSection = styled(View)`
 `
 
 export const CentreSection = styled(View)`
-
+    margin-left: 10px;
 `
 
 export const RightSection = styled(View)`

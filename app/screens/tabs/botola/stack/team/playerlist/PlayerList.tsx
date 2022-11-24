@@ -24,19 +24,18 @@ export default function PlayerList({ id }: Props) {
         data?.map((player) => (
           <Player key={ player?.player.id } onPress={ () => console.log("Player Clicked") }>
             <LeftSection>  
-              <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></Avatar>
+              <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }} ></Avatar>
               <CentreSection>
                   <PlayerName>{ player?.player.name }</PlayerName>
                   <TeamName>{ player?.player.team?.name }</TeamName>
               </CentreSection>
             </LeftSection>
             <RightSection>
-                <ShirtNumber>{ player?.player.jerseyNumber }</ShirtNumber>
+                <ShirtNumber>{ player?.player.jerseyNumber ?? "🙅‍♀️" }</ShirtNumber>
             </RightSection>
           </Player>
         ))
       }
-     
       <Spacer />
     </PlayersWrapper>
   )
