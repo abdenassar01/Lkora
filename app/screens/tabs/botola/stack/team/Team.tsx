@@ -44,9 +44,9 @@ export default function Team() {
         <Card>
             <Spacer />
             <CardRightSide>
-                <Heading>{ data?.venue.stadium.name }</Heading>
-                <Heading>{ data?.venue.stadium.capacity }</Heading>
-                <Heading>{ data?.venue.city.name }</Heading>
+                <Heading>{ data?.venue?.stadium.name ?? "No Staduim" }</Heading>
+                <Heading>{ data?.venue?.stadium.capacity }</Heading>
+                <Heading>{ data?.venue?.city.name }</Heading>
             </CardRightSide>
             <StaduimImage source={{ uri: `https://i.imgur.com/tMBDNIu.jpg` }}></StaduimImage>
             <Spacer />

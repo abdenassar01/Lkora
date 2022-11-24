@@ -1,4 +1,4 @@
-import { Image, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
 import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
@@ -36,7 +36,7 @@ export const Home = styled(View)`
 
 `
 
-export const Team = styled(View)`
+export const Team = styled(TouchableOpacity)`
     align-items: center;
     padding-bottom: 5px;
 `
