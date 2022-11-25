@@ -10,6 +10,6 @@ export const dark = {
     background: "#18191A",
     main: "#FF2782",
     text: "#242526",
-    textInverted: "white",
+    textInverted: "#E4E6EB",
     helperText: "#B6B6B6"
 }
