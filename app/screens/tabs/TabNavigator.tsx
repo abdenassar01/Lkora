@@ -27,22 +27,26 @@ export default function TabNavigator() {
         }
       }} 
     >
-      <Tab.Screen name='MainSTack' component={ MainStack } 
+      <Tab.Screen name='MainSTack' 
+        children={ () => <MainStack /> } 
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
       />
-      <Tab.Screen name='Botola' component={ BotolaStack } 
+      <Tab.Screen name='Botola'
+        children={ () => <BotolaStack /> }  
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Botola" icon="football" />
         }}
       />
-      <Tab.Screen name='Matches' component={ Standing } 
+      <Tab.Screen name='Matches'
+        children={ () => <Standing /> } 
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Standing" icon="ios-layers" />
         }}
       /> 
-      <Tab.Screen name='PlayerOfTheWeek' component={ PlayerOfTheWeekStack } 
+      <Tab.Screen name='PlayerOfTheWeek'
+        children={ () => <PlayerOfTheWeekStack /> }
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Top Players" icon="person-circle-outline" />
         }}
