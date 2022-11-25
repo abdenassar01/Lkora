@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query'
+import { useTheme } from 'styled-components';
 import { Standing } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
@@ -14,22 +15,22 @@ export default function Fixtures() {
   const [ tournomantId, setTournomantId ] = useState<number>(16)
   const [ seasonId, setSeasonId ] = useState<number>(41087)
 
-    const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
-        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
-        return result.data.standings
-    })
+  const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
+      const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
+      return result.data.standings
+  })
 
-    const onTournomantChange = (tournomant: Tournomant) => {
-      setSeasonId(tournomant.seasonId);
-      setTournomantId(tournomant.id);
-    }
+  const onTournomantChange = (tournomant: Tournomant) => {
+    setSeasonId(tournomant.seasonId);
+    setTournomantId(tournomant.id);
+  }
 
-    useEffect(() => {
-      refetch();
-    },[tournomantId])
+  useEffect(() => {
+    refetch();
+  },[tournomantId])
 
-    if(isLoading) return <SkeltonStandingLoader />
-    if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
+  if(isLoading) return <SkeltonStandingLoader />
+  if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
