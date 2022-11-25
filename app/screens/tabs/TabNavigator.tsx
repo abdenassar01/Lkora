@@ -6,7 +6,11 @@ import Standing from './standings/Standing';
 import BotolaStack from './botola/BotolaStack';
 import { COLOR } from '../../assets/color';
 
-export default function TabNavigator() {
+type Props = {
+  onThemeToggle: () => void
+}
+
+export default function TabNavigator({ onThemeToggle }: Props) {
     
   const Tab = createBottomTabNavigator();
 
@@ -28,7 +32,7 @@ export default function TabNavigator() {
       }} 
     >
       <Tab.Screen name='MainSTack' 
-        children={ () => <MainStack /> } 
+        children={ () => <MainStack onThemeToggle={ onThemeToggle } /> } 
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
