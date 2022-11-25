@@ -11,11 +11,12 @@ export const LiveCartWrapper = styled(View)`
     align-items: center;
     margin: 5px;
     border-radius: 10px;
-    background-color: white;
+    background-color: ${ props => props.theme.text };
     elevation: 5;
 `
 
 export const LiveText = styled(MainText)`
     text-align: center; 
     font-size: 16px;
+    color: ${ props => props.theme.textInverted }; 
 `
