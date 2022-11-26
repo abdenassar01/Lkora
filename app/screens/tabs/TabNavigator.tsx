@@ -4,7 +4,6 @@ import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
 import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
 import Standing from './standings/Standing';
 import BotolaStack from './botola/BotolaStack';
-import { COLOR } from '../../assets/color';
 import { withTheme } from 'styled-components';
 
 type Props = {
