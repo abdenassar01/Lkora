@@ -4,14 +4,14 @@ import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const BotolaFixWrapper = styled(ScrollView)`
-    background-color: ${ COLOR.background };   
+    background-color: ${ props => props.theme.background };   
 `
 
 export const HeroTitle = styled(MainText)`
     font-size: 25px;
     text-align: center;
     padding: 10px 0;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const Heading = styled(MainText)`
@@ -27,7 +27,7 @@ export const Heading = styled(MainText)`
 
 export const StyledText = styled(MainText)`
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const Logo = styled(Image)`
