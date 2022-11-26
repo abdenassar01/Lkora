@@ -4,7 +4,7 @@ import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const TeamWrapper = styled(ScrollView)`
-    background-color: ${ COLOR.background };
+    background-color: ${ props => props.theme.background };
 `
 
 export const Card = styled(View)`
@@ -13,7 +13,7 @@ export const Card = styled(View)`
     padding: 10px;
     width: 95%;
     border-radius: 10px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
     align-items: center;
     elevation: 5;
 `
@@ -33,7 +33,7 @@ export const CardRightSide = styled(View)`
 
 export const Heading = styled(MainText)`
     font-size: 14px;
-    color: ${ COLOR.textInverted };
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Avatar = styled(Image)`
@@ -46,7 +46,7 @@ export const Title = styled(MainText)`
     text-align: center;
     font-size: 20px;
     margin: 5px 0;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const StaduimImage = styled(Image)`
