@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query'
-import { Standing } from '../../../../types/standing';
+import { withTheme } from 'styled-components';
+import { StandingType } from '../../../../types/standing';
 import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
 import ErrorHandler from '../../../utils/error/ErrorHandler';
@@ -9,27 +10,27 @@ import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
 import SkeltonStandingRefetchLoader from './loader/SkeltonStandingRefetchLoader';
 import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHorisontal, Table, TieBreakingRule, TieBreakingRuleHeading, TieBreakingRuleText, TournamentsWrapper, TournomantItem, TournomantItemPressable } from './styles/Styles'
 
-export default function Fixtures() {
+function Standing({ theme }: any) {
 
   const [ tournomantId, setTournomantId ] = useState<number>(16)
   const [ seasonId, setSeasonId ] = useState<number>(41087)
 
-    const { data, isLoading, error, refetch, isRefetching } = useQuery<Standing[]>("get botola standing", async () => {
-        const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
-        return result.data.standings
-    })
+  const { data, isLoading, error, refetch, isRefetching } = useQuery<StandingType[]>("get botola standing", async () => {
+      const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
+      return result.data.standings
+  })
 
-    const onTournomantChange = (tournomant: Tournomant) => {
-      setSeasonId(tournomant.seasonId);
-      setTournomantId(tournomant.id);
-    }
+  const onTournomantChange = (tournomant: Tournomant) => {
+    setSeasonId(tournomant.seasonId);
+    setTournomantId(tournomant.id);
+  }
 
-    useEffect(() => {
-      refetch();
-    },[tournomantId])
+  useEffect(() => {
+    refetch();
+  },[tournomantId])
 
-    if(isLoading) return <SkeltonStandingLoader />
-    if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
+  if(isLoading) return <SkeltonStandingLoader />
+  if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ justifyContent: 'center' }}>
@@ -41,8 +42,8 @@ export default function Fixtures() {
                 <TournomantItem 
                   style={{ 
                     backgroundColor: 
-                      (tournomantId === tournomant.id) ? COLOR.main : COLOR.text, 
-                    color: (tournomantId === tournomant.id) ? COLOR.text : COLOR.helperText
+                      (tournomantId === tournomant.id) ? theme.main : theme.text, 
+                    color: (tournomantId === tournomant.id) ? theme.text : theme.helperText
                   }}  
                 >{ tournomant.label }</TournomantItem>
               </TournomantItemPressable> 
@@ -101,3 +102,5 @@ export default function Fixtures() {
     </BotolaFixWrapper>
   )
 }
+
+export default withTheme(Standing)

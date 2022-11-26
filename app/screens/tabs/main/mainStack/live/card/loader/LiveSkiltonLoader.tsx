@@ -1,8 +1,9 @@
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
+import { withTheme } from 'styled-components';
 
-export default function LiveSkiltonLoader() {
+function LiveSkiltonLoader(props: any) {
   return (
-    <SkeletonPlaceholder borderRadius={ 10 } >
+    <SkeletonPlaceholder borderRadius={ 10 } backgroundColor={ props.theme.text } highlightColor={ props.theme.helperText } >
       <SkeletonPlaceholder.Item flexDirection="row" alignItems="center" >
         <SkeletonPlaceholder.Item width={250} height={170} borderRadius={10} marginRight={ 10 } marginLeft={ 5 } />
         <SkeletonPlaceholder.Item  width={250} height={170} borderRadius={10}/>
@@ -10,3 +11,5 @@ export default function LiveSkiltonLoader() {
     </SkeletonPlaceholder>
   )
 }
+
+export default withTheme(LiveSkiltonLoader)

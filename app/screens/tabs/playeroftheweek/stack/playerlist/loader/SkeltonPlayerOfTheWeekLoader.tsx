@@ -1,9 +1,9 @@
-
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder'
+import { withTheme } from 'styled-components'
 
-export default function SkeltonPlayerOfTheWeekLoader() {
+function SkeltonPlayerOfTheWeekLoader(props: any) {
   return (
-    <SkeletonPlaceholder>
+    <SkeletonPlaceholder backgroundColor={ props.theme.text } highlightColor={ props.theme.helperText }> 
         <SkeletonPlaceholder.Item>
             {
                 [...Array(5)].map(ele => (
@@ -23,3 +23,5 @@ export default function SkeltonPlayerOfTheWeekLoader() {
     </SkeletonPlaceholder>
   )
 }
+
+export default withTheme(SkeltonPlayerOfTheWeekLoader)

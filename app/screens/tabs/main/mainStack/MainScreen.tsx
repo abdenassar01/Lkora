@@ -4,10 +4,15 @@ import Live from './live/Live';
 import Scheduled from './scheduled/Scheduled';
 import { Heading,  MainScreenWrapper, Section } from "./styles/Styles";
 
-export default function MainScreen() {
+
+type Props = {
+  onThemeToggle: () => void
+}
+
+export default function MainScreen({ onThemeToggle }: Props) {
   return (
     <>
-      <Header />
+      <Header onThemeToggle={ onThemeToggle } />
       <MainScreenWrapper>
         <Section>
           <Heading>Live Match</Heading>

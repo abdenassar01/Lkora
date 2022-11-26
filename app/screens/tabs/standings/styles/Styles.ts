@@ -5,13 +5,13 @@ import { MainText } from "../../../../assets/text/Text";
 
 
 export const BotolaFixWrapper = styled(ScrollView)`
-    background-color: ${ COLOR.background };   
+    background-color: ${ props => props.theme.background };   
 `
 
 export const BigHeading = styled(MainText)`
     font-size: 25px;
     padding: 10px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     text-align: center;
 `
 
@@ -27,8 +27,8 @@ export const TournomantItem = styled(MainText)`
     padding: 5px 10px;
     margin: 0 3px;
     border-radius: 50px;
-    color: ${ COLOR.helperText };
-    background-color: ${ COLOR.text };
+    color: ${ props => props.theme.helperText };
+    background-color: ${ props => props.theme.text };
     font-weight: 600;  
     font-size: 14px; 
 `
@@ -36,7 +36,7 @@ export const TournomantItem = styled(MainText)`
 export const TieBreakingRule = styled(View)`
     margin: 10px;
     padding: 10px;
-    background-color: ${ COLOR.text }; 
+    background-color: ${ props => props.theme.text }; 
     align-items: center;
     border-radius: 10px;
     elevation: 5;
@@ -44,9 +44,9 @@ export const TieBreakingRule = styled(View)`
 
 export const TieBreakingRuleHeading = styled(MainText)`
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     border-bottom-style: solid;
-    border-bottom-color: ${ COLOR.main };
+    border-bottom-color: ${ props => props.theme.main };
     border-bottom-width: 2px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -57,12 +57,13 @@ export const TieBreakingRuleHeading = styled(MainText)`
 
 export const TieBreakingRuleText = styled(MainText)`
     text-align: center;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Table = styled(View)`
     margin: 10px;
     padding: 10px;
-    background-color: ${ COLOR.text }; 
+    background-color: ${ props => props.theme.text }; 
     border-radius: 10px;
     elevation: 5;
 `
@@ -73,7 +74,7 @@ export const Row = styled(View)`
     padding-top: 5px;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: ${ COLOR.background };
+    border-bottom-color: ${ props => props.theme.background };
 `
 
 export const Column = styled(MainText)`
@@ -81,6 +82,7 @@ export const Column = styled(MainText)`
     height: 30px; 
     text-align: center;
     align-items: center;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Spacer = styled(View)`

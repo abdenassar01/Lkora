@@ -6,15 +6,19 @@ import { useQuery } from 'react-query'
 import { Text } from 'react-native'
 import axios from 'axios'
 import SkeltonDetailsLoader from './loader/SkeltonDetailsLoader'
+import ErrorHandler from '../../../../../utils/error/ErrorHandler'
+import { useRoute } from '@react-navigation/native'
 
-export default function EventDetails({ route }: any) {
+export default function EventDetails() {
 
+  const route: any = useRoute()
+  
   const { data, isFetching, error } = useQuery("get match details", async () => {
     const result = await axios.get(`https://api.sofascore.com/api/v1/event/${ route.params.id }`);
     return result.data
   })
 
-  if(error) return <Text>error occured</Text>
+  if(error) return <ErrorHandler message='Network Error. Please check your network status and try again' />
 
   return (
     <EventDetailsWrappe>

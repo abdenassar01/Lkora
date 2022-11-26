@@ -1,6 +1,5 @@
 import { TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
 
 export const ScheduledErrorWrapper = styled(View)`
@@ -9,22 +8,22 @@ export const ScheduledErrorWrapper = styled(View)`
     align-items: center;
     margin: 5px 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: ${ props => props.theme.main };
     elevation: 5;
 `
 
 export const ErrorText = styled(MainText)`
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     text-align: center;
 `
 
 export const RefrechButton = styled(TouchableOpacity)`
     margin: 10px;
     padding: 7px 32px;
-    background-color: ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
     border-radius: 50px;
 `
 
 export const ButtonText = styled(MainText)`
-    color: ${ COLOR.text };
+    color: ${ props => props.theme.text };
 `

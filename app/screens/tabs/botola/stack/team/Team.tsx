@@ -1,4 +1,3 @@
-import React from 'react'
 import WithGoBackHeader from '../../../../../utils/header/withgoback/WithGoBackHeader'
 import { Avatar, Card, CardRightSide, Heading, Spacer, StaduimImage, TeamWrapper, Title, TournomantLogo } from './styles/Styles'
 import { useQuery } from 'react-query'
@@ -17,7 +16,7 @@ export default function Team() {
         return result?.data?.team;
     })
 
-    if(isFetching) return <Heading>loading...</Heading>
+    if(isFetching) return <TeamWrapper><Heading>loading...</Heading></TeamWrapper>
     if(error) return <ErrorHandler message='Network Error. Please check your network status and try again.' />
     
   return (

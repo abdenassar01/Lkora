@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 import { PlayerPerformance } from '../../../../../../types/playerstats';
 import SkeltonPlayerDetailsLoader from './loader/SkeltonPlayerDetailsLoader';
+import ErrorHandler from '../../../../../utils/error/ErrorHandler';
 
 export default function PlayerDetails() {
 
@@ -18,7 +19,7 @@ export default function PlayerDetails() {
     return result.data
   })
 
-  if(error) return <Paragraph>error happened check your network</Paragraph>
+  if(error) return <ErrorHandler message='Network Error. Please check your network and try again.' />
 
   return (
     <PlayerDetailsWrapper>

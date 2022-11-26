@@ -1,6 +1,5 @@
 import { ScrollView, View } from "react-native"
 import styled from "styled-components"
-import { COLOR } from "../../../../../../../../../assets/color"
 import { MainText } from "../../../../../../../../../assets/text/Text"
 
 export const StatisticsWrapper = styled(ScrollView)`
@@ -19,6 +18,7 @@ export const Value = styled(MainText)`
     font-size: 16px;
     width: 80px;
     text-align: left;
+    color: ${ props => props.theme.textInverted };
 `  
 
 export const ValueFlipped = styled(Value)`
@@ -29,6 +29,7 @@ export const Label = styled(MainText)`
     font-size: 16px;
     text-align: center;
     width: 50%;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Period = styled(View)`
@@ -37,7 +38,7 @@ export const Period = styled(View)`
 
 export const Heading = styled(MainText)`
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     font-size: 16px;
     font-weight: 600;
     border-bottom-color: purple;
@@ -49,7 +50,7 @@ export const Heading = styled(MainText)`
 
 export const GroupeName = styled(MainText)`
     font-size: 14px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     text-align: center;
 `
 

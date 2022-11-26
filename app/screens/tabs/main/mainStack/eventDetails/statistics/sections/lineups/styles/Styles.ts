@@ -9,7 +9,7 @@ export const LineUpWrapper = styled(ScrollView)`
 
 export const Heading = styled(MainText)`
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     font-size: 16px;
     font-weight: 600;
     border-bottom-color: purple;
@@ -24,7 +24,7 @@ export const PlayerWrapper = styled(Pressable)`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: ${ COLOR.background };
+    background-color: ${ props => props.theme.background };
     margin-bottom: 5px;
     border-radius: 50px;
 `
@@ -32,7 +32,7 @@ export const PlayerWrapper = styled(Pressable)`
 export const Position = styled(MainText)`
     font-weight: 600;
     text-align: center;
-    background-color: ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
     color: white;
     border-radius: 50px;
     width: 25px;
@@ -44,16 +44,18 @@ export const ShirtNumber = styled(MainText)`
     height: 25px;
     width: 25px;
     text-align: center;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Name = styled(MainText)`
-
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Rating = styled(MainText)`
     height: 25px;
     width: 25px;
     text-align: center;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Avatar = styled(Image)`
@@ -64,7 +66,7 @@ export const Avatar = styled(Image)`
 
 export const GroupeName = styled(MainText)`
     font-size: 14px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     text-align: center;
 `
 

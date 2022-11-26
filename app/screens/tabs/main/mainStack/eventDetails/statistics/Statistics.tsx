@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
-import { COLOR } from '../../../../../../assets/color';
+import { withTheme } from 'styled-components';
 import LineUps from './sections/lineups/LineUps';
 import Stats from './sections/stats/Stats';
 import Summary from './sections/summary/Summary';
 import { ButtonLabel, Container, NavBar, NavItem, Spacer } from './styles/Styles'
 
 type Props = {
-  id: number
+  id: number,
+  theme: any
 }
 
-export default function Statistics({ id }: Props) {
+function Statistics({ id, theme }: Props) {
 
   const [section, setSection] = useState<string>("stats");
 
@@ -19,24 +20,24 @@ export default function Statistics({ id }: Props) {
         <NavBar>
           <NavItem onPress={() => setSection("stats")}
             style={{
-              backgroundColor: section === "stats" ? COLOR.main : COLOR.background,
+              backgroundColor: section === "stats" ? theme.main : theme.background,
             }}
           >
-            <ButtonLabel style={{ color: section === "stats" ? COLOR.text : COLOR.helperText }}>Stats</ButtonLabel>
+            <ButtonLabel style={{ color: section === "stats" ? theme.text : theme.helperText }}>Stats</ButtonLabel>
           </NavItem>
           <NavItem onPress={() => setSection("lineups")}
             style={{
-              backgroundColor: section === "lineups" ? COLOR.main : COLOR.background,
+              backgroundColor: section === "lineups" ? theme.main : theme.background,
             }}
           >
-            <ButtonLabel style={{ color: section === "lineups" ? COLOR.text : COLOR.helperText }}>Line-up</ButtonLabel>
+            <ButtonLabel style={{ color: section === "lineups" ? theme.text : theme.helperText }}>Line-up</ButtonLabel>
           </NavItem>
           <NavItem onPress={() => setSection("summary")}
             style={{
-              backgroundColor: section === "summary" ? COLOR.main : COLOR.background,
+              backgroundColor: section === "summary" ? theme.main : theme.background,
             }}
           >
-            <ButtonLabel style={{ color: section === "summary" ? COLOR.text : COLOR.helperText }}>Summary</ButtonLabel>
+            <ButtonLabel style={{ color: section === "summary" ? theme.text : theme.helperText }}>Summary</ButtonLabel>
           </NavItem>
         </NavBar>
         {
@@ -45,6 +46,7 @@ export default function Statistics({ id }: Props) {
       </Container>
       <Spacer />
     </>
-
   )
 }
+
+export default withTheme(Statistics);

@@ -1,6 +1,5 @@
 import { Image, Pressable, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
 export const CardWrapperLink = styled(TouchableOpacity)`
@@ -14,7 +13,7 @@ export const CardWrapper = styled(View)`
     flex-direction: row;
     margin: 5px 5px;
     border-radius: 10px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
 `
 
 export const Team = styled(View)`
@@ -28,6 +27,7 @@ export const Name = styled(MainText)`
     font-size: 16px;
     width: 120px;
     text-align: right;
+    color:  ${ props => props.theme.textInverted };
 `
 
 export const NameFlipped = styled(Name)`
@@ -50,7 +50,7 @@ export const FinishedMatchStatus = styled(View)`
 
 export const Score = styled(MainText)`
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const Time = styled(MainText)`
@@ -60,15 +60,15 @@ export const Time = styled(MainText)`
 
 export const DateCmp = styled(MainText)`
     font-size: 12px;
-    color: ${ COLOR.helperText };
+    color: ${ props => props.theme.helperText };
 `
 
 export const Status = styled(MainText)`
     font-size: 12px;
-    color: ${ COLOR.text };
+    color: ${ props => props.theme.text };
     padding: 2px 10px;
     border-radius: 50px;
-    background-color: #FF2782;
+    background-color: ${ props => props.theme.main };
     text-align: center;
     margin: 0 5px;
 `

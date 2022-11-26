@@ -1,23 +1,22 @@
 import { Image, Pressable, ScrollView, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const PlayerListWrapper = styled(ScrollView)`
-    
+    background-color: ${ props => props.theme.background };
 `
 
 export const Heading = styled(MainText)`
     margin: 10px;
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     font-size: 20px;
     font-weight: 600;
     border-bottom-color: purple;
     border-bottom-width: 3px;
     border-bottom-style: solid;
     margin-bottom: 20px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
     padding: 10px;
     border-radius: 5px;
     elevation: 5;
@@ -33,7 +32,7 @@ export const Player = styled(View)`
     align-items: center;
     padding: 5px;
     margin: 0 10px;
-    background-color: white;
+    background-color: ${ props => props.theme.text };
     border-radius: 50px;
     margin-bottom: 10px;
 `
@@ -52,15 +51,17 @@ export const PlayerAvatar = styled(Image)`
 export const PlayerName = styled(MainText)`
     font-size: 16px;
     margin-left: 10px;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const TeamName = styled(MainText)`
     font-size: 16px;
     margin-right: 5px;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const RatingWrapper = styled(View)`
-    background-color: ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
     width: 40px;
     height: 40px;
     text-align: center;
@@ -71,12 +72,12 @@ export const RatingWrapper = styled(View)`
 
 export const Rating = styled(MainText)`
     font-size: 18px;
-    color: ${ COLOR.text };
+    color: ${ props => props.theme.text };
 `
 
 export const TmpText = styled(MainText)`
     font-size: 18px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const Spacer = styled(View)`

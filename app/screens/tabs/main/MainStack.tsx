@@ -3,16 +3,25 @@ import Team from '../botola/stack/team/Team';
 import EventDetails from './mainStack/eventDetails/EventDetails';
 import MainScreen from './mainStack/MainScreen';
 
+type Props = {
+  onThemeToggle: () => void
+}
 
-export default function MainStack() {
+export default function MainStack({ onThemeToggle }: Props) {
 
   const Stack = createStackNavigator();
 
   return (
     <Stack.Navigator initialRouteName='MainScreen' screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='MainScreen' component={ MainScreen } />
-      <Stack.Screen name='EvantDetails' component={ EventDetails } />
-      <Stack.Screen name='Team' component={ Team } />
+      <Stack.Screen name='MainScreen' 
+        children={ () => <MainScreen onThemeToggle={ onThemeToggle } /> }
+      />
+      <Stack.Screen name='EvantDetails' 
+        children={ () => <EventDetails /> }  
+      />
+      <Stack.Screen name='Team' 
+        children={ () => <Team /> }
+      />
     </Stack.Navigator>
   )
 }

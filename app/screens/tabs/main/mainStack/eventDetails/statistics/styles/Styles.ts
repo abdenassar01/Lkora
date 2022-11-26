@@ -5,7 +5,7 @@ import { MainText } from '../../../../../../../assets/text/Text';
 export const Container = styled(View)`
     margin: 10px;
     padding: 5px;
-    background-color: white;
+    background-color: ${ props => props.theme.text };
     border-radius: 10px;
 `
 

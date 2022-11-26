@@ -1,8 +1,9 @@
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
+import { withTheme } from "styled-components";
 
-export default function SkeltonPlayerDetailsLoader() {
+function SkeltonPlayerDetailsLoader(props: any) {
   return (
-    <SkeletonPlaceholder>
+    <SkeletonPlaceholder backgroundColor={ props.theme.text } highlightColor={ props.theme.helperText }>
       <SkeletonPlaceholder.Item>
         <SkeletonPlaceholder.Item flexDirection="row" paddingHorizontal={ 20 } alignItems='center'>
             <SkeletonPlaceholder.Item width={ 100 } height={ 100 } borderRadius={ 50 }  />
@@ -30,3 +31,5 @@ export default function SkeltonPlayerDetailsLoader() {
     </SkeletonPlaceholder>
   )
 }
+
+export default withTheme(SkeltonPlayerDetailsLoader)

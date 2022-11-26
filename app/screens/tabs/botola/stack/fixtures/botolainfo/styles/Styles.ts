@@ -1,6 +1,5 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
 
 export const BotolaInfoWrapper = styled(View)`
@@ -13,7 +12,7 @@ export const BotolaInfoWrapper = styled(View)`
 export const Card = styled(View)`
     padding: 20px 30px;
     align-items: center;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
     border-radius: 10px;
     elevation: 5;
 `
@@ -38,12 +37,12 @@ export const TeamLogo = styled(Image)`
 export const Label = styled(MainText)`
     font-size: 16px;
     font-weight: 600;
-    color: ${ COLOR.main }; 
+    color: ${ props => props.theme.main }; 
 `
 
 export const HelperText = styled(MainText)`
     font-size: 10px;
-    color: ${ COLOR.helperText };
+    color: ${ props => props.theme.helperText };
 `
 
 export const BotolaColorsLine = styled(View)`
