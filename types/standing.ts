@@ -31,7 +31,7 @@ type Tournemant = {
     id: number
 } 
 
-export type Standing = {
+export type StandingType = {
     tournament: Tournemant,
     name: string,
     tieBreakingRule: TieBreakingRule,
