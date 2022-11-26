@@ -1,10 +1,9 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
 
 export const CardWrapper = styled(View)`
-    background-color: #ffffff;
+    background-color: ${ props => props.theme.text };
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -15,12 +14,13 @@ export const StaduimTitle = styled(MainText)`
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 5px;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Line = styled(View)`
     width: 30%;
     height: 2px;
-    background-color:  ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
     margin-bottom: 10px;
     border-radius: 50px;
 `
@@ -45,6 +45,7 @@ export const TeamTitle = styled(MainText)`
     font-size: 14px;
     width: 100px;
     text-align: center;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const TeamLogo = styled(Image)`
@@ -63,11 +64,12 @@ export const MatchStatusWrapper = styled(View)`
 
 export const Score = styled(MainText)`
     font-size: 25px;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Time = styled(MainText)`
     font-size: 20px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const DatePlaceHolder = styled(MainText)`
@@ -83,10 +85,10 @@ export const Status = styled(MainText)`
     color: white;
     border-radius: 5px;
     margin-top: 10px;
-    background-color: ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
 `
 
 export const HelperText = styled(MainText)`
     font-size: 12px;
-    color: ${ COLOR.helperText };
+    color: ${ props => props.theme.helperText };
 `

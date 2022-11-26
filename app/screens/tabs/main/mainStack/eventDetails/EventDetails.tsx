@@ -11,7 +11,7 @@ import { useRoute } from '@react-navigation/native'
 
 export default function EventDetails() {
 
-  const route = useRoute()
+  const route: any = useRoute()
   
   const { data, isFetching, error } = useQuery("get match details", async () => {
     const result = await axios.get(`https://api.sofascore.com/api/v1/event/${ route.params.id }`);
