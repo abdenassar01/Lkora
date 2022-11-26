@@ -1,6 +1,5 @@
 import { Image, ScrollView, View } from 'react-native';
 import styled from "styled-components";
-import { COLOR } from '../../../../../../../../../assets/color';
 import { MainText } from '../../../../../../../../../assets/text/Text';
 
 export const SummaryWrapper = styled(ScrollView)`
@@ -12,7 +11,7 @@ export const ItemWrapper = styled(View)`
     flex-direction: row;  
     justify-content: space-between; 
     align-items: center;
-    background-color: ${ COLOR.background };
+    background-color: ${ props => props.theme.background };
     margin-bottom: 5px;
     padding: 10px;
     border-radius: 10px;
@@ -21,7 +20,7 @@ export const ItemWrapper = styled(View)`
 export const Heading = styled(MainText)`
     margin: 10px 0;
     text-align: center;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     font-size: 16px;
     font-weight: 600;
     border-bottom-color: purple;
@@ -34,7 +33,7 @@ export const Heading = styled(MainText)`
 export const Label = styled(MainText)`
     font-size: 16px;
     font-weight: 600;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     text-align: center;
 `
 
@@ -62,5 +61,5 @@ export const ManagerImage = styled(Image)`
 `
 
 export const ManagerName = styled(MainText)`
-    color: #000;
+    color: ${ props => props.theme.textInverted };
 `
