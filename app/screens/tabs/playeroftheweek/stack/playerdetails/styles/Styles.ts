@@ -4,7 +4,7 @@ import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const PlayerDetailsWrapper = styled(ScrollView)`
-    background-color: ${ COLOR.background };
+    background-color: ${ props => props.theme.background };
 `
 
 export const Header = styled(View)`
@@ -14,7 +14,7 @@ export const Header = styled(View)`
     align-items: center;
     margin: 10px;
     border-radius: 10px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
     elevation: 10;
 `
 
@@ -24,14 +24,14 @@ export const BackIcon = styled(Pressable)`
 
 export const HeaderTitle = styled(MainText)`
     font-size: 20px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const HeroSection = styled(View)`
     flex-direction: row;
     padding: 10px;
     align-items: center;
-    background-color: white;
+    background-color: ${ props => props.theme.text };
     margin: 10px;
     border-radius: 10px;
 `
@@ -51,11 +51,11 @@ export const Rating = styled(View)`
     border-radius: 50px;
     align-items: center;
     justify-content: center;
-    background-color: ${ COLOR.main };
+    background-color: ${ props => props.theme.main };
 `
 
 export const RatingText = styled(MainText)`
-    color: ${ COLOR.text };
+    color: ${ props => props.theme.textInverted };
     font-size: 16px;
 `
 
@@ -66,6 +66,7 @@ export const PlayerInfo = styled(View)`
 export const Paragraph = styled(MainText)`
     font-size: 16px;
     font-weight: 600;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Stats = styled(View)`
@@ -81,7 +82,7 @@ export const Heading = styled(MainText)`
     border-bottom-width: 2px; 
     font-size: 23px;
     padding: 0 20px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     margin-bottom: 20px;
 `
 
@@ -93,11 +94,11 @@ export const StatsItem = styled(View)`
     align-items: center;
     margin: 5px 0;
     border-radius: 5px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
 `
 
 export const Value = styled(MainText)`
-
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Spacer = styled(View)`
