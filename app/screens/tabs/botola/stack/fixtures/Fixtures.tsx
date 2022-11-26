@@ -14,7 +14,11 @@ export default function Fixtures() {
     return result?.data;
   })
 
-  if(isLoading) return <SkeltonBotolaLoader />
+  if(isLoading) return (
+    <BotolaFixWrapper contentContainerStyle={{ alignItems: 'center' }}>
+      <SkeltonBotolaLoader />
+    </BotolaFixWrapper>
+  )
 
   return (
     <BotolaFixWrapper contentContainerStyle={{ alignItems: 'center' }}>
