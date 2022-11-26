@@ -1,6 +1,5 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../../../../../assets/color";
 import { MainText } from "../../../../../../../assets/text/Text";
 
 export const PlayersWrapper = styled(View)`
@@ -8,7 +7,7 @@ export const PlayersWrapper = styled(View)`
 `
 
 export const Player = styled(TouchableOpacity)`
-    background-color: white;
+    background-color: ${ props => props.theme.text };
     width: 95%;
     padding: 10px;
     margin: 5px;
@@ -35,7 +34,7 @@ export const CentreSection = styled(View)`
 export const RightSection = styled(View)`
     align-items: center;
     justify-content: center;
-    border: 2px solid ${ COLOR.main };
+    border: 2px solid ${ props => props.theme.main };
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -43,17 +42,17 @@ export const RightSection = styled(View)`
 
 export const ShirtNumber = styled(MainText)`
     font-size: 25px;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
 `
 
 export const PlayerName = styled(MainText)`
     font-size: 20px;
-    color: ${ COLOR.textInverted };
+    color: ${ props => props.theme.textInverted };
 `
 
 export const TeamName = styled(MainText)`
     font-size: 13px;
-    color: ${ COLOR.textInverted };
+    color: ${ props => props.theme.textInverted };
 `
 
 export const Spacer = styled(View)`
