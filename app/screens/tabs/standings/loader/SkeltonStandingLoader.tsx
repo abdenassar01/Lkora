@@ -1,10 +1,10 @@
 import SkeletonPlaceholder from "react-native-skeleton-placeholder";
+import { withTheme } from "styled-components";
 
-
-export default function SkeltonStandingLoader() {
+function SkeltonStandingLoader({ theme }: any) {
   return (
-    <SkeletonPlaceholder>
-      <SkeletonPlaceholder.Item>
+    <SkeletonPlaceholder backgroundColor={ theme.text } highlightColor={ theme.helperText }>
+      <SkeletonPlaceholder.Item> 
         <SkeletonPlaceholder.Item alignItems="center">
           <SkeletonPlaceholder.Item width={ 200 } height={ 40 } marginVertical={ 10 } borderRadius={ 50 } />
         </SkeletonPlaceholder.Item>
@@ -22,4 +22,6 @@ export default function SkeltonStandingLoader() {
       </SkeletonPlaceholder.Item>
     </SkeletonPlaceholder>
   )
-}{}
+}
+
+export default withTheme(SkeltonStandingLoader)
