@@ -4,7 +4,7 @@ import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
 export const HeaderBackground = styled(View)`
-    background-color: ${ COLOR.background };
+    background-color: ${ props => props.theme.background };
 `
 
 export const HeaderWrapper = styled(View)`
@@ -12,7 +12,7 @@ export const HeaderWrapper = styled(View)`
     justify-content: space-between;
     flex-direction: row;
     padding: 5px;
-    background-color: ${ COLOR.text };
+    background-color: ${ props => props.theme.text };
     margin: 10px;
     border-radius: 5px;
     elevation: 5;
@@ -41,6 +41,6 @@ export const TournamentTitle = styled(MainText)`
 export const Heading = styled(MainText)`
     font-size: 22px;
     font-weight: 600;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     padding-left: 10px;
 `
