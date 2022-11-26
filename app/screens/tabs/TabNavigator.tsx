@@ -5,12 +5,14 @@ import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
 import Standing from './standings/Standing';
 import BotolaStack from './botola/BotolaStack';
 import { COLOR } from '../../assets/color';
+import { withTheme } from 'styled-components';
 
 type Props = {
-  onThemeToggle: () => void
+  onThemeToggle: () => void,
+  theme: any
 }
 
-export default function TabNavigator({ onThemeToggle }: Props) {
+function TabNavigator(props: Props) {
     
   const Tab = createBottomTabNavigator();
 
@@ -25,14 +27,14 @@ export default function TabNavigator({ onThemeToggle }: Props) {
           left: 10,
           right: 10,
           borderRadius: 10,
-          backgroundColor: COLOR.text,
+          backgroundColor: props.theme.text,
           elevation: 3,
           height: 50
         }
       }} 
     >
       <Tab.Screen name='MainSTack' 
-        children={ () => <MainStack onThemeToggle={ onThemeToggle } /> } 
+        children={ () => <MainStack onThemeToggle={ props.onThemeToggle } /> } 
         options={{
           tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
         }}
@@ -58,3 +60,5 @@ export default function TabNavigator({ onThemeToggle }: Props) {
     </Tab.Navigator>
   )
 }
+
+export default withTheme(TabNavigator)
