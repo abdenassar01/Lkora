@@ -12,7 +12,7 @@ export const LiveCardWrapperView = styled(View)`
     align-items: center;
     width: 300px;
     margin-right: 10px;
-    background-color: #fff;
+    background-color: ${ props => props.theme.text };
     border-radius: 20px;
 ` 
 
