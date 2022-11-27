@@ -8,7 +8,7 @@ export const ErrorWrapper = styled(View)`
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: ${ props => props.theme.background };
+    background-color: ${ props => props.theme.text };
 `
 
 export const ErrorMessage = styled(MainText)`
