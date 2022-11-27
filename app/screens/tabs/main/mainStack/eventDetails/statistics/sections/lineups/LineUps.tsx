@@ -12,28 +12,28 @@ type Props = {
 }
 
 export default function LineUps({ id }: Props) {
+  console.log(id)
 
-  const { data, isFetching, error } = useQuery("match stats", async () => {
+  const { data, isFetching, error } = useQuery<LineUp>("match stats", async () => {
     const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/lineups`)
-    const data: LineUp = response.data
-    return data
+    return response.data;
   })
 
   const navigation: any = useNavigation();
 
   if(isFetching) return <SkeltonStatisticsLoader />
-  if(error) return <MatchDetailSectionError message='LineUp is not available for this event'  />
+  if(error || (data?.confirmed === false)) return <MatchDetailSectionError message='LineUp is not available for this event'  />
 
   return (
     <LineUpWrapper contentContainerStyle={{ alignItems: 'center' }}>
       <Heading>Home</Heading>
       <GroupeName>starting xi</GroupeName>
      {
-      data?.home?.players.map((player: Player) => !(player.substitute) &&  (
+      data?.home?.players?.map((player: Player) => !(player.substitute) &&  (
         <PlayerWrapper key={ player.player.id } onPress={ () => navigation.navigate("playerDetails", { playerId: player.player.id, eventId: id }) }>
           <Portion>
-            <Position>{ player.position }</Position>
-            <ShirtNumber>{ player.shirtNumber }</ShirtNumber>
+            <Position>{ player?.position }</Position>
+            <ShirtNumber>{ player?.shirtNumber }</ShirtNumber>
           </Portion>  
           <Name>{ player.player.name }</Name>
           <Portion>
@@ -46,15 +46,15 @@ export default function LineUps({ id }: Props) {
 
       <GroupeName>substitution</GroupeName>
      {
-      data?.home?.players.map((player: Player) => (player.substitute) &&  (
-        <PlayerWrapper key={ player.player.id }>
+      data?.home?.players.map((player: Player) => (player?.substitute) &&  (
+        <PlayerWrapper key={ player?.player?.id }>
           <Portion>
-            <Position>{ player.position }</Position>
-            <ShirtNumber>{ player.shirtNumber }</ShirtNumber>
+            <Position>{ player?.position }</Position>
+            <ShirtNumber>{ player?.shirtNumber }</ShirtNumber>
           </Portion>  
-          <Name>{ player.player.name }</Name>
+          <Name>{ player?.player?.name }</Name>
           <Portion>
-            <Rating>{ player.statistics.rating ?? "💺" }</Rating>
+            <Rating>{ player?.statistics?.rating ?? "💺" }</Rating>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/player/${ player.player.id }/image` }}></Avatar>
           </Portion>
         </PlayerWrapper>
