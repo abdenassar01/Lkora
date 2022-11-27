@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
-import React from 'react'
 import { useQuery } from 'react-query'
 import { LineUp, Player } from '../../../../../../../../../types/lineups'
 import MatchDetailSectionError from '../../error/MatchDetailSectionError'
@@ -12,7 +11,6 @@ type Props = {
 }
 
 export default function LineUps({ id }: Props) {
-  console.log(id)
 
   const { data, isFetching, error } = useQuery<LineUp>("match stats", async () => {
     const response = await axios.get(`https://api.sofascore.com/api/v1/event/${ id }/lineups`)
