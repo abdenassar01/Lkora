@@ -44,3 +44,13 @@ export const Heading = styled(MainText)`
     color: ${ props => props.theme.main };
     padding-left: 10px;
 `
+
+export const ThemeToggle = styled(TouchableOpacity)`
+    flex-direction: row;
+    align-items: center;
+`
+
+export const ThemeLabel = styled(MainText)`
+    margin-right: 5px;
+    color: ${ props => props.theme.main };
+`

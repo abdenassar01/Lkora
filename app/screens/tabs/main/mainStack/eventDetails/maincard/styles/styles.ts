@@ -73,7 +73,7 @@ export const Time = styled(MainText)`
 `
 
 export const DatePlaceHolder = styled(MainText)`
-   
+   color: ${ props => props.theme.textInverted };
 `
 
 export const TimeWrapper = styled(View)`

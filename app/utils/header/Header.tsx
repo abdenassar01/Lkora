@@ -1,8 +1,7 @@
-import { HeaderBackground, HeaderWrapper, Heading } from "./styles/Styles";
+import { HeaderBackground, HeaderWrapper, Heading, ThemeLabel, ThemeToggle } from "./styles/Styles";
 import Icon from "react-native-vector-icons/Ionicons";
-import { COLOR } from "../../assets/color";
-import { Pressable } from "react-native";
 import { useTheme } from "styled-components";
+import { dark } from "../../assets/theme";
 
 type Props = {
   onThemeToggle: () => void
@@ -10,13 +9,16 @@ type Props = {
 
 export default function Header({ onThemeToggle }: Props) {
 
+  const theme = useTheme();
+
   return (
     <HeaderBackground>  
       <HeaderWrapper>
           <Heading>Lkora</Heading>
-          <Pressable onPress={ onThemeToggle }>
-            <Icon name="football" size={ 30 } color={ COLOR.main }  />
-          </Pressable>
+          <ThemeToggle onPress={ onThemeToggle }>
+            <ThemeLabel>{ theme === dark ? "Dark" : "Light" }</ThemeLabel>
+            <Icon name="football" size={ 30 } color={ dark.main }  />
+          </ThemeToggle>
       </HeaderWrapper>
     </HeaderBackground>
   )

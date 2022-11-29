@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query'
 import { withTheme } from 'styled-components';
 import { StandingType } from '../../../../types/standing';
-import { COLOR } from '../../../assets/color';
 import { Tournomant, TOURNOMANTS } from '../../../assets/tournomants';
 import ErrorHandler from '../../../utils/error/ErrorHandler';
 import SkeltonStandingLoader from './loader/SkeltonStandingLoader';
@@ -29,7 +28,12 @@ function Standing({ theme }: any) {
     refetch();
   },[tournomantId])
 
-  if(isLoading) return <SkeltonStandingLoader />
+  if(isLoading) return (
+                      <BotolaFixWrapper>
+                        <SkeltonStandingLoader />
+                      </BotolaFixWrapper>
+                    )
+
   if(error) return <ErrorHandler message="Network Error. Check your network status and try again." />
 
   return (
