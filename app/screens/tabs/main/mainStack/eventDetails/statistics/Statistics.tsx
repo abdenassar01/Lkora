@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { withTheme } from 'styled-components';
+import Incidents from "./sections/incidents/Incidents";
 import LineUps from './sections/lineups/LineUps';
 import Stats from './sections/stats/Stats';
 import Summary from './sections/summary/Summary';
@@ -39,9 +40,16 @@ function Statistics({ id, theme }: Props) {
           >
             <ButtonLabel style={{ color: section === "summary" ? theme.text : theme.helperText }}>Summary</ButtonLabel>
           </NavItem>
+          <NavItem onPress={() => setSection("incidents")}
+            style={{
+              backgroundColor: section === "incidents" ? theme.main : theme.background,
+            }}
+          >
+            <ButtonLabel style={{ color: section === "incidents" ? theme.text : theme.helperText }}>Incident</ButtonLabel>
+          </NavItem>
         </NavBar>
         {
-          section === "stats" ? <Stats id={id} /> : section === "lineups" ? <LineUps id={id} /> : <Summary id={id} />
+          section === "stats" ? <Stats id={id} /> : section === "lineups" ? <LineUps id={id} /> : section === "summary" ? <Summary id={id} /> : <Incidents id={ id } />
         }
       </Container>
       <Spacer />
