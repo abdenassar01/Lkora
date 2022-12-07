@@ -4,7 +4,7 @@ import NavigationIcon from '../../utils/navigationIcon/NavigationIcon';
 import PlayerOfTheWeekStack from './playeroftheweek/PlayerOfTheWeekStack';
 import Standing from './standings/Standing';
 import BotolaStack from './botola/BotolaStack';
-import { withTheme } from 'styled-components';
+import { withTheme } from "styled-components";
 
 type Props = {
   onThemeToggle: () => void,
