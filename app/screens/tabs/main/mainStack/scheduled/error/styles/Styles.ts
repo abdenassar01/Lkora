@@ -8,7 +8,7 @@ export const ScheduledErrorWrapper = styled(View)`
     align-items: center;
     margin: 5px 20px;
     border-radius: 10px;
-    background-color: ${ props => props.theme.main };
+    background-color: ${ props => props.theme.text };
     elevation: 5;
 `
 
