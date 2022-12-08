@@ -10,6 +10,7 @@ export type Incident = {
     time: number,
     incidentType: string,
     isHome?: boolean,
+    text?: string, 
     playerIn?: Player,
     playerOut?: Player,
     addedTime?: number,
