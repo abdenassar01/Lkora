@@ -27,6 +27,7 @@ export const TeamPressable = styled(TouchableOpacity)`
 
 export const TeamName = styled(MainText)`
     font-size: 12px;
+    color: ${ props => props.theme.textInverted };
 `
 
 export const TeamLogo = styled(Image)`

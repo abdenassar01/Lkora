@@ -61,17 +61,25 @@ export default function Incidents({ id }: Props) {
                                                 <HelperText>{ incident.reason }</HelperText>
                                             </TextWrapper>
                                         </IncidentParentElement>
-                                    ) : (
+                                    ) : incident.incidentType === "injuryTime" ? (
                                         <IncidentParentElement>
                                             <IncidentLogo source={require("../../../../../../../../assets/injury.png")} />
                                             <TextWrapper>
-                                                <HeadingText>{ "Added Time: " + incident.addedTime }</HeadingText>
+                                                <HeadingText>{ "Added Time: " + incident?.length }</HeadingText>
                                             </TextWrapper>
                                         </IncidentParentElement>
+                                    ) : (
+                                            <IncidentParentElement>
+                                                <IncidentLogo source={ incident.incidentType === "varDecision" ? require("../../../../../../../../assets/var.png") : require("../../../../../../../../assets/missed.png") } />
+                                                <TextWrapper>
+                                                    <HeadingText>{ incident.incidentType === "varDecision" ? "Var Decision" : "Penalty" }</HeadingText>
+                                                    <HelperText>{ incident.incidentClass }</HelperText>
+                                                </TextWrapper>
+                                            </IncidentParentElement>
                                     )
                                 }
                                 <Time>
-                                    <TimeText>{ incident.time + "\'" }</TimeText>
+                                    <TimeText>{ incident.addedTime ? (incident.time + incident.addedTime) + "\'" : incident.time + "\'" }</TimeText>
                                 </Time>
                             </IncidentItem>
                         )

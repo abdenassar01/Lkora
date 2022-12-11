@@ -1,12 +1,15 @@
 # Lkora
 
-![img](https://thumbs.gfycat.com/AntiquePastelEeve-mobile.jpg)
+<img alt="abdenassar amimi" src="https://i.imgur.com/YLGETuU.png" style="border-radius: 10px" />
+
+<img alt="abdenassar amimi" src="https://i.imgur.com/Q9NbReo.png" style="border-radius: 10px" />
+
+<img alt="abdenassar amimi" src="https://i.imgur.com/FQG00b6.png" style="border-radius: 10px" />
+
 
 _lkora is an android application built with react native_ 
 
-
 This app uses [sofascore api](https://sofascore.com) to get live football matches and stats, next match fixtures, leagues standings, player of the day...
-
 
 ## Contrubution
 

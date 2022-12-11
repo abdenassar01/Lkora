@@ -140,7 +140,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 2
         multiDexEnabled true
-        versionName "2.0.1"
+        versionName "2.2.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
         if (isNewArchitectureEnabled()) {

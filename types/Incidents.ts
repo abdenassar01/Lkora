@@ -22,5 +22,6 @@ export type Incident = {
     reason?: string,
     playerName?: string,
     assist1?: Player,
-    player?: Player
+    player?: Player,
+    length: number
 }
