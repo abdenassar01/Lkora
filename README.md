@@ -4,8 +4,8 @@
 
 <img alt="abdenassar amimi" src="https://i.imgur.com/Q9NbReo.png" style="border-radius: 10px" />
 
-
 <img alt="abdenassar amimi" src="https://i.imgur.com/FQG00b6.png" style="border-radius: 10px" />
+
 
 _lkora is an android application built with react native_ 
 
