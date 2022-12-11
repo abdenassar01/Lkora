@@ -17,8 +17,6 @@ export default function Incidents({ id }: Props) {
         return response.data.incidents;
     })
 
-    console.log(id)
-
     if(isFetching) return <SkeltonStatisticsLoader />
     if(error) return <MatchDetailSectionError message='incidents is not available for this event'  />
 
