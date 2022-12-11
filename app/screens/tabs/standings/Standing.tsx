@@ -11,8 +11,8 @@ import { Avatar, BigHeading, BotolaFixWrapper, Column, Row, Spacer, SpacerHoriso
 
 function Standing({ theme }: any) {
 
-  const [ tournomantId, setTournomantId ] = useState<number>(16)
-  const [ seasonId, setSeasonId ] = useState<number>(41087)
+  const [ tournomantId, setTournomantId ] = useState<number>(937)
+  const [ seasonId, setSeasonId ] = useState<number>(45552)
 
   const { data, isLoading, error, refetch, isRefetching } = useQuery<StandingType[]>("get botola standing", async () => {
       const result = await axios.get(`https://api.sofascore.com/api/v1/unique-tournament/${ tournomantId }/season/${ seasonId }/standings/total`);
