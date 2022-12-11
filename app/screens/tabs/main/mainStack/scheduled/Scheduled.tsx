@@ -21,7 +21,7 @@ export default function Scheduled() {
     if(isFetching) return <ScheduledSkiltonLoader />
     if(error) return  <ScheculedErrorHandler message='Network Error, Please check your network connection and try again' refetch={ refetch } />
 
-    const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 0 ));
+    const filtred = data.events.filter((event: Event) => ( event?.tournament.priority > 300 || (event?.tournament.id === 937) ));
 
   return (
     <MatchesWrapper>
