@@ -21,7 +21,7 @@ export default function Team() {
     
   return (
     <TeamWrapper>
-        <WithGoBackHeader tournament='Arsonal'/>
+        <WithGoBackHeader tournament={ data?.name ?? "Team" } />
         <Card>
             <Avatar source={{ uri: `https://api.sofascore.app/api/v1/team/${ data?.id }/image` }}></Avatar>
             <CardRightSide>
