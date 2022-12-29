@@ -18,7 +18,7 @@ export default function Live() {
   if(isLoading) return <LiveSkiltonLoader />
   if(error) return <LiveError message="Network Error, Please chech your network status and try again" />
 
-  const filtred = data?.events?.filter((event: Event) => (event.tournament.priority > 250))
+  const filtred = data?.events?.filter((event: Event) => ((event.tournament.priority > 250) || (event?.tournament?.uniqueTournament?.id == 937)))
 
   return (
     <LiveSlider horizontal showsHorizontalScrollIndicator={ false } >
