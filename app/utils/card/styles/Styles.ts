@@ -64,7 +64,7 @@ export const DateCmp = styled(MainText)`
 `
 
 export const Status = styled(MainText)`
-    font-size: 12px;
+    font-size: 8px;
     color: ${ props => props.theme.text };
     padding: 2px 10px;
     border-radius: 50px;
