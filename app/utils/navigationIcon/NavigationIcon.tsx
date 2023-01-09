@@ -9,9 +9,9 @@ type Props = {
 
 export default function NavigationIcon({ focused, label, icon }: Props) {
   return (
-    <IconWrapper>
-      <Icon name={ icon } size={20} color={ focused ? "#FF2782" : "#748c94" } />
-      <Label style={{ color: focused ? "#FF2782" : "#748c94" }}>{ focused ? "⦿" : label }</Label>
+    <IconWrapper style={{ position: 'absolute', bottom: focused ? 5 : 0 }}>
+      <Icon name={ icon } size={ focused ? 25 : 20} color={ focused ? "#FF2782" : "#748c94" } />
+      <Label style={{ color: focused ? "#FF2782" : "#748c94" }}>{  label }</Label>
     </IconWrapper>
   )
 }
