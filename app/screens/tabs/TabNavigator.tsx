@@ -35,25 +35,25 @@ function TabNavigator(props: Props) {
       <Tab.Screen name='MainSTack' 
         children={ () => <MainStack onThemeToggle={ props.onThemeToggle } /> } 
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Home" icon="home" />
+          tabBarIcon: ({ focused }) => <NavigationIcon theme={ props.theme } focused={ focused } label="Home" icon="home" />
         }}
       />
       <Tab.Screen name='Botola'
         children={ () => <BotolaStack /> }  
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Botola" icon="football" />
+          tabBarIcon: ({ focused }) => <NavigationIcon theme={ props.theme } focused={ focused } label="Botola" icon="football" />
         }}
       />
       <Tab.Screen name='Matches'
         children={ () => <Standing /> } 
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Standing" icon="ios-layers" />
+          tabBarIcon: ({ focused }) => <NavigationIcon theme={ props.theme } focused={ focused } label="Standing" icon="ios-layers" />
         }}
       /> 
       <Tab.Screen name='PlayerOfTheWeek'
         children={ () => <PlayerOfTheWeekStack /> }
         options={{
-          tabBarIcon: ({ focused }) => <NavigationIcon focused={ focused } label="Top Players" icon="person-circle-outline" />
+          tabBarIcon: ({ focused }) => <NavigationIcon theme={ props.theme } focused={ focused } label="Top Players" icon="person-circle-outline" />
         }}
       /> 
     </Tab.Navigator>
