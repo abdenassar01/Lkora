@@ -7,15 +7,19 @@ import {
 import TabNavigator from './app/screens/tabs/TabNavigator';
 import { ThemeProvider } from 'styled-components';
 import { light, dark } from './app/assets/theme';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import SplashScreen from 'react-native-splash-screen';
 
 const queryClient = new QueryClient()
 
 const App = () => {
 
   const [ theme, setTheme ] = useState<string>("light")
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   const storeTheme = async (value: string) => {
     try {
