@@ -61,8 +61,8 @@ export const DateElementButton = styled(TouchableOpacity)`
 
 export const DateElement = styled(MainText)`
     padding: 20px; 
-    padding-top: 5px; 
-    padding-bottom: 5px; 
+    padding-top: 3px; 
+    padding-bottom: 3px; 
     background-color: ${ props => props.theme.main };
     color: ${ props => props.theme.textInverted };
     border-radius: 50px;
