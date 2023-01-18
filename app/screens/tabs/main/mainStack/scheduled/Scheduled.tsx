@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
 import Card from '../../../../../utils/card/Card';
@@ -9,7 +8,7 @@ import ScheduledSkiltonLoader from './loader/ScheduledSkiltonLoader';
 
 type ScheduledProps = {
     today: string,
-    key: (string & Date) | (number & Date)
+    key: any
 }
 
 export default function Scheduled({ today }: ScheduledProps) {

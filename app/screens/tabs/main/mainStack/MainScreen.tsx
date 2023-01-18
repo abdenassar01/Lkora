@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Card from '../../../../utils/card/Card';
 import Header from '../../../../utils/header/Header';
 import Live from './live/Live';
 import Scheduled from './scheduled/Scheduled';
