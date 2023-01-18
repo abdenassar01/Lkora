@@ -72,7 +72,7 @@ export const Time = styled(MainText)`
     color: ${ props => props.theme.text };
     padding: 2px 10px;
     border-radius: 50px;
-    background-color: #FF2782;
+    background-color: ${ props => props.theme.main };
 `
 
 export const MatchScore = styled(MainText)`
