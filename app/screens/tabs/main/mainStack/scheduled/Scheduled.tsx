@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { Event } from '../../../../../../types/events';
 import Card from '../../../../../utils/card/Card';
@@ -7,14 +7,15 @@ import { MatchesWrapper, Spacer } from "../styles/Styles"
 import ScheculedErrorHandler from './error/ScheculedErrorHandler';
 import ScheduledSkiltonLoader from './loader/ScheduledSkiltonLoader';
 
-export default function Scheduled() {
+type ScheduledProps = {
+    today: string,
+    key: (string & Date) | (number & Date)
+}
 
-    const [ day, setDay ] = useState<string>(String(new Date().getDate()).padStart(2, '0'));
-    const [ month, setMonth ] = useState<string>(String(new Date().getMonth() + 1).padStart(2, '0'));
-    const [ year, setYear ] = useState<string>(String(new Date().getFullYear()));
+export default function Scheduled({ today }: ScheduledProps) {
 
     const { data, isFetching, error, refetch } = useQuery("fetch scheduled matches", async () => {
-        const result = await axios.get(`https://api.sofascore.com/api/v1/sport/football/scheduled-events/${ year }-${ month }-${ day }`) 
+        const result = await axios.get(`https://api.sofascore.com/api/v1/sport/football/scheduled-events/${ today }`) 
         return result.data
     })
 

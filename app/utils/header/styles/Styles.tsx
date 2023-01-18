@@ -54,3 +54,16 @@ export const ThemeLabel = styled(MainText)`
     margin-right: 5px;
     color: ${ props => props.theme.main };
 `
+
+export const DateElementButton = styled(TouchableOpacity)`
+
+`
+
+export const DateElement = styled(MainText)`
+    padding: 20px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    background-color: ${ props => props.theme.main };
+    color: ${ props => props.theme.textInverted };
+    border-radius: 50px;
+`
