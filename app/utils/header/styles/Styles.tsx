@@ -1,6 +1,5 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import styled from "styled-components";
-import { COLOR } from "../../../assets/color";
 import { MainText } from "../../../assets/text/Text";
 
 export const HeaderBackground = styled(View)`
@@ -33,7 +32,7 @@ export const GoBack = styled(TouchableOpacity)`
 export const TournamentTitle = styled(MainText)`
     font-size: 22px;
     font-weight: 600;
-    color: ${ COLOR.main };
+    color: ${ props => props.theme.main };
     position: absolute;
     right: 10px;
 `
@@ -53,4 +52,17 @@ export const ThemeToggle = styled(TouchableOpacity)`
 export const ThemeLabel = styled(MainText)`
     margin-right: 5px;
     color: ${ props => props.theme.main };
+`
+
+export const DateElementButton = styled(TouchableOpacity)`
+
+`
+
+export const DateElement = styled(MainText)`
+    padding: 20px; 
+    padding-top: 3px; 
+    padding-bottom: 3px; 
+    background-color: ${ props => props.theme.main };
+    color: ${ props => props.theme.textInverted };
+    border-radius: 50px;
 `

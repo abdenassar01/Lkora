@@ -1,4 +1,4 @@
-import Card from '../../../../utils/card/Card';
+import { useState } from "react";
 import Header from '../../../../utils/header/Header';
 import Live from './live/Live';
 import Scheduled from './scheduled/Scheduled';
@@ -10,9 +10,12 @@ type Props = {
 }
 
 export default function MainScreen({ onThemeToggle }: Props) {
+
+  const [ today, setToday ] = useState<Date>(new Date());
+
   return (
     <>
-      <Header onThemeToggle={ onThemeToggle } />
+      <Header onThemeToggle={ onThemeToggle } today={ today } setToday={ setToday } />
       <MainScreenWrapper>
         <Section>
           <Heading>Live Match</Heading>
@@ -20,7 +23,7 @@ export default function MainScreen({ onThemeToggle }: Props) {
         </Section>
         <Section>
           <Heading>Matches</Heading>
-          <Scheduled />
+          <Scheduled key={today} today={`${String(today.getFullYear())}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`} />
         </Section>
       </MainScreenWrapper>
     </>
