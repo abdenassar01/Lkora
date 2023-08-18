@@ -1,15 +1,15 @@
 type StatsItem = {
-    name: string,
-    home: string,
-    away: string
-}
+  name: string;
+  home: string;
+  away: string;
+};
 
 type Group = {
-    groupName: string,
-    statisticsItems: StatsItem[]
-}
+  groupName: string;
+  statisticsItems: StatsItem[];
+};
 
 export type StatsType = {
-    period: "All" | "1ST" | "2ND",
-    groups: Group[] 
-}
+  period: "All" | "1ST" | "2ND";
+  groups: Group[];
+};
