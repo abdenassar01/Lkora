@@ -44,6 +44,8 @@ export const TieBreakingRuleWrapper = styled(TouchableOpacity)`
 	elevation: 5;
 `;
 
+export const SelectionTabsWrapper = styled(View)``;
+
 export const TieBreakingRuleHeading = styled(MainText)`
 	text-align: center;
 	color: ${(props) => props.theme.main};
