@@ -1,13 +1,13 @@
-import { LiveCartWrapper, LiveText } from './styles'
+import { LiveCartWrapper, LiveText } from "./styles";
 
 type Props = {
-    message: string
-}
+  message: string;
+};
 
 export default function LiveError({ message }: Props) {
   return (
     <LiveCartWrapper>
-      <LiveText>{ message }</LiveText>
+      <LiveText>{message}</LiveText>
     </LiveCartWrapper>
-  )
+  );
 }

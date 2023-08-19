@@ -1,49 +1,49 @@
-type Tournament =  {
-    name: string,
-    id: number,
-    priority: number,
-    uniqueTournament: {
-        id: number
-    }
-}
+type Tournament = {
+  name: string;
+  id: number;
+  priority: number;
+  uniqueTournament: {
+    id: number;
+  };
+};
 
 type Status = {
-    description: string
-}
+  description: string;
+};
 
 type TeamColor = {
-    primary: string,
-    seconadry?: string 
-}  
+  primary: string;
+  seconadry?: string;
+};
 
 type Round = {
-    round: number
-}
+  round: number;
+};
 
 type Team = {
-    name: string,
-    id: number,
-    shortName?: string
-    teamColors: TeamColor
-}
+  name: string;
+  id: number;
+  shortName?: string;
+  teamColors: TeamColor;
+};
 
 type Score = {
-    current: number
-}
+  current: number;
+};
 
 type StatusTime = {
-    timestamp: number
-}
+  timestamp: number;
+};
 
 export type Event = {
-    id: number,
-    tournament: Tournament,
-    roundInfo: Round,
-    status: Status,
-    homeTeam: Team,
-    awayTeam: Team,
-    homeScore: Score,
-    awayScore: Score,
-    statusTime: StatusTime,
-    startTimestamp: number;
-}
+  id: number;
+  tournament: Tournament;
+  roundInfo: Round;
+  status: Status;
+  homeTeam: Team;
+  awayTeam: Team;
+  homeScore: Score;
+  awayScore: Score;
+  statusTime: StatusTime;
+  startTimestamp: number;
+};

@@ -4,103 +4,101 @@ import { COLOR } from "../../../../../../assets/color";
 import { MainText } from "../../../../../../assets/text/Text";
 
 export const PlayerDetailsWrapper = styled(ScrollView)`
-    background-color: ${ props => props.theme.background };
-`
+  background-color: ${(props) => props.theme.background};
+`;
 
 export const Header = styled(View)`
-    flex-direction: row;
-    padding: 5px 10px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: ${ props => props.theme.text };
-    elevation: 10;
-`
+  flex-direction: row;
+  padding: 5px 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: ${(props) => props.theme.text};
+  elevation: 10;
+`;
 
-export const BackIcon = styled(Pressable)`
-
-`
+export const BackIcon = styled(Pressable)``;
 
 export const HeaderTitle = styled(MainText)`
-    font-size: 20px;
-    color: ${ props => props.theme.main };
-`
+  font-size: 20px;
+  color: ${(props) => props.theme.main};
+`;
 
 export const HeroSection = styled(View)`
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
-    background-color: ${ props => props.theme.text };
-    margin: 10px;
-    border-radius: 10px;
-`
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+  background-color: ${(props) => props.theme.text};
+  margin: 10px;
+  border-radius: 10px;
+`;
 
 export const Avatar = styled(Image)`
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-`
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+`;
 
 export const Rating = styled(View)`
-    position: absolute;
-    top: 80px;
-    left: 80px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-    background-color: ${ props => props.theme.main };
-`
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.main};
+`;
 
 export const RatingText = styled(MainText)`
-    color: ${ props => props.theme.textInverted };
-    font-size: 16px;
-`
+  color: ${(props) => props.theme.textInverted};
+  font-size: 16px;
+`;
 
 export const PlayerInfo = styled(View)`
-    margin-left: 20px;
-`
+  margin-left: 20px;
+`;
 
 export const Paragraph = styled(MainText)`
-    font-size: 16px;
-    font-weight: 600;
-    color: ${ props => props.theme.textInverted };
-`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${(props) => props.theme.textInverted};
+`;
 
 export const Stats = styled(View)`
-    align-items: center;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 10px;
-`
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+`;
 
 export const Heading = styled(MainText)`
-    border-bottom-style: solid;
-    border-bottom-color: purple;
-    border-bottom-width: 2px; 
-    font-size: 23px;
-    padding: 0 20px;
-    color: ${ props => props.theme.main };
-    margin-bottom: 20px;
-`
+  border-bottom-style: solid;
+  border-bottom-color: purple;
+  border-bottom-width: 2px;
+  font-size: 23px;
+  padding: 0 20px;
+  color: ${(props) => props.theme.main};
+  margin-bottom: 20px;
+`;
 
 export const StatsItem = styled(View)`
-    flex-direction: row;
-    padding: 5px 10px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-    border-radius: 5px;
-    background-color: ${ props => props.theme.text };
-`
+  flex-direction: row;
+  padding: 5px 10px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.text};
+`;
 
 export const Value = styled(MainText)`
-    color: ${ props => props.theme.textInverted };
-`
+  color: ${(props) => props.theme.textInverted};
+`;
 
 export const Spacer = styled(View)`
-    height: 60px;
-`
+  height: 60px;
+`;

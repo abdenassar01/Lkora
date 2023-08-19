@@ -1,65 +1,65 @@
-import { Image, ScrollView, View } from 'react-native';
+import { Image, ScrollView, View } from "react-native";
 import styled from "styled-components";
-import { MainText } from '../../../../../../../../../assets/text/Text';
+import { MainText } from "../../../../../../../../../assets/text/Text";
 
 export const SummaryWrapper = styled(ScrollView)`
-    padding: 5px;
-`
+  padding: 5px;
+`;
 
 export const ItemWrapper = styled(View)`
-    width: 100%;
-    flex-direction: row;  
-    justify-content: space-between; 
-    align-items: center;
-    background-color: ${ props => props.theme.background };
-    margin-bottom: 5px;
-    padding: 10px;
-    border-radius: 10px;
-`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${(props) => props.theme.background};
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 10px;
+`;
 
 export const Heading = styled(MainText)`
-    margin: 10px 0;
-    text-align: center;
-    color: ${ props => props.theme.main };
-    font-size: 16px;
-    font-weight: 600;
-    border-bottom-color: purple;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    margin-bottom: 10px;
-    width: 50%;
-` 
+  margin: 10px 0;
+  text-align: center;
+  color: ${(props) => props.theme.main};
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom-color: purple;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  margin-bottom: 10px;
+  width: 50%;
+`;
 
 export const Label = styled(MainText)`
-    font-size: 16px;
-    font-weight: 600;
-    color: ${ props => props.theme.main };
-    text-align: center;
-`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${(props) => props.theme.main};
+  text-align: center;
+`;
 
 export const Home = styled(View)`
-    align-items: center;
-`
+  align-items: center;
+`;
 
 export const Away = styled(View)`
-    align-items: center;
-`
+  align-items: center;
+`;
 
 export const Jursey = styled(Image)`
-    width: 50px;
-    height: 50px;
-`
+  width: 50px;
+  height: 50px;
+`;
 
 export const Manager = styled(View)`
-    align-items: center;
-`
+  align-items: center;
+`;
 
 export const ManagerImage = styled(Image)`
-    width: 70px;
-    height: 70px;
-    border-radius: 50px;
-`
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+`;
 
 export const ManagerName = styled(MainText)`
-    color: ${ props => props.theme.textInverted };
-`
+  color: ${(props) => props.theme.textInverted};
+`;
