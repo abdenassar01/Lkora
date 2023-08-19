@@ -7,6 +7,7 @@ import DataTable from "./data-table/DataTable";
 function Standing() {
 	const [tournomantId, setTournomantId] = useState<number>(17);
 	const [seasonId, setSeasonId] = useState<number>(52186);
+	const [league, setLeague] = useState<string>("");
 
 	const onTournomantChange = (
 		tournomant?: SimpleUniqueTournomant,
@@ -18,10 +19,7 @@ function Standing() {
 
 	return (
 		<BotolaFixWrapper contentContainerStyle={{ justifyContent: "center" }}>
-			<BigHeading>
-				text
-				{/* {data && data[0]?.tournament.uniqueTournament.name} */}
-			</BigHeading>
+			<BigHeading>{league}</BigHeading>
 			<TournementsTabSelector
 				onTournomantChange={onTournomantChange}
 				tournomantId={tournomantId}
@@ -31,6 +29,7 @@ function Standing() {
 			<DataTable
 				seasonId={seasonId}
 				tournomantId={tournomantId}
+				setLeague={setLeague}
 			/>
 			<Spacer />
 		</BotolaFixWrapper>

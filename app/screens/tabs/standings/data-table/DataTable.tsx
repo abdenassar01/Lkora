@@ -16,9 +16,10 @@ import axios from "axios";
 type Props = {
 	tournomantId: number;
 	seasonId: number;
+	setLeague: (value: string) => void;
 };
 
-function DataTable({ seasonId, tournomantId }: Props) {
+function DataTable({ seasonId, tournomantId, setLeague }: Props) {
 	const { data, isLoading, error, isRefetching } = useQuery<StandingType[]>(
 		["get tournoment standing", [tournomantId, seasonId]],
 		{
@@ -27,7 +28,7 @@ function DataTable({ seasonId, tournomantId }: Props) {
 				const result = await axios.get(
 					`https://api.sofascore.com/api/v1/unique-tournament/${tournomantId}/season/${seasonId}/standings/total`
 				);
-				console.log("standing: tid: ", tournomantId, "sid", seasonId);
+				setLeague(result.data?.standings[0]?.tournament.name);
 				return result.data.standings;
 			},
 		}
@@ -55,7 +56,7 @@ function DataTable({ seasonId, tournomantId }: Props) {
 				<SkeltonStandingRefetchLoader />
 			) : (
 				data?.map((group) => (
-					<Table key={Math.random() * Math.random()}>
+					<Table key={group.name}>
 						<Row>
 							<Avatar
 								source={{
