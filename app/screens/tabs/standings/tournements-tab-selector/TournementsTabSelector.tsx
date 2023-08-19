@@ -11,8 +11,8 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import ErrorHandler from "../../../../utils/error/ErrorHandler";
 import { SimpleUniqueTournomant } from "../../../../../types/uniqueTournomant";
-import { Text } from "react-native";
 import { Season } from "../../../../../types/season";
+import SkeltonStandingTopLoader from "../loader/SkeltonStandingTopLoader";
 
 type Props = {
 	onTournomantChange: (
@@ -67,7 +67,7 @@ function TournementsTabSelector({
 		}
 	);
 
-	if (isLoading || seasonsLoading) return <Text>loading...</Text>;
+	if (isLoading || seasonsLoading) return <SkeltonStandingTopLoader />;
 	if (error || seasonsError)
 		return (
 			<ErrorHandler message="Network Error. Check your network status and try again." />

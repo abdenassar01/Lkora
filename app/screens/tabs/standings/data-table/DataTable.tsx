@@ -6,7 +6,7 @@ import {
 	SelectionTabsWrapper,
 	Table,
 } from "../styles/Styles";
-import SkeltonStandingRefetchLoader from "../loader/SkeltonStandingRefetchLoader";
+import SkeltonStandingTableLoader from "../loader/SkeltonStandingTableLoader";
 import TieBreakingRule from "../tie-breaking-rule/TieBreakingRule";
 import { useQuery } from "react-query";
 import { StandingType } from "../../../../../types/standing";
@@ -36,7 +36,7 @@ function DataTable({ seasonId, tournomantId, setLeague }: Props) {
 
 	if (isLoading || isRefetching)
 		return (
-			<SkeltonStandingRefetchLoader />
+			<SkeltonStandingTableLoader />
 			// <BotolaFixWrapper>
 			//     <SkeltonStandingLoader />
 			// </BotolaFixWrapper>
